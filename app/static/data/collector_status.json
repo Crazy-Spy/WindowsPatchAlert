@@ -1,8 +1,8 @@
 {
   "is_running": false,
   "current_source": null,
-  "started_at": "2026-10-22T16:23:03Z",
-  "finished_at": "2026-10-22T16:23:05Z",
+  "started_at": "2026-10-22T22:54:01Z",
+  "finished_at": "2026-10-22T22:54:02Z",
   "last_trigger": "scheduled_action",
   "last_status": "COMPLETED",
   "sources_total": 6,
@@ -14,6 +14,18 @@
   "errors": [],
   "schedule_interval_minutes": 240,
   "recent_runs": [
+    {
+      "id": 8,
+      "started_at": "2026-10-22T22:54:01Z",
+      "finished_at": "2026-10-22T22:54:02Z",
+      "trigger_type": "scheduled_action",
+      "status": "COMPLETED",
+      "sources_checked": 6,
+      "sources_succeeded": 6,
+      "sources_failed": 0,
+      "changes_detected": 57,
+      "summary": "Checked 6/6 Microsoft sources: 6 succeeded, 0 failed, 57 field-level change(s) recorded."
+    },
     {
       "id": 7,
       "started_at": "2026-10-22T16:23:03Z",
