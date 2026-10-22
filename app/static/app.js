@@ -4,9 +4,8 @@
   "use strict";
 
   // Follow.it RSS-to-Email Configuration:
-  // After deploying to GitHub Pages, register your rss.xml URL at https://follow.it
-  // and paste your Follow.it form action URL here (e.g., "https://api.follow.it/subscription-form/YOUR_FEED_ID/8")
-  const FOLLOW_IT_FORM_ACTION = "";
+  const FOLLOW_IT_FORM_ACTION =
+    "https://api.follow.it/subscription-form/Y2I1ZFYza25xYXViRU14bEk2VFRqdFZnbW9uWTJlSlFuVTNIRG45ME5DSWpZdnFyZTdZTEQ4b0lva2JxTmhIUkxtQjl6Z3lTY2ZPNGdLMDk2RTR5Z1BRdUpYdnhpUHNtL2NTdWlxdVkxanlKTG9RMitIdXREVjYycTA2OHN0ZVN8aTltWUsxTlNWTjdZM3pYbCtYZm9PRlJGcXZLOFVVRlE1M3lLWUN5SmVKOD0=/8";
 
   const state = {
     q: "",
