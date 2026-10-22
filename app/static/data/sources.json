@@ -9,13 +9,13 @@
       "url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2",
       "enabled": true,
       "check_interval_minutes": 240,
-      "last_checked_at": null,
-      "last_success_at": null,
-      "last_status": "NEVER_CHECKED",
-      "last_http_code": null,
+      "last_checked_at": "2026-10-22T00:06:35Z",
+      "last_success_at": "2026-10-22T00:06:35Z",
+      "last_status": "OK",
+      "last_http_code": 200,
       "last_error": null,
-      "content_hash": null,
-      "items_collected": 0
+      "content_hash": "ea1922c02cf8426ac0a064fcac027ee149b8add6f6a90c2f6a5b60fc3bda24d4",
+      "items_collected": 11
     },
     {
       "id": 2,
@@ -26,13 +26,13 @@
       "url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2",
       "enabled": true,
       "check_interval_minutes": 240,
-      "last_checked_at": null,
-      "last_success_at": null,
-      "last_status": "NEVER_CHECKED",
-      "last_http_code": null,
+      "last_checked_at": "2026-10-22T00:06:36Z",
+      "last_success_at": "2026-10-22T00:06:36Z",
+      "last_status": "OK",
+      "last_http_code": 200,
       "last_error": null,
-      "content_hash": null,
-      "items_collected": 0
+      "content_hash": "3c01b86685d9e1d85857c12c912a0ca309d859086f4e75794c64f0c3fbd64cb6",
+      "items_collected": 3
     },
     {
       "id": 3,
@@ -43,12 +43,12 @@
       "url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-22h2",
       "enabled": true,
       "check_interval_minutes": 240,
-      "last_checked_at": null,
-      "last_success_at": null,
-      "last_status": "NEVER_CHECKED",
-      "last_http_code": null,
+      "last_checked_at": "2026-10-22T00:06:36Z",
+      "last_success_at": "2026-10-22T00:06:36Z",
+      "last_status": "OK",
+      "last_http_code": 200,
       "last_error": null,
-      "content_hash": null,
+      "content_hash": "f362e4743e7a3f4087c5865b51ed989b27f7209c15e4ccce97b22efd79facc35",
       "items_collected": 0
     },
     {
@@ -60,13 +60,13 @@
       "url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-10-22h2",
       "enabled": true,
       "check_interval_minutes": 240,
-      "last_checked_at": null,
-      "last_success_at": null,
-      "last_status": "NEVER_CHECKED",
-      "last_http_code": null,
+      "last_checked_at": "2026-10-22T00:06:36Z",
+      "last_success_at": "2026-10-22T00:06:36Z",
+      "last_status": "OK",
+      "last_http_code": 200,
       "last_error": null,
-      "content_hash": null,
-      "items_collected": 0
+      "content_hash": "8d5d72af379cdd9679cc2035f73ca88b618638df13076acd51d7c95a318db970",
+      "items_collected": 3
     },
     {
       "id": 5,
@@ -77,13 +77,13 @@
       "url": "https://learn.microsoft.com/en-us/windows/release-health/windows-message-center",
       "enabled": true,
       "check_interval_minutes": 240,
-      "last_checked_at": null,
-      "last_success_at": null,
-      "last_status": "NEVER_CHECKED",
-      "last_http_code": null,
+      "last_checked_at": "2026-10-22T00:06:36Z",
+      "last_success_at": "2026-10-22T00:06:36Z",
+      "last_status": "OK",
+      "last_http_code": 200,
       "last_error": null,
-      "content_hash": null,
-      "items_collected": 0
+      "content_hash": "f8160d770e2e0b9401144b385cada7cebcc6e4beadf7a619a883602e673be24a",
+      "items_collected": 10
     },
     {
       "id": 6,
@@ -94,13 +94,13 @@
       "url": "https://api.msrc.microsoft.com/cvrf/v3.0/updates",
       "enabled": true,
       "check_interval_minutes": 240,
-      "last_checked_at": null,
-      "last_success_at": null,
-      "last_status": "NEVER_CHECKED",
-      "last_http_code": null,
+      "last_checked_at": "2026-10-22T00:06:37Z",
+      "last_success_at": "2026-10-22T00:06:37Z",
+      "last_status": "OK",
+      "last_http_code": 200,
       "last_error": null,
-      "content_hash": null,
-      "items_collected": 0
+      "content_hash": "b954e728863d514da295f80396c299bad7f82ef9f06a41262a73e89108f28d8e",
+      "items_collected": 12
     }
   ],
   "total": 6,

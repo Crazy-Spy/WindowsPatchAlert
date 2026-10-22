@@ -1,6 +1,48 @@
 {
   "items": [
     {
+      "id": 15,
+      "kb_number": "KB5129236",
+      "windows_version": "All Supported Desktop Releases",
+      "severity": "SAFE",
+      "alert_type": "STATUS_CHANGE",
+      "title": "KB5129236 Operational Health Changed: CAUTION -> SAFE",
+      "summary": "SAFE: Official Microsoft Release Health telemetry verified for KB5129236. No active known issues, Known Issue Rollbacks (KIR), or Out-of-Band (OOB) replacements are reported by Microsoft.",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/windows-message-center",
+      "acknowledged": false,
+      "acknowledged_at": null,
+      "is_demo": false,
+      "created_at": "2026-10-22T00:06:36Z"
+    },
+    {
+      "id": 14,
+      "kb_number": "KB5129242",
+      "windows_version": "All Supported Desktop Releases",
+      "severity": "SAFE",
+      "alert_type": "STATUS_CHANGE",
+      "title": "KB5129242 Operational Health Changed: CAUTION -> SAFE",
+      "summary": "SAFE: Official Microsoft Release Health telemetry verified for KB5129242. No active known issues, Known Issue Rollbacks (KIR), or Out-of-Band (OOB) replacements are reported by Microsoft.",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/windows-message-center",
+      "acknowledged": false,
+      "acknowledged_at": null,
+      "is_demo": false,
+      "created_at": "2026-10-22T00:06:36Z"
+    },
+    {
+      "id": 13,
+      "kb_number": "KB5129195",
+      "windows_version": "All Supported Desktop Releases",
+      "severity": "SAFE",
+      "alert_type": "STATUS_CHANGE",
+      "title": "KB5129195 Operational Health Changed: CAUTION -> SAFE",
+      "summary": "SAFE: Official Microsoft Release Health telemetry verified for KB5129195. No active known issues, Known Issue Rollbacks (KIR), or Out-of-Band (OOB) replacements are reported by Microsoft.",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/windows-message-center",
+      "acknowledged": false,
+      "acknowledged_at": null,
+      "is_demo": false,
+      "created_at": "2026-10-22T00:06:36Z"
+    },
+    {
       "id": 10,
       "kb_number": "KB5045934",
       "windows_version": "Windows 11 24H2",
@@ -57,6 +99,6 @@
       "created_at": "2026-10-13T20:00:00Z"
     }
   ],
-  "total": 4,
-  "unacknowledged_count": 4
+  "total": 7,
+  "unacknowledged_count": 7
 }

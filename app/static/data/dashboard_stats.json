@@ -5,34 +5,72 @@
     "2026-09"
   ],
   "status_counts": {
-    "SAFE": 3,
-    "MONITOR": 1,
+    "SAFE": 13,
+    "MONITOR": 2,
     "CAUTION": 2,
-    "AFFECTED": 1,
+    "AFFECTED": 5,
     "UNKNOWN": 1
   },
   "metrics": {
-    "total_kbs": 8,
+    "total_kbs": 23,
     "oob_updates_count": 1,
     "active_kir_count": 3,
-    "active_known_issues_count": 3,
+    "active_known_issues_count": 7,
     "total_cves_count": 5,
     "exploited_cves_count": 2,
-    "unacknowledged_alerts_count": 4,
+    "unacknowledged_alerts_count": 7,
     "sources_total": 6,
-    "sources_ok": 0,
+    "sources_ok": 6,
     "sources_error": 0,
-    "last_checked_at": "2026-10-16T14:30:00Z",
+    "last_checked_at": "2026-10-22T00:06:37Z",
     "demo_records_count": 8,
-    "live_records_count": 0,
-    "using_demo_seed": true,
-    "last_refresh_at": "2026-10-22T00:03:48Z"
+    "live_records_count": 15,
+    "using_demo_seed": false,
+    "last_refresh_at": "2026-10-22T00:06:37Z"
   },
   "advisory_banner": {
     "level": "AFFECTED",
-    "headline": "CRITICAL DEPLOYMENT ADVISORY (All Cycles): 1 Windows Update(s) (KB5044284) have confirmed severe regressions or Out-of-Band (OOB) replacements.",
-    "detail": "Pause broad deployment of KB5044284. Click any KB, OOB replacement, or Known Issue Rollback (KIR) link below to inspect the deployment rationale and mitigation policy.",
+    "headline": "CRITICAL DEPLOYMENT ADVISORY (All Cycles): 5 Windows Update(s) (KB5124008, KB5044284, KB5120998, KB5122880, KB5122878) have confirmed severe regressions or Out-of-Band (OOB) replacements.",
+    "detail": "Pause broad deployment of KB5124008, KB5044284, KB5120998, KB5122880, KB5122878. Click any KB, OOB replacement, or Known Issue Rollback (KIR) link below to inspect the deployment rationale and mitigation policy.",
     "items": [
+      {
+        "kb_number": "KB5124008",
+        "windows_version": "All Supported Desktop Releases",
+        "os_build": "26100.1",
+        "health_status": "AFFECTED",
+        "rationale": "AFFECTED: Do not deploy KB5124008 without remediation. Microsoft issued Out-of-Band (OOB) emergency replacement update(s) KB5129195 to resolve critical regressions in KB5124008.",
+        "is_oob": false,
+        "oob_replaced_by_kbs": [
+          "KB5129195"
+        ],
+        "oob_replaces_kbs": [],
+        "source_url": "https://learn.microsoft.com/en-us/windows/release-health/windows-message-center",
+        "kirs": [
+          {
+            "issue_title": "Domain-joined devices might lose their secure trust relationship with the domain Some Credential Guard protected machine accounts might be unable to sign in interactively will valid domain credentials.",
+            "kir_gpo_name": "KB5124008 260915_17123 Known Issue Rollback The special Group Policy can be found in Computer Configuration > Administrative Templates > KB5124008 260915_17123 Known Issue Rollback",
+            "kir_deployment_method": "Automatic via Windows Update (Consumer) & Group Policy MSI (Enterprise Managed)",
+            "kir_restart_required": true,
+            "kir_guidance_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2#4990msgdesc"
+          }
+        ],
+        "issues": [
+          {
+            "title": "Domain-joined devices might lose their secure trust relationship with the domain Some Credential Guard protected machine accounts might be unable to sign in interactively will valid domain credentials.",
+            "status": "Resolved",
+            "severity": "Critical",
+            "oob_fix_kb": "KB5129195",
+            "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2#4990msgdesc"
+          },
+          {
+            "title": "USB audio devices might fail to start or produce no sound Some USB Audio Class 1.0 devices display Code 10 or fail in multichannel audio modes after installing the Sept. 8 update",
+            "status": "Mitigated",
+            "severity": "Critical",
+            "oob_fix_kb": "KB5129195",
+            "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2#4984msgdesc"
+          }
+        ]
+      },
       {
         "kb_number": "KB5044284",
         "windows_version": "Windows 11 24H2",
@@ -61,6 +99,83 @@
             "severity": "Critical",
             "oob_fix_kb": "KB5045934",
             "source_url": "https://support.microsoft.com/help/5044284#known-issues-in-this-update"
+          }
+        ]
+      },
+      {
+        "kb_number": "KB5120998",
+        "windows_version": "Windows 11 24H2",
+        "os_build": "26100.9278",
+        "health_status": "AFFECTED",
+        "rationale": "AFFECTED: Do not deploy KB5120998 without remediation. Microsoft issued Out-of-Band (OOB) emergency replacement update(s) KB5129195 to resolve critical regressions in KB5120998.",
+        "is_oob": false,
+        "oob_replaced_by_kbs": [
+          "KB5129195"
+        ],
+        "oob_replaces_kbs": [],
+        "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2",
+        "kirs": [
+          {
+            "issue_title": "Devices might experience a black screen or desktop loading issues after sign-in Microsoft has received reports of this issue occurring in some virtual desktop environments.",
+            "kir_gpo_name": "KB5124006 260924_20071 Known Issue Rollback ​ Download for Windows 11, version 26H2, Windows 11, version 25H2 and Windows 11, version 24H2: KB5124010 260924_20021 Known Issue Rollback",
+            "kir_deployment_method": "Automatic via Windows Update (Consumer) & Group Policy MSI (Enterprise Managed)",
+            "kir_restart_required": true,
+            "kir_guidance_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2#5006msgdesc"
+          }
+        ],
+        "issues": [
+          {
+            "title": "Devices might experience a black screen or desktop loading issues after sign-in Microsoft has received reports of this issue occurring in some virtual desktop environments.",
+            "status": "Resolved",
+            "severity": "Critical",
+            "oob_fix_kb": "KB5129195",
+            "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2#5006msgdesc"
+          }
+        ]
+      },
+      {
+        "kb_number": "KB5122880",
+        "windows_version": "Windows 11 23H2",
+        "os_build": "22621.7582",
+        "health_status": "AFFECTED",
+        "rationale": "AFFECTED: Do not deploy KB5122880 without remediation. Microsoft issued Out-of-Band (OOB) emergency replacement update(s) KB5129242 to resolve critical regressions in KB5122880.",
+        "is_oob": false,
+        "oob_replaced_by_kbs": [
+          "KB5129242"
+        ],
+        "oob_replaces_kbs": [],
+        "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2",
+        "kirs": [],
+        "issues": [
+          {
+            "title": "USB audio devices might fail to start or produce no sound Some USB Audio Class 1.0 devices display Code 10 or fail in multichannel audio modes after installing the Sept. 8 update",
+            "status": "Mitigated",
+            "severity": "Critical",
+            "oob_fix_kb": "KB5129242",
+            "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2#4984msgdesc"
+          }
+        ]
+      },
+      {
+        "kb_number": "KB5122878",
+        "windows_version": "Windows 10 22H2",
+        "os_build": "19045.7725",
+        "health_status": "AFFECTED",
+        "rationale": "AFFECTED: Do not deploy KB5122878 without remediation. Microsoft issued Out-of-Band (OOB) emergency replacement update(s) KB5129236 to resolve critical regressions in KB5122878.",
+        "is_oob": false,
+        "oob_replaced_by_kbs": [
+          "KB5129236"
+        ],
+        "oob_replaces_kbs": [],
+        "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-10-22h2",
+        "kirs": [],
+        "issues": [
+          {
+            "title": "USB audio devices might fail to start or produce no sound Some USB Audio Class 1.0 devices display Code 10 or fail in multichannel audio modes after installing the Sept. 8 update",
+            "status": "Mitigated",
+            "severity": "Critical",
+            "oob_fix_kb": "KB5129236",
+            "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-10-22h2#4984msgdesc"
           }
         ]
       },
@@ -112,14 +227,14 @@
   },
   "version_health": [
     {
-      "total_kbs": 2,
-      "safe_count": 0,
+      "total_kbs": 5,
+      "safe_count": 2,
       "monitor_count": 0,
       "caution_count": 1,
-      "affected_count": 1,
+      "affected_count": 2,
       "unknown_count": 0,
       "oob_count": 1,
-      "kir_count": 1,
+      "kir_count": 4,
       "latest_release_date": "2026-10-16",
       "windows_version": "Windows 11 24H2",
       "overall_status": "AFFECTED",
@@ -128,20 +243,20 @@
       "active_issues": 1
     },
     {
-      "total_kbs": 2,
+      "total_kbs": 3,
       "safe_count": 1,
       "monitor_count": 0,
       "caution_count": 1,
-      "affected_count": 0,
+      "affected_count": 1,
       "unknown_count": 0,
       "oob_count": 0,
       "kir_count": 1,
       "latest_release_date": "2026-10-13",
       "windows_version": "Windows 11 23H2",
-      "overall_status": "CAUTION",
+      "overall_status": "AFFECTED",
       "latest_kb": "KB5044285",
       "latest_build": "22631.4317",
-      "active_issues": 1
+      "active_issues": 2
     },
     {
       "total_kbs": 2,
@@ -160,23 +275,81 @@
       "active_issues": 0
     },
     {
-      "total_kbs": 2,
+      "total_kbs": 3,
       "safe_count": 1,
       "monitor_count": 1,
       "caution_count": 0,
-      "affected_count": 0,
+      "affected_count": 1,
       "unknown_count": 0,
       "oob_count": 0,
       "kir_count": 1,
       "latest_release_date": "2026-10-13",
       "windows_version": "Windows 10 22H2",
-      "overall_status": "MONITOR",
+      "overall_status": "AFFECTED",
       "latest_kb": "KB5044273",
       "latest_build": "19045.5011",
-      "active_issues": 1
+      "active_issues": 2
+    },
+    {
+      "total_kbs": 10,
+      "safe_count": 8,
+      "monitor_count": 1,
+      "caution_count": 0,
+      "affected_count": 1,
+      "unknown_count": 0,
+      "oob_count": 0,
+      "kir_count": 1,
+      "latest_release_date": "2026-10-22",
+      "windows_version": "All Supported Desktop Releases",
+      "overall_status": "AFFECTED",
+      "latest_kb": "KB5129242",
+      "latest_build": "26100.1",
+      "active_issues": 2
     }
   ],
   "latest_alerts": [
+    {
+      "id": 15,
+      "kb_number": "KB5129236",
+      "windows_version": "All Supported Desktop Releases",
+      "severity": "SAFE",
+      "alert_type": "STATUS_CHANGE",
+      "title": "KB5129236 Operational Health Changed: CAUTION -> SAFE",
+      "summary": "SAFE: Official Microsoft Release Health telemetry verified for KB5129236. No active known issues, Known Issue Rollbacks (KIR), or Out-of-Band (OOB) replacements are reported by Microsoft.",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/windows-message-center",
+      "acknowledged": false,
+      "acknowledged_at": null,
+      "is_demo": false,
+      "created_at": "2026-10-22T00:06:36Z"
+    },
+    {
+      "id": 14,
+      "kb_number": "KB5129242",
+      "windows_version": "All Supported Desktop Releases",
+      "severity": "SAFE",
+      "alert_type": "STATUS_CHANGE",
+      "title": "KB5129242 Operational Health Changed: CAUTION -> SAFE",
+      "summary": "SAFE: Official Microsoft Release Health telemetry verified for KB5129242. No active known issues, Known Issue Rollbacks (KIR), or Out-of-Band (OOB) replacements are reported by Microsoft.",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/windows-message-center",
+      "acknowledged": false,
+      "acknowledged_at": null,
+      "is_demo": false,
+      "created_at": "2026-10-22T00:06:36Z"
+    },
+    {
+      "id": 13,
+      "kb_number": "KB5129195",
+      "windows_version": "All Supported Desktop Releases",
+      "severity": "SAFE",
+      "alert_type": "STATUS_CHANGE",
+      "title": "KB5129195 Operational Health Changed: CAUTION -> SAFE",
+      "summary": "SAFE: Official Microsoft Release Health telemetry verified for KB5129195. No active known issues, Known Issue Rollbacks (KIR), or Out-of-Band (OOB) replacements are reported by Microsoft.",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/windows-message-center",
+      "acknowledged": false,
+      "acknowledged_at": null,
+      "is_demo": false,
+      "created_at": "2026-10-22T00:06:36Z"
+    },
     {
       "id": 10,
       "kb_number": "KB5045934",
@@ -237,16 +410,16 @@
   "collector": {
     "is_running": false,
     "current_source": null,
-    "started_at": null,
-    "finished_at": null,
-    "last_trigger": "none",
-    "last_status": "IDLE",
-    "sources_total": 0,
-    "sources_completed": 0,
-    "sources_succeeded": 0,
+    "started_at": "2026-10-22T00:06:35Z",
+    "finished_at": "2026-10-22T00:06:37Z",
+    "last_trigger": "scheduled_action",
+    "last_status": "COMPLETED",
+    "sources_total": 6,
+    "sources_completed": 6,
+    "sources_succeeded": 6,
     "sources_failed": 0,
-    "changes_detected": 0,
-    "last_summary": "No synchronization run executed in this session yet.",
+    "changes_detected": 117,
+    "last_summary": "Checked 6/6 Microsoft sources: 6 succeeded, 0 failed, 117 field-level change(s) recorded.",
     "errors": [],
     "schedule_interval_minutes": 240
   }
