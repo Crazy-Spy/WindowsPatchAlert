@@ -48,11 +48,6 @@
         <span id="sourceStatusText">Sources: Loading...</span>
       </button>
 
-      <button id="subscribeEmailBtn" type="button" class="btn btn-secondary" title="Subscribe to Windows Patch Operational Alerts via Email (Follow.it)">
-        <img src="./followit-icon.png" alt="" style="width:16px; height:16px; border-radius:50%; flex-shrink:0;" />
-        <span>Subscribe Alerts</span>
-      </button>
-
       <a href="./rss.xml" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" title="Subscribe to RSS 2.0 Operational Alert Feed">
         RSS 2.0
       </a>
@@ -343,71 +338,6 @@
       </div>
       <div id="modalBodyContent" class="modal-body">
         <div class="empty-state">Loading KB dossier...</div>
-      </div>
-    </div>
-  </div>
-
-  <!-- EMAIL & RSS SUBSCRIPTION MODAL (FOLLOW.IT) -->
-  <div id="subscribeModalBackdrop" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="subscribeModalTitle">
-    <div class="modal-dialog subscribe-modal-dialog">
-      <div class="modal-header">
-        <div class="modal-title-group">
-          <div class="modal-badges-row">
-            <span class="status-badge badge-SAFE">RSS-TO-EMAIL</span>
-            <span class="mini-pill">Follow.it Integration</span>
-            <span class="mini-pill">Auto-Sync Every 4h</span>
-          </div>
-          <h2 id="subscribeModalTitle" class="modal-title">Subscribe to Patch Alert Notifications</h2>
-          <p class="modal-subtitle">Receive automated email alerts whenever Microsoft reports new regressions, Out-of-Band (OOB) updates, or Known Issue Rollbacks (KIR).</p>
-        </div>
-        <button id="closeSubscribeModalBtn" type="button" class="btn btn-secondary btn-sm" aria-label="Close Subscription Modal">Close [ESC]</button>
-      </div>
-      <div class="modal-body">
-        <div class="subscribe-box">
-          <div class="dossier-section-title">1. Instant Email Subscription (via Follow.it)</div>
-          <p class="subscribe-desc">
-            Enter your email below to receive automated alerts whenever new Windows Patch advisories are detected:
-          </p>
-          <div class="followit--follow-form-container" attr-a attr-b attr-c attr-d attr-e attr-f>
-            <form id="followItSubscribeForm" data-v-f93f6730="" class="subscribe-form-row" action="https://api.follow.it/subscription-form/Y2I1ZFYza25xYXViRU14bEk2VFRqdFZnbW9uWTJlSlFuVTNIRG45ME5DSWpZdnFyZTdZTEQ4b0lva2JxTmhIUkxtQjl6Z3lTY2ZPNGdLMDk2RTR5Z1BRdUpYdnhpUHNtL2NTdWlxdVkxanlKTG9RMitIdXREVjYycTA2OHN0ZVN8aTltWUsxTlNWTjdZM3pYbCtYZm9PRlJGcXZLOFVVRlE1M3lLWUN5SmVKOD0=/8" method="post" target="_blank">
-              <input
-                id="followItEmailInput"
-                data-v-f93f6730=""
-                type="email"
-                name="email"
-                placeholder="Enter your email (e.g. admin@company.com)"
-                required
-                autocomplete="email"
-                spellcheck="false"
-                class="subscribe-email-input"
-              />
-              <button data-v-f93f6730="" type="submit" class="btn btn-primary">Subscribe &nearr;</button>
-            </form>
-            <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:8px; margin-top:10px;">
-              <a href="https://follow.it/patch-alert-windows-desktop-update-intelligence-and-operational-health?leanpub" target="_blank" rel="noopener noreferrer" class="btn btn-secondary btn-sm" style="display:inline-flex; align-items:center; gap:6px;">
-                <img src="./followit-icon.png" alt="" style="width:15px; height:15px; border-radius:50%;" />
-                <span>Follow on Follow.it Page (All Filter &amp; Delivery Options) &nearr;</span>
-              </a>
-              <a href="https://follow.it" target="_blank" rel="noopener noreferrer" class="powered-by-line" style="font-size:11.5px; color:var(--text-muted); display:inline-flex; align-items:center; gap:5px;">
-                <span>Powered by</span>
-                <img src="https://follow.it/images/colored-logo.svg" alt="follow.it" height="14" />
-              </a>
-            </div>
-          </div>
-          <div id="followItStatusHint" class="subscribe-hint"></div>
-        </div>
-
-        <div class="subscribe-box" style="margin-top: 14px;">
-          <div class="dossier-section-title">2. Direct RSS 2.0 Feed URL (Follow.it / Teams / Slack / Outlook)</div>
-          <p class="subscribe-desc">
-            Use this feed URL to register your GitHub Pages site on <a href="https://follow.it" target="_blank" rel="noopener noreferrer" style="font-weight:700;">Follow.it &nearr;</a> or plug directly into Microsoft Teams / Slack RSS connectors:
-          </p>
-          <div class="subscribe-rss-copy-row">
-            <input id="rssFeedFullUrlInput" type="text" readonly class="subscribe-email-input" style="font-family: var(--font-mono); font-size: 12px;" />
-            <button id="copyRssUrlBtn" type="button" class="btn btn-secondary">Copy RSS URL</button>
-            <a href="./rss.xml" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Open XML &nearr;</a>
-          </div>
-        </div>
       </div>
     </div>
   </div>

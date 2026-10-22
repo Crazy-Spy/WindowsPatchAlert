@@ -3,10 +3,6 @@
 (function () {
   "use strict";
 
-  // Follow.it RSS-to-Email Configuration:
-  const FOLLOW_IT_FORM_ACTION =
-    "https://api.follow.it/subscription-form/Y2I1ZFYza25xYXViRU14bEk2VFRqdFZnbW9uWTJlSlFuVTNIRG45ME5DSWpZdnFyZTdZTEQ4b0lva2JxTmhIUkxtQjl6Z3lTY2ZPNGdLMDk2RTR5Z1BRdUpYdnhpUHNtL2NTdWlxdVkxanlKTG9RMitIdXREVjYycTA2OHN0ZVN8aTltWUsxTlNWTjdZM3pYbCtYZm9PRlJGcXZLOFVVRlE1M3lLWUN5SmVKOD0=/8";
-
   const state = {
     q: "",
     windows_version: "all",
@@ -2045,92 +2041,8 @@
         if (e.target === backdrop) closeKbModal();
       });
     }
-
-    // Subscribe Email Modal (Follow.it)
-    const subBtn = document.getElementById("subscribeEmailBtn");
-    const subBackdrop = document.getElementById("subscribeModalBackdrop");
-    const closeSubBtn = document.getElementById("closeSubscribeModalBtn");
-    const subForm = document.getElementById("followItSubscribeForm");
-    const subHint = document.getElementById("followItStatusHint");
-    const rssInput = document.getElementById("rssFeedFullUrlInput");
-    const copyRssBtn = document.getElementById("copyRssUrlBtn");
-
-    const openSubscribeModal = () => {
-      if (!subBackdrop) return;
-      const fullRssUrl = new URL("./rss.xml", window.location.href).href;
-      if (rssInput) rssInput.value = fullRssUrl;
-
-      const cleanAction = (FOLLOW_IT_FORM_ACTION || "").trim();
-      if (subForm) {
-        if (cleanAction) {
-          subForm.setAttribute("action", cleanAction);
-        } else {
-          subForm.removeAttribute("action");
-        }
-      }
-      if (subHint) {
-        if (cleanAction) {
-          subHint.innerHTML = `<span style="color:var(--safe-fg); font-weight:600;">&#10003; Connected to Follow.it RSS-to-Email.</span> Double opt-in confirmation will be sent to your inbox.`;
-        } else {
-          subHint.innerHTML = `<strong>Setup Note:</strong> Once hosted on GitHub Pages, copy the RSS URL below, register your feed for free at <a href="https://follow.it" target="_blank" rel="noopener noreferrer">follow.it &nearr;</a>, and paste your Form Action URL into <code>FOLLOW_IT_FORM_ACTION</code> in <code>app.js</code>.`;
-        }
-      }
-      subBackdrop.classList.remove("hidden");
-      const emailEl = document.getElementById("followItEmailInput");
-      if (emailEl) emailEl.focus();
-    };
-
-    const closeSubscribeModal = () => {
-      if (subBackdrop) subBackdrop.classList.add("hidden");
-    };
-
-    if (subBtn) subBtn.addEventListener("click", openSubscribeModal);
-    if (closeSubBtn) closeSubBtn.addEventListener("click", closeSubscribeModal);
-    if (subBackdrop) {
-      subBackdrop.addEventListener("click", (e) => {
-        if (e.target === subBackdrop) closeSubscribeModal();
-      });
-    }
-
-    if (subForm) {
-      subForm.addEventListener("submit", (e) => {
-        const cleanAction = (FOLLOW_IT_FORM_ACTION || "").trim();
-        if (!cleanAction) {
-          e.preventDefault();
-          const fullRssUrl = new URL("./rss.xml", window.location.href).href;
-          if (navigator.clipboard && navigator.clipboard.writeText) {
-            navigator.clipboard.writeText(fullRssUrl).catch(() => {});
-          }
-          window.open("https://follow.it", "_blank", "noopener,noreferrer");
-          if (subHint) {
-            subHint.innerHTML = `<span style="color:var(--safe-fg); font-weight:600;">&#10003; RSS URL copied to clipboard!</span> Paste it on Follow.it to activate your feed and get your <code>FOLLOW_IT_FORM_ACTION</code> URL.`;
-          }
-        }
-      });
-    }
-
-    if (copyRssBtn && rssInput) {
-      copyRssBtn.addEventListener("click", async () => {
-        try {
-          await navigator.clipboard.writeText(rssInput.value);
-          const origText = copyRssBtn.textContent;
-          copyRssBtn.textContent = "✓ Copied!";
-          copyRssBtn.style.color = "var(--safe-fg)";
-          setTimeout(() => {
-            copyRssBtn.textContent = origText;
-            copyRssBtn.style.color = "";
-          }, 2000);
-        } catch (_err) {
-          rssInput.select();
-        }
-      });
-    }
-
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        closeKbModal();
-        closeSubscribeModal();
-      }
+      if (e.key === "Escape") closeKbModal();
     });
   }
 
