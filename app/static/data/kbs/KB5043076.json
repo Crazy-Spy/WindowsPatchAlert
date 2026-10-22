@@ -1,0 +1,201 @@
+{
+  "kb_number": "KB5043076",
+  "title": "September 2026 Cumulative Security Update for Windows 11, version 23H2 (OS Build 22631.4169)",
+  "windows_version": "Windows 11 23H2",
+  "os_build": "22631.4169",
+  "release_date": "2026-09-08",
+  "patch_tuesday_cycle": "2026-09",
+  "update_type": "Cumulative",
+  "is_security_update": true,
+  "is_oob": false,
+  "has_kir": false,
+  "health_status": "SAFE",
+  "health_rationale": "SAFE: Official Microsoft Release Health telemetry verified for KB5043076. No active known issues, Known Issue Rollbacks (KIR), or Out-of-Band (OOB) replacements are reported by Microsoft.",
+  "known_issues_count": 0,
+  "active_issues_count": 0,
+  "cve_count": 1,
+  "exploited_cve_count": 0,
+  "supersedes_kbs": [],
+  "superseded_by_kbs": [
+    "KB5044285"
+  ],
+  "oob_replaces_kbs": [],
+  "oob_replaced_by_kbs": [],
+  "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2",
+  "telemetry_verified": true,
+  "data_origin": "Local Reference Dataset (Pre-Sync Seed)",
+  "is_demo": true,
+  "last_checked_at": "2026-10-16T14:30:00Z",
+  "content_hash": "003363562528ac80736e2c64f4c9d9c7d11e7f3fff96b2354a23036e7b858b24",
+  "summary": "September Patch Tuesday cumulative security update for Windows 11 version 23H2.",
+  "highlights": "Validated across production rings with zero active Microsoft known issues.",
+  "known_issues": [],
+  "cves": [
+    {
+      "id": 26,
+      "cve_id": "CVE-2024-38217",
+      "kb_number": "KB5043076",
+      "title": "Windows Mark of the Web (MotW) Security Feature Bypass Vulnerability",
+      "severity": "Important",
+      "cvss_score": 5.4,
+      "affected_component": "Windows Shell / SmartScreen",
+      "exploitability_status": "Exploitation Less Likely",
+      "is_exploited": false,
+      "publicly_disclosed": true,
+      "published_date": "2026-09-08",
+      "source_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-38217",
+      "is_demo": 1,
+      "content_hash": "775a3f92195730ee3fe905b7d3aeae1138d63907d7602fa6d1af9b6fada54454"
+    }
+  ],
+  "relationships": [
+    {
+      "id": 25,
+      "kb_number": "KB5043076",
+      "related_kb": "KB5044285",
+      "relationship_type": "superseded_by",
+      "issue_key": null,
+      "description": "Superseded by October 2026 cumulative update KB5044285.",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2"
+    }
+  ],
+  "lifecycle": [
+    {
+      "id": 43,
+      "kb_number": "KB5043076",
+      "event_date": "2026-09-08",
+      "event_type": "Released",
+      "title": "Patch Tuesday General Availability",
+      "details": "Released for Windows 11 23H2 (Build 22631.4169) with zero active regressions.",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2"
+    },
+    {
+      "id": 44,
+      "kb_number": "KB5043076",
+      "event_date": "2026-10-13",
+      "event_type": "Superseded",
+      "title": "Superseded by KB5044285",
+      "details": "Superseded by October 2026 cumulative security update KB5044285.",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2"
+    }
+  ],
+  "changes": [
+    {
+      "id": 232,
+      "entity_type": "KB",
+      "entity_id": "KB5043076",
+      "kb_number": "KB5043076",
+      "field_name": "health_rationale",
+      "old_value": "",
+      "new_value": "SAFE: Official Microsoft Release Health telemetry verified for KB5043076. No active known issues, Known Issue Rollbacks (KIR), or Out-of-Band (OOB) replacements are reported by Microsoft.",
+      "change_type": "UPDATED",
+      "content_hash": "003363562528ac80736e2c64f4c9d9c7d11e7f3fff96b2354a23036e7b858b24",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2",
+      "is_demo": true,
+      "detected_at": "2026-10-16T14:30:00Z"
+    },
+    {
+      "id": 231,
+      "entity_type": "KB",
+      "entity_id": "KB5043076",
+      "kb_number": "KB5043076",
+      "field_name": "health_status",
+      "old_value": "UNKNOWN",
+      "new_value": "SAFE",
+      "change_type": "STATUS_CHANGED",
+      "content_hash": "003363562528ac80736e2c64f4c9d9c7d11e7f3fff96b2354a23036e7b858b24",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2",
+      "is_demo": true,
+      "detected_at": "2026-10-16T14:30:00Z"
+    },
+    {
+      "id": 218,
+      "entity_type": "CVE",
+      "entity_id": "CVE-2024-38217:KB5043076",
+      "kb_number": "KB5043076",
+      "field_name": "severity",
+      "old_value": "",
+      "new_value": "Important",
+      "change_type": "CREATED",
+      "content_hash": "775a3f92195730ee3fe905b7d3aeae1138d63907d7602fa6d1af9b6fada54454",
+      "source_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-38217",
+      "is_demo": true,
+      "detected_at": "2026-10-13T18:00:00Z"
+    },
+    {
+      "id": 217,
+      "entity_type": "CVE",
+      "entity_id": "CVE-2024-38217:KB5043076",
+      "kb_number": "KB5043076",
+      "field_name": "title",
+      "old_value": "",
+      "new_value": "Windows Mark of the Web (MotW) Security Feature Bypass Vulnerability",
+      "change_type": "CREATED",
+      "content_hash": "775a3f92195730ee3fe905b7d3aeae1138d63907d7602fa6d1af9b6fada54454",
+      "source_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-38217",
+      "is_demo": true,
+      "detected_at": "2026-10-13T18:00:00Z"
+    },
+    {
+      "id": 178,
+      "entity_type": "KB",
+      "entity_id": "KB5043076",
+      "kb_number": "KB5043076",
+      "field_name": "health_status",
+      "old_value": "",
+      "new_value": "UNKNOWN",
+      "change_type": "CREATED",
+      "content_hash": "d54d5c557974affa6ab1a92c98bb5810b07603075544ec8579b15e2f56c9f587",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2",
+      "is_demo": true,
+      "detected_at": "2026-09-08T18:00:00Z"
+    },
+    {
+      "id": 177,
+      "entity_type": "KB",
+      "entity_id": "KB5043076",
+      "kb_number": "KB5043076",
+      "field_name": "has_kir",
+      "old_value": "",
+      "new_value": "0",
+      "change_type": "CREATED",
+      "content_hash": "d54d5c557974affa6ab1a92c98bb5810b07603075544ec8579b15e2f56c9f587",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2",
+      "is_demo": true,
+      "detected_at": "2026-09-08T18:00:00Z"
+    },
+    {
+      "id": 176,
+      "entity_type": "KB",
+      "entity_id": "KB5043076",
+      "kb_number": "KB5043076",
+      "field_name": "is_oob",
+      "old_value": "",
+      "new_value": "0",
+      "change_type": "CREATED",
+      "content_hash": "d54d5c557974affa6ab1a92c98bb5810b07603075544ec8579b15e2f56c9f587",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2",
+      "is_demo": true,
+      "detected_at": "2026-09-08T18:00:00Z"
+    },
+    {
+      "id": 175,
+      "entity_type": "KB",
+      "entity_id": "KB5043076",
+      "kb_number": "KB5043076",
+      "field_name": "title",
+      "old_value": "",
+      "new_value": "September 2026 Cumulative Security Update for Windows 11, version 23H2 (OS Build 22631.4169)",
+      "change_type": "CREATED",
+      "content_hash": "d54d5c557974affa6ab1a92c98bb5810b07603075544ec8579b15e2f56c9f587",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2",
+      "is_demo": true,
+      "detected_at": "2026-09-08T18:00:00Z"
+    }
+  ],
+  "risk_factors": [
+    "Official Microsoft Release Health telemetry verified.",
+    "Zero active, mitigated, or investigating known issues reported by Microsoft.",
+    "Addresses 1 documented security vulnerability(ies) with no reported regressions."
+  ]
+}

@@ -1,0 +1,253 @@
+{
+  "selected_cycle": "all",
+  "available_cycles": [
+    "2026-10",
+    "2026-09"
+  ],
+  "status_counts": {
+    "SAFE": 3,
+    "MONITOR": 1,
+    "CAUTION": 2,
+    "AFFECTED": 1,
+    "UNKNOWN": 1
+  },
+  "metrics": {
+    "total_kbs": 8,
+    "oob_updates_count": 1,
+    "active_kir_count": 3,
+    "active_known_issues_count": 3,
+    "total_cves_count": 5,
+    "exploited_cves_count": 2,
+    "unacknowledged_alerts_count": 4,
+    "sources_total": 6,
+    "sources_ok": 0,
+    "sources_error": 0,
+    "last_checked_at": "2026-10-16T14:30:00Z",
+    "demo_records_count": 8,
+    "live_records_count": 0,
+    "using_demo_seed": true,
+    "last_refresh_at": "2026-10-22T00:03:48Z"
+  },
+  "advisory_banner": {
+    "level": "AFFECTED",
+    "headline": "CRITICAL DEPLOYMENT ADVISORY (All Cycles): 1 Windows Update(s) (KB5044284) have confirmed severe regressions or Out-of-Band (OOB) replacements.",
+    "detail": "Pause broad deployment of KB5044284. Click any KB, OOB replacement, or Known Issue Rollback (KIR) link below to inspect the deployment rationale and mitigation policy.",
+    "items": [
+      {
+        "kb_number": "KB5044284",
+        "windows_version": "Windows 11 24H2",
+        "os_build": "26100.2033",
+        "health_status": "AFFECTED",
+        "rationale": "AFFECTED: Do not deploy KB5044284 without remediation. Microsoft issued Out-of-Band (OOB) emergency replacement update(s) KB5045934 to resolve critical regressions in KB5044284; Confirmed critical component failure: \"OpenSSH (sshd) service fails to start and Kerberos authentication failure after installing KB5044284\" (Confirmed).",
+        "is_oob": false,
+        "oob_replaced_by_kbs": [
+          "KB5045934"
+        ],
+        "oob_replaces_kbs": [],
+        "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2",
+        "kirs": [
+          {
+            "issue_title": "OpenSSH (sshd) service fails to start and Kerberos authentication failure after installing KB5044284",
+            "kir_gpo_name": "KB5044284 241015_03301 Known Issue Rollback",
+            "kir_deployment_method": "Automatic via Windows Update (Consumer) & Group Policy MSI (Enterprise Managed)",
+            "kir_restart_required": true,
+            "kir_guidance_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2#4990msgdesc"
+          }
+        ],
+        "issues": [
+          {
+            "title": "OpenSSH (sshd) service fails to start and Kerberos authentication failure after installing KB5044284",
+            "status": "Confirmed",
+            "severity": "Critical",
+            "oob_fix_kb": "KB5045934",
+            "source_url": "https://support.microsoft.com/help/5044284#known-issues-in-this-update"
+          }
+        ]
+      },
+      {
+        "kb_number": "KB5045934",
+        "windows_version": "Windows 11 24H2",
+        "os_build": "26100.2036",
+        "health_status": "CAUTION",
+        "rationale": "CAUTION: Requires administrator evaluation before broad deployment. KB5045934 is an Out-of-Band (OOB) update replacing KB5044284; Microsoft recommends deploying only to environments impacted by the targeted regression.",
+        "is_oob": true,
+        "oob_replaced_by_kbs": [],
+        "oob_replaces_kbs": [
+          "KB5044284"
+        ],
+        "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2",
+        "kirs": [],
+        "issues": []
+      },
+      {
+        "kb_number": "KB5044285",
+        "windows_version": "Windows 11 23H2",
+        "os_build": "22631.4317",
+        "health_status": "CAUTION",
+        "rationale": "CAUTION: Requires administrator evaluation before broad deployment. Microsoft confirmed active known issue: \"Dual-mode USB printers might print unexpected text or fail to initialize over IPP-over-USB\"; Known Issue Rollback (KIR) active for \"Dual-mode USB printers might print unexpected text or fail to initialize over IPP-over-USB\" (Automatic via Windows Update (Consumer) & Group Policy MSI (Enterprise Managed); requires restart).",
+        "is_oob": false,
+        "oob_replaced_by_kbs": [],
+        "oob_replaces_kbs": [],
+        "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2",
+        "kirs": [
+          {
+            "issue_title": "Dual-mode USB printers might print unexpected text or fail to initialize over IPP-over-USB",
+            "kir_gpo_name": "KB5044285 241014_21401 Known Issue Rollback",
+            "kir_deployment_method": "Automatic via Windows Update (Consumer) & Group Policy MSI (Enterprise Managed)",
+            "kir_restart_required": true,
+            "kir_guidance_url": "https://support.microsoft.com/help/5044285#known-issues-in-this-update"
+          }
+        ],
+        "issues": [
+          {
+            "title": "Dual-mode USB printers might print unexpected text or fail to initialize over IPP-over-USB",
+            "status": "Confirmed",
+            "severity": "High",
+            "oob_fix_kb": null,
+            "source_url": "https://support.microsoft.com/help/5044285#known-issues-in-this-update"
+          }
+        ]
+      }
+    ]
+  },
+  "version_health": [
+    {
+      "total_kbs": 2,
+      "safe_count": 0,
+      "monitor_count": 0,
+      "caution_count": 1,
+      "affected_count": 1,
+      "unknown_count": 0,
+      "oob_count": 1,
+      "kir_count": 1,
+      "latest_release_date": "2026-10-16",
+      "windows_version": "Windows 11 24H2",
+      "overall_status": "AFFECTED",
+      "latest_kb": "KB5045934",
+      "latest_build": "26100.2036",
+      "active_issues": 1
+    },
+    {
+      "total_kbs": 2,
+      "safe_count": 1,
+      "monitor_count": 0,
+      "caution_count": 1,
+      "affected_count": 0,
+      "unknown_count": 0,
+      "oob_count": 0,
+      "kir_count": 1,
+      "latest_release_date": "2026-10-13",
+      "windows_version": "Windows 11 23H2",
+      "overall_status": "CAUTION",
+      "latest_kb": "KB5044285",
+      "latest_build": "22631.4317",
+      "active_issues": 1
+    },
+    {
+      "total_kbs": 2,
+      "safe_count": 1,
+      "monitor_count": 0,
+      "caution_count": 0,
+      "affected_count": 0,
+      "unknown_count": 1,
+      "oob_count": 0,
+      "kir_count": 0,
+      "latest_release_date": "2026-10-20",
+      "windows_version": "Windows 11 22H2",
+      "overall_status": "SAFE",
+      "latest_kb": "KB5046109",
+      "latest_build": "22621.4391",
+      "active_issues": 0
+    },
+    {
+      "total_kbs": 2,
+      "safe_count": 1,
+      "monitor_count": 1,
+      "caution_count": 0,
+      "affected_count": 0,
+      "unknown_count": 0,
+      "oob_count": 0,
+      "kir_count": 1,
+      "latest_release_date": "2026-10-13",
+      "windows_version": "Windows 10 22H2",
+      "overall_status": "MONITOR",
+      "latest_kb": "KB5044273",
+      "latest_build": "19045.5011",
+      "active_issues": 1
+    }
+  ],
+  "latest_alerts": [
+    {
+      "id": 10,
+      "kb_number": "KB5045934",
+      "windows_version": "Windows 11 24H2",
+      "severity": "AFFECTED",
+      "alert_type": "OOB_RELEASE",
+      "title": "[Reference Seed] Out-of-Band Update KB5045934 Issued for Windows 11 24H2 (Replaces KB5044284)",
+      "summary": "Microsoft released emergency Out-of-Band update KB5045934 (OS Build 26100.2036) to resolve OpenSSH service startup failure and Kerberos authentication errors in KB5044284.",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2",
+      "acknowledged": false,
+      "acknowledged_at": null,
+      "is_demo": true,
+      "created_at": "2026-10-16T15:00:00Z"
+    },
+    {
+      "id": 9,
+      "kb_number": "KB5044284",
+      "windows_version": "Windows 11 24H2",
+      "severity": "AFFECTED",
+      "alert_type": "STATUS_CHANGE",
+      "title": "KB5044284 Operational Health Changed: SAFE -> AFFECTED",
+      "summary": "AFFECTED: Do not deploy KB5044284 without remediation. Microsoft issued Out-of-Band (OOB) emergency replacement update(s) KB5045934 to resolve critical regressions in KB5044284; Confirmed critical component failure: \"OpenSSH (sshd) service fails to start and Kerberos authentication failure after installing KB5044284\" (Confirmed).",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2",
+      "acknowledged": false,
+      "acknowledged_at": null,
+      "is_demo": true,
+      "created_at": "2026-10-16T14:30:00Z"
+    },
+    {
+      "id": 11,
+      "kb_number": "KB5044285",
+      "windows_version": "Windows 11 23H2",
+      "severity": "CAUTION",
+      "alert_type": "KIR_ISSUED",
+      "title": "[Reference Seed] Known Issue Rollback (KIR) Group Policy Issued for KB5044285 (Windows 11 23H2)",
+      "summary": "Enterprise-managed endpoints require Group Policy MSI 'KB5044285 241014_21401 Known Issue Rollback' and a system restart to mitigate USB IPP printer protocol issues.",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2",
+      "acknowledged": false,
+      "acknowledged_at": null,
+      "is_demo": true,
+      "created_at": "2026-10-15T12:00:00Z"
+    },
+    {
+      "id": 12,
+      "kb_number": "KB5044273",
+      "windows_version": "Windows 10 22H2",
+      "severity": "MONITOR",
+      "alert_type": "EXPLOITED_CVE",
+      "title": "[Reference Seed] Active Zero-Day Exploitation Reported in MSRC: CVE-2024-43573 & CVE-2024-43572",
+      "summary": "MSRC confirms active exploitation of CVE-2024-43573 (MSHTML Spoofing) and CVE-2024-43572 (MMC RCE). Addressed in October cumulative updates KB5044273, KB5044285, and OOB KB5045934.",
+      "source_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-43573",
+      "acknowledged": false,
+      "acknowledged_at": null,
+      "is_demo": true,
+      "created_at": "2026-10-13T20:00:00Z"
+    }
+  ],
+  "collector": {
+    "is_running": false,
+    "current_source": null,
+    "started_at": null,
+    "finished_at": null,
+    "last_trigger": "none",
+    "last_status": "IDLE",
+    "sources_total": 0,
+    "sources_completed": 0,
+    "sources_succeeded": 0,
+    "sources_failed": 0,
+    "changes_detected": 0,
+    "last_summary": "No synchronization run executed in this session yet.",
+    "errors": [],
+    "schedule_interval_minutes": 240
+  }
+}

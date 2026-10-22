@@ -1,0 +1,17 @@
+{
+  "is_running": false,
+  "current_source": null,
+  "started_at": null,
+  "finished_at": null,
+  "last_trigger": "none",
+  "last_status": "IDLE",
+  "sources_total": 0,
+  "sources_completed": 0,
+  "sources_succeeded": 0,
+  "sources_failed": 0,
+  "changes_detected": 0,
+  "last_summary": "No synchronization run executed in this session yet.",
+  "errors": [],
+  "schedule_interval_minutes": 240,
+  "recent_runs": []
+}

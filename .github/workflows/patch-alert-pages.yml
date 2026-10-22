@@ -1,0 +1,69 @@
+name: Sync Microsoft Telemetry & Deploy to GitHub Pages
+
+on:
+  schedule:
+    # Run every 4 hours (at minute 0)
+    - cron: "0 */4 * * *"
+  push:
+    branches:
+      - main
+      - master
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages-and-telemetry-sync"
+  cancel-in-progress: false
+
+jobs:
+  sync-and-deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.12
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Sync Microsoft Release Health & MSRC CVRF and export static JSON/RSS
+        run: |
+          python export_static.py --sync --base-url "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+
+      - name: Commit updated telemetry snapshot & SQLite audit trail
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add app/static/data app/static/rss.xml app/static/feed.xml patch_alert.db
+          if ! git diff --staged --quiet; then
+            git commit -m "chore(telemetry): automated 4h Microsoft Release Health & MSRC sync [skip ci]"
+            git push
+          else
+            echo "No telemetry changes detected since last sync."
+          fi
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload static dashboard artifact (app/static)
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: "app/static"
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+

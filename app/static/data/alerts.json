@@ -1,0 +1,62 @@
+{
+  "items": [
+    {
+      "id": 10,
+      "kb_number": "KB5045934",
+      "windows_version": "Windows 11 24H2",
+      "severity": "AFFECTED",
+      "alert_type": "OOB_RELEASE",
+      "title": "[Reference Seed] Out-of-Band Update KB5045934 Issued for Windows 11 24H2 (Replaces KB5044284)",
+      "summary": "Microsoft released emergency Out-of-Band update KB5045934 (OS Build 26100.2036) to resolve OpenSSH service startup failure and Kerberos authentication errors in KB5044284.",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2",
+      "acknowledged": false,
+      "acknowledged_at": null,
+      "is_demo": true,
+      "created_at": "2026-10-16T15:00:00Z"
+    },
+    {
+      "id": 9,
+      "kb_number": "KB5044284",
+      "windows_version": "Windows 11 24H2",
+      "severity": "AFFECTED",
+      "alert_type": "STATUS_CHANGE",
+      "title": "KB5044284 Operational Health Changed: SAFE -> AFFECTED",
+      "summary": "AFFECTED: Do not deploy KB5044284 without remediation. Microsoft issued Out-of-Band (OOB) emergency replacement update(s) KB5045934 to resolve critical regressions in KB5044284; Confirmed critical component failure: \"OpenSSH (sshd) service fails to start and Kerberos authentication failure after installing KB5044284\" (Confirmed).",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2",
+      "acknowledged": false,
+      "acknowledged_at": null,
+      "is_demo": true,
+      "created_at": "2026-10-16T14:30:00Z"
+    },
+    {
+      "id": 11,
+      "kb_number": "KB5044285",
+      "windows_version": "Windows 11 23H2",
+      "severity": "CAUTION",
+      "alert_type": "KIR_ISSUED",
+      "title": "[Reference Seed] Known Issue Rollback (KIR) Group Policy Issued for KB5044285 (Windows 11 23H2)",
+      "summary": "Enterprise-managed endpoints require Group Policy MSI 'KB5044285 241014_21401 Known Issue Rollback' and a system restart to mitigate USB IPP printer protocol issues.",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2",
+      "acknowledged": false,
+      "acknowledged_at": null,
+      "is_demo": true,
+      "created_at": "2026-10-15T12:00:00Z"
+    },
+    {
+      "id": 12,
+      "kb_number": "KB5044273",
+      "windows_version": "Windows 10 22H2",
+      "severity": "MONITOR",
+      "alert_type": "EXPLOITED_CVE",
+      "title": "[Reference Seed] Active Zero-Day Exploitation Reported in MSRC: CVE-2024-43573 & CVE-2024-43572",
+      "summary": "MSRC confirms active exploitation of CVE-2024-43573 (MSHTML Spoofing) and CVE-2024-43572 (MMC RCE). Addressed in October cumulative updates KB5044273, KB5044285, and OOB KB5045934.",
+      "source_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-43573",
+      "acknowledged": false,
+      "acknowledged_at": null,
+      "is_demo": true,
+      "created_at": "2026-10-13T20:00:00Z"
+    }
+  ],
+  "total": 4,
+  "unacknowledged_count": 4
+}

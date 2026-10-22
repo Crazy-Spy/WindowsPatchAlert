@@ -1,0 +1,192 @@
+{
+  "kb_number": "KB5045934",
+  "title": "Out-of-Band (OOB) Update for Windows 11, version 24H2 (OS Build 26100.2036)",
+  "windows_version": "Windows 11 24H2",
+  "os_build": "26100.2036",
+  "release_date": "2026-10-16",
+  "patch_tuesday_cycle": "2026-10",
+  "update_type": "Out-of-Band (OOB)",
+  "is_security_update": true,
+  "is_oob": true,
+  "has_kir": false,
+  "health_status": "CAUTION",
+  "health_rationale": "CAUTION: Requires administrator evaluation before broad deployment. KB5045934 is an Out-of-Band (OOB) update replacing KB5044284; Microsoft recommends deploying only to environments impacted by the targeted regression.",
+  "known_issues_count": 0,
+  "active_issues_count": 0,
+  "cve_count": 1,
+  "exploited_cve_count": 1,
+  "supersedes_kbs": [
+    "KB5044284"
+  ],
+  "superseded_by_kbs": [],
+  "oob_replaces_kbs": [
+    "KB5044284"
+  ],
+  "oob_replaced_by_kbs": [],
+  "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2",
+  "telemetry_verified": true,
+  "data_origin": "Local Reference Dataset (Pre-Sync Seed)",
+  "is_demo": true,
+  "last_checked_at": "2026-10-16T14:30:00Z",
+  "content_hash": "81667bf451947e86393c7f26298554f0d5842751d0175a8c41bdc3dbfcc6e26c",
+  "summary": "Emergency Out-of-Band cumulative update resolving OpenSSH service startup failure and Kerberos authentication stop error introduced in KB5044284.",
+  "highlights": "Supersedes KB5044284. Deploy to endpoints and servers experiencing OpenSSH or Kerberos authentication failures.",
+  "known_issues": [],
+  "cves": [
+    {
+      "id": 20,
+      "cve_id": "CVE-2024-43573",
+      "kb_number": "KB5045934",
+      "title": "Windows MSHTML Platform Spoofing Vulnerability",
+      "severity": "Important",
+      "cvss_score": 6.5,
+      "affected_component": "Windows MSHTML Platform",
+      "exploitability_status": "Exploited:Yes; Publicly Disclosed:Yes",
+      "is_exploited": true,
+      "publicly_disclosed": true,
+      "published_date": "2026-10-13",
+      "source_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-43573",
+      "is_demo": 1,
+      "content_hash": "e00bedd671c972d0b25552981d7938392b91cdce26b2de299e4c5fd328f3cf46"
+    }
+  ],
+  "relationships": [
+    {
+      "id": 23,
+      "kb_number": "KB5045934",
+      "related_kb": "KB5044284",
+      "relationship_type": "oob_replaces",
+      "issue_key": "ISSUE-KB5044284-SSH-KERBEROS",
+      "description": "Out-of-Band update KB5045934 replaces and supersedes KB5044284.",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2"
+    }
+  ],
+  "lifecycle": [
+    {
+      "id": 38,
+      "kb_number": "KB5045934",
+      "event_date": "2026-10-16",
+      "event_type": "Released",
+      "title": "Out-of-Band (OOB) Emergency Release",
+      "details": "Published out-of-band to Microsoft Update Catalog and WSUS to remediate KB5044284 OpenSSH and Kerberos regressions.",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2"
+    }
+  ],
+  "changes": [
+    {
+      "id": 224,
+      "entity_type": "KB",
+      "entity_id": "KB5045934",
+      "kb_number": "KB5045934",
+      "field_name": "health_rationale",
+      "old_value": "",
+      "new_value": "CAUTION: Requires administrator evaluation before broad deployment. KB5045934 is an Out-of-Band (OOB) update replacing KB5044284; Microsoft recommends deploying only to environments impacted by the targeted regression.",
+      "change_type": "UPDATED",
+      "content_hash": "81667bf451947e86393c7f26298554f0d5842751d0175a8c41bdc3dbfcc6e26c",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2",
+      "is_demo": true,
+      "detected_at": "2026-10-16T14:30:00Z"
+    },
+    {
+      "id": 223,
+      "entity_type": "KB",
+      "entity_id": "KB5045934",
+      "kb_number": "KB5045934",
+      "field_name": "health_status",
+      "old_value": "UNKNOWN",
+      "new_value": "CAUTION",
+      "change_type": "STATUS_CHANGED",
+      "content_hash": "81667bf451947e86393c7f26298554f0d5842751d0175a8c41bdc3dbfcc6e26c",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2",
+      "is_demo": true,
+      "detected_at": "2026-10-16T14:30:00Z"
+    },
+    {
+      "id": 166,
+      "entity_type": "KB",
+      "entity_id": "KB5045934",
+      "kb_number": "KB5045934",
+      "field_name": "health_status",
+      "old_value": "",
+      "new_value": "UNKNOWN",
+      "change_type": "CREATED",
+      "content_hash": "03dc439bbd49c60e42a5939baed279592fb764eee9d3827d00b4ff9fd3b72df6",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2",
+      "is_demo": true,
+      "detected_at": "2026-10-16T14:30:00Z"
+    },
+    {
+      "id": 165,
+      "entity_type": "KB",
+      "entity_id": "KB5045934",
+      "kb_number": "KB5045934",
+      "field_name": "has_kir",
+      "old_value": "",
+      "new_value": "0",
+      "change_type": "CREATED",
+      "content_hash": "03dc439bbd49c60e42a5939baed279592fb764eee9d3827d00b4ff9fd3b72df6",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2",
+      "is_demo": true,
+      "detected_at": "2026-10-16T14:30:00Z"
+    },
+    {
+      "id": 164,
+      "entity_type": "KB",
+      "entity_id": "KB5045934",
+      "kb_number": "KB5045934",
+      "field_name": "is_oob",
+      "old_value": "",
+      "new_value": "1",
+      "change_type": "CREATED",
+      "content_hash": "03dc439bbd49c60e42a5939baed279592fb764eee9d3827d00b4ff9fd3b72df6",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2",
+      "is_demo": true,
+      "detected_at": "2026-10-16T14:30:00Z"
+    },
+    {
+      "id": 163,
+      "entity_type": "KB",
+      "entity_id": "KB5045934",
+      "kb_number": "KB5045934",
+      "field_name": "title",
+      "old_value": "",
+      "new_value": "Out-of-Band (OOB) Update for Windows 11, version 24H2 (OS Build 26100.2036)",
+      "change_type": "CREATED",
+      "content_hash": "03dc439bbd49c60e42a5939baed279592fb764eee9d3827d00b4ff9fd3b72df6",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2",
+      "is_demo": true,
+      "detected_at": "2026-10-16T14:30:00Z"
+    },
+    {
+      "id": 206,
+      "entity_type": "CVE",
+      "entity_id": "CVE-2024-43573:KB5045934",
+      "kb_number": "KB5045934",
+      "field_name": "severity",
+      "old_value": "",
+      "new_value": "Important",
+      "change_type": "CREATED",
+      "content_hash": "e00bedd671c972d0b25552981d7938392b91cdce26b2de299e4c5fd328f3cf46",
+      "source_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-43573",
+      "is_demo": true,
+      "detected_at": "2026-10-13T18:00:00Z"
+    },
+    {
+      "id": 205,
+      "entity_type": "CVE",
+      "entity_id": "CVE-2024-43573:KB5045934",
+      "kb_number": "KB5045934",
+      "field_name": "title",
+      "old_value": "",
+      "new_value": "Windows MSHTML Platform Spoofing Vulnerability",
+      "change_type": "CREATED",
+      "content_hash": "e00bedd671c972d0b25552981d7938392b91cdce26b2de299e4c5fd328f3cf46",
+      "source_url": "https://msrc.microsoft.com/update-guide/vulnerability/CVE-2024-43573",
+      "is_demo": true,
+      "detected_at": "2026-10-13T18:00:00Z"
+    }
+  ],
+  "risk_factors": [
+    "KB5045934 is an Out-of-Band (OOB) update replacing KB5044284; Microsoft recommends deploying only to environments impacted by the targeted regression"
+  ]
+}

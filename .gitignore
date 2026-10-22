@@ -1,0 +1,17 @@
+# Python cache & virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.venv/
+venv/
+env/
+
+# SQLite temporary WAL/SHM files (main patch_alert.db is tracked for GitHub Actions audit trail)
+*.db-shm
+*.db-wal
+*.db-journal
+
+# OS / IDE artifacts
+.DS_Store
+Thumbs.db

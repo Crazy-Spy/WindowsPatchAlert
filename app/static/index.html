@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PATCH ALERT — Windows Desktop Update Intelligence &amp; Operational Patch Health Monitor</title>
+  <link rel="alternate" type="application/rss+xml" title="PATCH ALERT Operational Advisories RSS 2.0" href="./rss.xml" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <!-- TOP OPERATIONS HEADER -->
+  <header class="app-header">
+    <div class="header-brand">
+      <div class="brand-shield" aria-hidden="true">
+        <span class="shield-dot"></span>
+      </div>
+      <div>
+        <div class="brand-title-row">
+          <h1 class="brand-title">PATCH ALERT</h1>
+          <span class="brand-tag">WIN-OPS INTEL</span>
+        </div>
+        <p class="brand-subtitle">Microsoft Windows Desktop Update Intelligence &amp; Operational Patch Health Monitor</p>
+      </div>
+    </div>
+
+    <div class="header-search-wrap">
+      <div class="global-search-box">
+        <label for="globalSearchInput" class="sr-only">Global Search across KBs, CVEs, Known Issues, and Windows Builds</label>
+        <input
+          id="globalSearchInput"
+          type="search"
+          placeholder="Global search KBs (KB5044284), CVEs (CVE-2024-43573), issues, or OS builds (26100)..."
+          autocomplete="off"
+        />
+        <button id="globalSearchBtn" type="button" class="btn btn-ghost btn-sm" title="Run Global Search">Search</button>
+      </div>
+      <div id="globalSearchDropdown" class="search-dropdown hidden" role="region" aria-label="Global search results"></div>
+    </div>
+
+    <div class="header-actions">
+      <div class="header-telemetry-meta" title="Automated Microsoft Telemetry Sync (Every 4h via GitHub Actions)">
+        <span id="dataProvenancePill" class="provenance-pill">Dataset: Checking...</span>
+        <span id="lastSyncTimestamp" class="sync-timestamp">Last Refresh: — &bull; Next Refresh: —</span>
+      </div>
+
+      <button id="sourceStatusBtn" type="button" class="source-pill" title="View configured official Microsoft sources &amp; hashes">
+        <span id="sourceStatusDot" class="status-dot dot-unknown"></span>
+        <span id="sourceStatusText">Sources: Loading...</span>
+      </button>
+
+      <button id="subscribeEmailBtn" type="button" class="btn btn-primary" title="Subscribe to Windows Patch Operational Alerts via Email (Follow.it)">
+        Subscribe Email
+      </button>
+
+      <a href="./rss.xml" target="_blank" rel="noopener noreferrer" class="btn btn-secondary" title="Subscribe to RSS 2.0 Operational Alert Feed">
+        RSS 2.0
+      </a>
+
+      <button id="themeToggleBtn" type="button" class="btn btn-secondary" aria-label="Toggle Dark or Light Theme" title="Toggle Dark/Light Theme">
+        <span id="themeToggleText">Light Mode</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="dashboard-container">
+    <!-- API ERROR BANNER (SHOWN ONLY WHEN REQUESTS FAIL) -->
+    <div id="globalErrorBanner" class="error-banner hidden" role="alert">
+      <div class="error-banner-title">Telemetry / API Communication Error</div>
+      <div id="globalErrorText" class="error-banner-body"></div>
+    </div>
+
+    <!-- OPERATIONAL ADVISORY BANNER -->
+    <section id="advisoryBanner" class="advisory-banner advisory-unknown" aria-label="Operational Deployment Advisory">
+      <div class="advisory-top-row">
+        <span id="advisoryBadge" class="status-badge badge-UNKNOWN">INITIALIZING</span>
+        <div class="advisory-copy">
+          <h2 id="advisoryHeadline" class="advisory-headline">Loading operational patch health telemetry...</h2>
+          <p id="advisoryDetail" class="advisory-detail">Verifying local intelligence store and Microsoft Release Health status.</p>
+        </div>
+      </div>
+      <div id="advisoryItemsList" class="advisory-items-list hidden"></div>
+    </section>
+
+    <!-- FIVE CLICKABLE OPERATIONAL HEALTH SUMMARY CARDS -->
+    <section class="health-cards-section" aria-label="Operational Health Summary Cards">
+      <div class="section-header-compact">
+        <h2 id="healthSectionTitle" class="section-title">OPERATIONAL PATCH HEALTH STATES</h2>
+        <span class="section-hint">Counts reflect the selected Patch Tuesday Cycle &bull; Click any card to filter the table</span>
+      </div>
+      <div class="health-cards-grid" id="healthCardsGrid">
+        <button type="button" class="health-card card-SAFE" data-status="SAFE" aria-pressed="false">
+          <div class="card-top">
+            <span class="card-state-label">SAFE</span>
+            <span class="card-indicator dot-safe"></span>
+          </div>
+          <div class="card-count" id="count-SAFE">0</div>
+          <div class="card-desc">Verified telemetry; no active known issues reported by Microsoft</div>
+        </button>
+
+        <button type="button" class="health-card card-MONITOR" data-status="MONITOR" aria-pressed="false">
+          <div class="card-top">
+            <span class="card-state-label">MONITOR</span>
+            <span class="card-indicator dot-monitor"></span>
+          </div>
+          <div class="card-count" id="count-MONITOR">0</div>
+          <div class="card-desc">Limited, mitigated (auto-KIR), investigating, or recently resolved issue</div>
+        </button>
+
+        <button type="button" class="health-card card-CAUTION" data-status="CAUTION" aria-pressed="false">
+          <div class="card-top">
+            <span class="card-state-label">CAUTION</span>
+            <span class="card-indicator dot-caution"></span>
+          </div>
+          <div class="card-count" id="count-CAUTION">0</div>
+          <div class="card-desc">Confirmed active issue, enterprise GPO KIR, or targeted OOB release</div>
+        </button>
+
+        <button type="button" class="health-card card-AFFECTED" data-status="AFFECTED" aria-pressed="false">
+          <div class="card-top">
+            <span class="card-state-label">AFFECTED</span>
+            <span class="card-indicator dot-affected"></span>
+          </div>
+          <div class="card-count" id="count-AFFECTED">0</div>
+          <div class="card-desc">Critical component failure or superseded by an Out-of-Band (OOB) fix</div>
+        </button>
+
+        <button type="button" class="health-card card-UNKNOWN" data-status="UNKNOWN" aria-pressed="false">
+          <div class="card-top">
+            <span class="card-state-label">UNKNOWN</span>
+            <span class="card-indicator dot-unknown"></span>
+          </div>
+          <div class="card-count" id="count-UNKNOWN">0</div>
+          <div class="card-desc">Insufficient or unverified source data (never inferred as SAFE)</div>
+        </button>
+      </div>
+    </section>
+
+    <!-- MIDDLE GRID: WINDOWS RELEASE HEALTH BY VERSION + ALERTS / AUDIT LOG / SOURCES -->
+    <section class="intel-split-grid">
+      <!-- LEFT: WINDOWS RELEASE HEALTH BY SUPPORTED VERSION -->
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <h2 class="panel-title">WINDOWS RELEASE HEALTH BY VERSION</h2>
+            <p class="panel-subtitle">Click a Windows release branch to filter updates</p>
+          </div>
+          <div class="kpi-mini-row" id="kpiMiniSummary"></div>
+        </div>
+        <div id="versionHealthList" class="version-health-list">
+          <div class="empty-state">Loading Windows branch telemetry...</div>
+        </div>
+      </div>
+
+      <!-- RIGHT: ALERTS, AUDIT LOG & CONFIGURED MICROSOFT SOURCES -->
+      <div class="panel">
+        <div class="panel-header panel-tabs-header">
+          <div class="tab-buttons" role="tablist">
+            <button type="button" class="tab-btn active" data-tab="alertsTab" role="tab" aria-selected="true">
+              Microsoft Alerts <span id="unackedAlertBadge" class="badge-counter">0</span>
+            </button>
+            <button type="button" class="tab-btn" data-tab="auditTab" role="tab" aria-selected="false">
+              Field-Level Audit Log
+            </button>
+            <button type="button" class="tab-btn" data-tab="sourcesTab" role="tab" aria-selected="false">
+              Official Sources &amp; Hashes
+            </button>
+          </div>
+        </div>
+
+        <!-- TAB 1: ALERTS -->
+        <div id="alertsTab" class="tab-pane active" role="tabpanel">
+          <div id="alertsListContainer" class="feed-list">
+            <div class="empty-state">Loading operational alerts...</div>
+          </div>
+        </div>
+
+        <!-- TAB 2: AUDIT LOG -->
+        <div id="auditTab" class="tab-pane hidden" role="tabpanel">
+          <div id="auditListContainer" class="feed-list">
+            <div class="empty-state">Loading SHA-256 field-level audit trail...</div>
+          </div>
+        </div>
+
+        <!-- TAB 3: CONFIGURED MICROSOFT SOURCES -->
+        <div id="sourcesTab" class="tab-pane hidden" role="tabpanel">
+          <div id="sourcesListContainer" class="feed-list">
+            <div class="empty-state">Loading configured Microsoft sources...</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- UPDATE INTELLIGENCE FILTER BAR & DATA TABLE -->
+    <section class="panel table-panel" aria-label="Windows Update Intelligence Table">
+      <div class="panel-header">
+        <div>
+          <h2 class="panel-title">WINDOWS UPDATE INTELLIGENCE &amp; DEPLOYMENT MATRIX</h2>
+          <p class="panel-subtitle" id="tableSummarySubtitle">Showing tracked KBs with Known Issue Rollbacks (KIR), Out-of-Band (OOB) supersession, and MSRC CVEs</p>
+        </div>
+        <div class="table-header-controls">
+          <button id="resetFiltersBtn" type="button" class="btn btn-secondary btn-sm">Reset All Filters</button>
+        </div>
+      </div>
+
+      <!-- FILTER BAR -->
+      <div class="filters-bar">
+        <div class="filter-group filter-search">
+          <label for="kbSearchInput">Filter KBs / Issues / CVEs</label>
+          <input id="kbSearchInput" type="search" placeholder="KB number, build, issue, CVE..." />
+        </div>
+
+        <div class="filter-group">
+          <label for="filterVersion">Windows Version</label>
+          <select id="filterVersion">
+            <option value="all">All Versions</option>
+            <option value="Windows 11 24H2">Windows 11 24H2</option>
+            <option value="Windows 11 23H2">Windows 11 23H2</option>
+            <option value="Windows 11 22H2">Windows 11 22H2</option>
+            <option value="Windows 10 22H2">Windows 10 22H2</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="filterStatus">Operational Health</label>
+          <select id="filterStatus">
+            <option value="ALL">All States</option>
+            <option value="SAFE">SAFE (Green)</option>
+            <option value="MONITOR">MONITOR (Yellow)</option>
+            <option value="CAUTION">CAUTION (Orange)</option>
+            <option value="AFFECTED">AFFECTED (Red)</option>
+            <option value="UNKNOWN">UNKNOWN (Gray)</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="filterUpdateType">Update Type</label>
+          <select id="filterUpdateType">
+            <option value="all">All Types</option>
+            <option value="Cumulative">Cumulative</option>
+            <option value="Out-of-Band (OOB)">Out-of-Band (OOB)</option>
+            <option value="Security Only">Security Only</option>
+            <option value="Preview">Preview</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="filterCycle">Patch Tuesday Cycle</label>
+          <select id="filterCycle">
+            <option value="all">All Cycles</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="sortBySelect">Sort By</label>
+          <select id="sortBySelect">
+            <option value="release_date">Release Date</option>
+            <option value="health_status">Operational Risk Priority</option>
+            <option value="kb_number">KB Number</option>
+            <option value="windows_version">Windows Version</option>
+            <option value="known_issues_count">Known Issues Count</option>
+            <option value="cve_count">CVE Count</option>
+            <option value="last_checked_at">Last Checked Time</option>
+          </select>
+        </div>
+
+        <div class="filter-group">
+          <label for="sortOrderSelect">Order</label>
+          <select id="sortOrderSelect">
+            <option value="desc">Descending</option>
+            <option value="asc">Ascending</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- CHECKBOX TOGGLE FILTERS -->
+      <div class="filter-toggles-row">
+        <label class="toggle-chip">
+          <input type="checkbox" id="toggleOobOnly" />
+          <span>Out-of-Band (OOB) Only</span>
+        </label>
+        <label class="toggle-chip">
+          <input type="checkbox" id="toggleKirOnly" />
+          <span>Known Issue Rollback (KIR) Active</span>
+        </label>
+        <label class="toggle-chip">
+          <input type="checkbox" id="toggleIssuesOnly" />
+          <span>Has Known Issues</span>
+        </label>
+        <label class="toggle-chip">
+          <input type="checkbox" id="toggleSecurityOnly" />
+          <span>Security Updates Only</span>
+        </label>
+      </div>
+
+      <!-- DATA TABLE -->
+      <div class="table-responsive">
+        <table class="intel-table" aria-label="Tracked Windows Updates">
+          <thead>
+            <tr>
+              <th>KB Article</th>
+              <th>Release &amp; Cycle</th>
+              <th>Windows Version / Build</th>
+              <th>Update Type</th>
+              <th>Security / CVEs</th>
+              <th>Known Issues</th>
+              <th>Operational Health</th>
+              <th>OOB / KIR Flags</th>
+              <th>Supersession Chain</th>
+              <th>Last Check / Source</th>
+            </tr>
+          </thead>
+          <tbody id="kbTableBody">
+            <tr>
+              <td colspan="10" class="empty-state">Loading Windows update intelligence...</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- PAGINATION -->
+      <div class="pagination-bar">
+        <div id="paginationInfo" class="pagination-info">Showing 0 updates</div>
+        <div class="pagination-controls">
+          <button id="prevPageBtn" type="button" class="btn btn-secondary btn-sm" disabled>Previous</button>
+          <span id="pageIndicator" class="page-indicator">Page 1 of 1</span>
+          <button id="nextPageBtn" type="button" class="btn btn-secondary btn-sm" disabled>Next</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- KB DOSSIER DETAIL MODAL -->
+  <div id="kbModalBackdrop" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modalKbTitle">
+    <div class="modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <div class="modal-badges-row" id="modalTopBadges"></div>
+          <h2 id="modalKbTitle" class="modal-title">KB Dossier</h2>
+          <p id="modalKbMeta" class="modal-subtitle"></p>
+        </div>
+        <button id="closeModalBtn" type="button" class="btn btn-secondary btn-sm" aria-label="Close KB Dossier Modal">Close [ESC]</button>
+      </div>
+      <div id="modalBodyContent" class="modal-body">
+        <div class="empty-state">Loading KB dossier...</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- EMAIL & RSS SUBSCRIPTION MODAL (FOLLOW.IT) -->
+  <div id="subscribeModalBackdrop" class="modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="subscribeModalTitle">
+    <div class="modal-dialog subscribe-modal-dialog">
+      <div class="modal-header">
+        <div class="modal-title-group">
+          <div class="modal-badges-row">
+            <span class="status-badge badge-SAFE">RSS-TO-EMAIL</span>
+            <span class="mini-pill">Follow.it Integration</span>
+            <span class="mini-pill">Auto-Sync Every 4h</span>
+          </div>
+          <h2 id="subscribeModalTitle" class="modal-title">Subscribe to Patch Alert Notifications</h2>
+          <p class="modal-subtitle">Receive automated email alerts whenever Microsoft reports new regressions, Out-of-Band (OOB) updates, or Known Issue Rollbacks (KIR).</p>
+        </div>
+        <button id="closeSubscribeModalBtn" type="button" class="btn btn-secondary btn-sm" aria-label="Close Subscription Modal">Close [ESC]</button>
+      </div>
+      <div class="modal-body">
+        <div class="subscribe-box">
+          <div class="dossier-section-title">1. Instant Email Subscription (via Follow.it)</div>
+          <p class="subscribe-desc">
+            Enter your email below to receive alerts generated from this dashboard's live RSS 2.0 feed:
+          </p>
+          <form id="followItSubscribeForm" class="subscribe-form-row" method="post" target="_blank">
+            <input
+              id="followItEmailInput"
+              type="email"
+              name="email"
+              placeholder="admin@company.com"
+              required
+              autocomplete="email"
+              class="subscribe-email-input"
+            />
+            <button type="submit" class="btn btn-primary">Subscribe Now &nearr;</button>
+          </form>
+          <div id="followItStatusHint" class="subscribe-hint"></div>
+        </div>
+
+        <div class="subscribe-box" style="margin-top: 14px;">
+          <div class="dossier-section-title">2. Direct RSS 2.0 Feed URL (Follow.it / Teams / Slack / Outlook)</div>
+          <p class="subscribe-desc">
+            Use this feed URL to register your GitHub Pages site on <a href="https://follow.it" target="_blank" rel="noopener noreferrer" style="font-weight:700;">Follow.it &nearr;</a> or plug directly into Microsoft Teams / Slack RSS connectors:
+          </p>
+          <div class="subscribe-rss-copy-row">
+            <input id="rssFeedFullUrlInput" type="text" readonly class="subscribe-email-input" style="font-family: var(--font-mono); font-size: 12px;" />
+            <button id="copyRssUrlBtn" type="button" class="btn btn-secondary">Copy RSS URL</button>
+            <a href="./rss.xml" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Open XML &nearr;</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="./app.js"></script>
+</body>
+</html>
+
