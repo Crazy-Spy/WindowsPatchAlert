@@ -18,15 +18,15 @@
     "active_known_issues_count": 7,
     "total_cves_count": 5,
     "exploited_cves_count": 2,
-    "unacknowledged_alerts_count": 7,
+    "unacknowledged_alerts_count": 10,
     "sources_total": 6,
     "sources_ok": 6,
     "sources_error": 0,
-    "last_checked_at": "2026-10-22T00:06:37Z",
+    "last_checked_at": "2026-10-22T00:12:18Z",
     "demo_records_count": 8,
     "live_records_count": 15,
     "using_demo_seed": false,
-    "last_refresh_at": "2026-10-22T00:06:37Z"
+    "last_refresh_at": "2026-10-22T00:12:19Z"
   },
   "advisory_banner": {
     "level": "AFFECTED",
@@ -309,6 +309,48 @@
   ],
   "latest_alerts": [
     {
+      "id": 18,
+      "kb_number": "KB5129236",
+      "windows_version": "Windows 10 22H2",
+      "severity": "CAUTION",
+      "alert_type": "STATUS_CHANGE",
+      "title": "KB5129236 Operational Health Changed: SAFE -> CAUTION",
+      "summary": "CAUTION: Requires administrator evaluation before broad deployment. KB5129236 is an Out-of-Band (OOB) update; Microsoft recommends deploying only to environments impacted by the targeted regression.",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-10-22h2",
+      "acknowledged": false,
+      "acknowledged_at": null,
+      "is_demo": false,
+      "created_at": "2026-10-22T00:12:18Z"
+    },
+    {
+      "id": 17,
+      "kb_number": "KB5129242",
+      "windows_version": "Windows 11 23H2",
+      "severity": "CAUTION",
+      "alert_type": "STATUS_CHANGE",
+      "title": "KB5129242 Operational Health Changed: SAFE -> CAUTION",
+      "summary": "CAUTION: Requires administrator evaluation before broad deployment. KB5129242 is an Out-of-Band (OOB) update; Microsoft recommends deploying only to environments impacted by the targeted regression.",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2",
+      "acknowledged": false,
+      "acknowledged_at": null,
+      "is_demo": false,
+      "created_at": "2026-10-22T00:12:17Z"
+    },
+    {
+      "id": 16,
+      "kb_number": "KB5129195",
+      "windows_version": "Windows 11 24H2",
+      "severity": "CAUTION",
+      "alert_type": "STATUS_CHANGE",
+      "title": "KB5129195 Operational Health Changed: SAFE -> CAUTION",
+      "summary": "CAUTION: Requires administrator evaluation before broad deployment. KB5129195 is an Out-of-Band (OOB) update; Microsoft recommends deploying only to environments impacted by the targeted regression.",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2",
+      "acknowledged": false,
+      "acknowledged_at": null,
+      "is_demo": false,
+      "created_at": "2026-10-22T00:12:16Z"
+    },
+    {
       "id": 15,
       "kb_number": "KB5129236",
       "windows_version": "All Supported Desktop Releases",
@@ -410,16 +452,16 @@
   "collector": {
     "is_running": false,
     "current_source": null,
-    "started_at": "2026-10-22T00:06:35Z",
-    "finished_at": "2026-10-22T00:06:37Z",
+    "started_at": "2026-10-22T00:12:16Z",
+    "finished_at": "2026-10-22T00:12:19Z",
     "last_trigger": "scheduled_action",
     "last_status": "COMPLETED",
     "sources_total": 6,
     "sources_completed": 6,
     "sources_succeeded": 6,
     "sources_failed": 0,
-    "changes_detected": 117,
-    "last_summary": "Checked 6/6 Microsoft sources: 6 succeeded, 0 failed, 117 field-level change(s) recorded.",
+    "changes_detected": 57,
+    "last_summary": "Checked 6/6 Microsoft sources: 6 succeeded, 0 failed, 57 field-level change(s) recorded.",
     "errors": [],
     "schedule_interval_minutes": 240
   }

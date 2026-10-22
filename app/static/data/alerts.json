@@ -1,6 +1,48 @@
 {
   "items": [
     {
+      "id": 18,
+      "kb_number": "KB5129236",
+      "windows_version": "Windows 10 22H2",
+      "severity": "CAUTION",
+      "alert_type": "STATUS_CHANGE",
+      "title": "KB5129236 Operational Health Changed: SAFE -> CAUTION",
+      "summary": "CAUTION: Requires administrator evaluation before broad deployment. KB5129236 is an Out-of-Band (OOB) update; Microsoft recommends deploying only to environments impacted by the targeted regression.",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-10-22h2",
+      "acknowledged": false,
+      "acknowledged_at": null,
+      "is_demo": false,
+      "created_at": "2026-10-22T00:12:18Z"
+    },
+    {
+      "id": 17,
+      "kb_number": "KB5129242",
+      "windows_version": "Windows 11 23H2",
+      "severity": "CAUTION",
+      "alert_type": "STATUS_CHANGE",
+      "title": "KB5129242 Operational Health Changed: SAFE -> CAUTION",
+      "summary": "CAUTION: Requires administrator evaluation before broad deployment. KB5129242 is an Out-of-Band (OOB) update; Microsoft recommends deploying only to environments impacted by the targeted regression.",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2",
+      "acknowledged": false,
+      "acknowledged_at": null,
+      "is_demo": false,
+      "created_at": "2026-10-22T00:12:17Z"
+    },
+    {
+      "id": 16,
+      "kb_number": "KB5129195",
+      "windows_version": "Windows 11 24H2",
+      "severity": "CAUTION",
+      "alert_type": "STATUS_CHANGE",
+      "title": "KB5129195 Operational Health Changed: SAFE -> CAUTION",
+      "summary": "CAUTION: Requires administrator evaluation before broad deployment. KB5129195 is an Out-of-Band (OOB) update; Microsoft recommends deploying only to environments impacted by the targeted regression.",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2",
+      "acknowledged": false,
+      "acknowledged_at": null,
+      "is_demo": false,
+      "created_at": "2026-10-22T00:12:16Z"
+    },
+    {
       "id": 15,
       "kb_number": "KB5129236",
       "windows_version": "All Supported Desktop Releases",
@@ -99,6 +141,6 @@
       "created_at": "2026-10-13T20:00:00Z"
     }
   ],
-  "total": 7,
-  "unacknowledged_count": 7
+  "total": 10,
+  "unacknowledged_count": 10
 }
