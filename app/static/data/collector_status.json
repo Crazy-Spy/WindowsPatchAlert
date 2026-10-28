@@ -1,19 +1,31 @@
 {
   "is_running": false,
   "current_source": null,
-  "started_at": "2026-10-28T03:19:23Z",
-  "finished_at": "2026-10-28T03:19:25Z",
+  "started_at": "2026-10-28T10:13:07Z",
+  "finished_at": "2026-10-28T10:13:08Z",
   "last_trigger": "scheduled_action",
   "last_status": "COMPLETED",
   "sources_total": 6,
   "sources_completed": 6,
   "sources_succeeded": 6,
   "sources_failed": 0,
-  "changes_detected": 62,
-  "last_summary": "Checked 6/6 Microsoft sources: 6 succeeded, 0 failed, 62 field-level change(s) recorded.",
+  "changes_detected": 57,
+  "last_summary": "Checked 6/6 Microsoft sources: 6 succeeded, 0 failed, 57 field-level change(s) recorded.",
   "errors": [],
   "schedule_interval_minutes": 240,
   "recent_runs": [
+    {
+      "id": 32,
+      "started_at": "2026-10-28T10:13:07Z",
+      "finished_at": "2026-10-28T10:13:08Z",
+      "trigger_type": "scheduled_action",
+      "status": "COMPLETED",
+      "sources_checked": 6,
+      "sources_succeeded": 6,
+      "sources_failed": 0,
+      "changes_detected": 57,
+      "summary": "Checked 6/6 Microsoft sources: 6 succeeded, 0 failed, 57 field-level change(s) recorded."
+    },
     {
       "id": 31,
       "started_at": "2026-10-28T03:19:23Z",
@@ -121,18 +133,6 @@
       "sources_failed": 0,
       "changes_detected": 62,
       "summary": "Checked 6/6 Microsoft sources: 6 succeeded, 0 failed, 62 field-level change(s) recorded."
-    },
-    {
-      "id": 22,
-      "started_at": "2026-10-25T22:12:28Z",
-      "finished_at": "2026-10-25T22:12:30Z",
-      "trigger_type": "scheduled_action",
-      "status": "COMPLETED",
-      "sources_checked": 6,
-      "sources_succeeded": 6,
-      "sources_failed": 0,
-      "changes_detected": 57,
-      "summary": "Checked 6/6 Microsoft sources: 6 succeeded, 0 failed, 57 field-level change(s) recorded."
     }
   ]
 }
