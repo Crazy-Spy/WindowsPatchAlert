@@ -5,7 +5,7 @@
       "title": "Cumulative Update KB5129242 for All Supported Desktop Releases (OS Build 26100.1)",
       "windows_version": "All Supported Desktop Releases",
       "os_build": "26100.1",
-      "release_date": "2026-11-01",
+      "release_date": "2026-11-02",
       "patch_tuesday_cycle": "2026-11",
       "update_type": "Cumulative",
       "is_security_update": true,
@@ -25,15 +25,15 @@
       "telemetry_verified": true,
       "data_origin": "Microsoft Release Health (Live Sync)",
       "is_demo": false,
-      "last_checked_at": "2026-11-01T23:15:49Z",
-      "content_hash": "4f81bb78e6f891f4164b5d1cb977fc3c7aec8507d45bccbd84a6fb4117ce26a0"
+      "last_checked_at": "2026-11-02T03:41:59Z",
+      "content_hash": "cc1a61de496e128b415fdf025c6095be6d4fe75f45d1d6f665637606ef6838f5"
     },
     {
       "kb_number": "KB5129241",
       "title": "Cumulative Update KB5129241 for All Supported Desktop Releases (OS Build 26100.1)",
       "windows_version": "All Supported Desktop Releases",
       "os_build": "26100.1",
-      "release_date": "2026-11-01",
+      "release_date": "2026-11-02",
       "patch_tuesday_cycle": "2026-11",
       "update_type": "Cumulative",
       "is_security_update": true,
@@ -53,15 +53,15 @@
       "telemetry_verified": true,
       "data_origin": "Microsoft Release Health (Live Sync)",
       "is_demo": false,
-      "last_checked_at": "2026-11-01T23:15:49Z",
-      "content_hash": "d9a1cbc5cf2eda46cc9f2a3d9588f67f21bac3e4d55e77c21635c737fd457bca"
+      "last_checked_at": "2026-11-02T03:41:59Z",
+      "content_hash": "6a4d07d5b3c87d0b0dfdf1676e61913235820f4594d091d0d9e1d3878ef9b3fa"
     },
     {
       "kb_number": "KB5129237",
       "title": "Cumulative Update KB5129237 for All Supported Desktop Releases (OS Build 26100.1)",
       "windows_version": "All Supported Desktop Releases",
       "os_build": "26100.1",
-      "release_date": "2026-11-01",
+      "release_date": "2026-11-02",
       "patch_tuesday_cycle": "2026-11",
       "update_type": "Cumulative",
       "is_security_update": true,
@@ -81,15 +81,15 @@
       "telemetry_verified": true,
       "data_origin": "Microsoft Release Health (Live Sync)",
       "is_demo": false,
-      "last_checked_at": "2026-11-01T23:15:49Z",
-      "content_hash": "ebe94c6f113f20d6d728a82c5456796c9f2024f69a0921a2a6420d26a12462e7"
+      "last_checked_at": "2026-11-02T03:41:59Z",
+      "content_hash": "31bf4b646d9dcf5fe190aaf85c393a41aa9c3ecf81f9f68c44fd66fe4f302f50"
     },
     {
       "kb_number": "KB5129236",
       "title": "Cumulative Update KB5129236 for All Supported Desktop Releases (OS Build 26100.1)",
       "windows_version": "All Supported Desktop Releases",
       "os_build": "26100.1",
-      "release_date": "2026-11-01",
+      "release_date": "2026-11-02",
       "patch_tuesday_cycle": "2026-11",
       "update_type": "Cumulative",
       "is_security_update": true,
@@ -109,15 +109,15 @@
       "telemetry_verified": true,
       "data_origin": "Microsoft Release Health (Live Sync)",
       "is_demo": false,
-      "last_checked_at": "2026-11-01T23:15:49Z",
-      "content_hash": "f0eadd3bafd2b4378bf6ba5fb87f073eeab4813f8145ef1e1ecf7df82f8cddf0"
+      "last_checked_at": "2026-11-02T03:41:59Z",
+      "content_hash": "86182d6b6f571ab068e084da39b5c7559864d2e0adc69d602ffed60438a25483"
     },
     {
       "kb_number": "KB5129235",
       "title": "Cumulative Update KB5129235 for All Supported Desktop Releases (OS Build 26100.1)",
       "windows_version": "All Supported Desktop Releases",
       "os_build": "26100.1",
-      "release_date": "2026-11-01",
+      "release_date": "2026-11-02",
       "patch_tuesday_cycle": "2026-11",
       "update_type": "Cumulative",
       "is_security_update": true,
@@ -137,15 +137,15 @@
       "telemetry_verified": true,
       "data_origin": "Microsoft Release Health (Live Sync)",
       "is_demo": false,
-      "last_checked_at": "2026-11-01T23:15:49Z",
-      "content_hash": "ec96d9a747c1a4810066568115f9a8717aeb7ec2583c28b389e92cd5f89d043b"
+      "last_checked_at": "2026-11-02T03:41:59Z",
+      "content_hash": "999107500ba1118ff360707c0ba804936bdc8c240d8bf856ef463d68db7e5ca7"
     },
     {
       "kb_number": "KB5129195",
       "title": "Cumulative Update KB5129195 for All Supported Desktop Releases (OS Build 26100.1)",
       "windows_version": "All Supported Desktop Releases",
       "os_build": "26100.1",
-      "release_date": "2026-11-01",
+      "release_date": "2026-11-02",
       "patch_tuesday_cycle": "2026-11",
       "update_type": "Cumulative",
       "is_security_update": true,
@@ -165,15 +165,15 @@
       "telemetry_verified": true,
       "data_origin": "Microsoft Release Health (Live Sync)",
       "is_demo": false,
-      "last_checked_at": "2026-11-01T23:15:49Z",
-      "content_hash": "1c574956610ef89d94ad150683af45735a9ca92deb239e107fa7c05d2b252e20"
+      "last_checked_at": "2026-11-02T03:41:59Z",
+      "content_hash": "d49ed71d41ea3a9479018151b0ea126ea4667a9a5acdc5a43004bcb1d0cf455f"
     },
     {
       "kb_number": "KB5129194",
       "title": "Cumulative Update KB5129194 for All Supported Desktop Releases (OS Build 26100.1)",
       "windows_version": "All Supported Desktop Releases",
       "os_build": "26100.1",
-      "release_date": "2026-11-01",
+      "release_date": "2026-11-02",
       "patch_tuesday_cycle": "2026-11",
       "update_type": "Cumulative",
       "is_security_update": true,
@@ -193,15 +193,15 @@
       "telemetry_verified": true,
       "data_origin": "Microsoft Release Health (Live Sync)",
       "is_demo": false,
-      "last_checked_at": "2026-11-01T23:15:49Z",
-      "content_hash": "9e8886d552887e413cb78d34d5744d3d2ca2f4df0bf9bcc3cb7863f071952b1c"
+      "last_checked_at": "2026-11-02T03:41:59Z",
+      "content_hash": "f0d560450fa828d7a722b281efba3fb95bb935e3ecde90c9cb86f13c2dda5fac"
     },
     {
       "kb_number": "KB5124010",
       "title": "Cumulative Update KB5124010 for All Supported Desktop Releases (OS Build 26100.1)",
       "windows_version": "All Supported Desktop Releases",
       "os_build": "26100.1",
-      "release_date": "2026-11-01",
+      "release_date": "2026-11-02",
       "patch_tuesday_cycle": "2026-11",
       "update_type": "Cumulative",
       "is_security_update": true,
@@ -221,15 +221,15 @@
       "telemetry_verified": true,
       "data_origin": "Microsoft Release Health (Live Sync)",
       "is_demo": false,
-      "last_checked_at": "2026-11-01T23:15:49Z",
-      "content_hash": "725856bb3867c6a42d62a05c7cab3d545a3b94fab3d2ccd2b881f76db50b4b21"
+      "last_checked_at": "2026-11-02T03:41:59Z",
+      "content_hash": "9f36e3b098cb3ceddf45ecfb3087b355ffd6dda0bb4e32fd2fea3df2b659d69d"
     },
     {
       "kb_number": "KB5124008",
       "title": "Cumulative Update KB5124008 for All Supported Desktop Releases (OS Build 26100.1)",
       "windows_version": "All Supported Desktop Releases",
       "os_build": "26100.1",
-      "release_date": "2026-11-01",
+      "release_date": "2026-11-02",
       "patch_tuesday_cycle": "2026-11",
       "update_type": "Cumulative",
       "is_security_update": true,
@@ -253,15 +253,15 @@
       "telemetry_verified": true,
       "data_origin": "Microsoft Release Health (Live Sync)",
       "is_demo": false,
-      "last_checked_at": "2026-11-01T23:15:49Z",
-      "content_hash": "00077b446b84c4af9b460c5bf055c1e713b15ae3310eebca39dfcf10843b7546"
+      "last_checked_at": "2026-11-02T03:41:59Z",
+      "content_hash": "794c24f124f2312f30850ae58dca023a2cd6171f24c09d1fd4d7a8c0f5542506"
     },
     {
       "kb_number": "KB5066470",
       "title": "Cumulative Update KB5066470 for All Supported Desktop Releases (OS Build 26100.1)",
       "windows_version": "All Supported Desktop Releases",
       "os_build": "26100.1",
-      "release_date": "2026-11-01",
+      "release_date": "2026-11-02",
       "patch_tuesday_cycle": "2026-11",
       "update_type": "Cumulative",
       "is_security_update": true,
@@ -281,8 +281,8 @@
       "telemetry_verified": true,
       "data_origin": "Microsoft Release Health (Live Sync)",
       "is_demo": false,
-      "last_checked_at": "2026-11-01T23:15:49Z",
-      "content_hash": "36738dfbba05822fb93d917335dd56f1204590c9ef4d122c6d49b625ea9a0433"
+      "last_checked_at": "2026-11-02T03:41:59Z",
+      "content_hash": "2779d516623105b1a4cfc12ee0cd03217c17a51244452c3d2d1d7cf8558cc994"
     },
     {
       "kb_number": "KB5046109",
@@ -369,7 +369,7 @@
       "telemetry_verified": true,
       "data_origin": "Microsoft Release Health (Live Sync)",
       "is_demo": false,
-      "last_checked_at": "2026-11-01T23:15:48Z",
+      "last_checked_at": "2026-11-02T03:41:58Z",
       "content_hash": "a5e53501f374f696e23029618995e7ae7369301becee9d1fdd7da6c3f23fe0cc"
     },
     {
@@ -397,7 +397,7 @@
       "telemetry_verified": true,
       "data_origin": "Microsoft Release Health (Live Sync)",
       "is_demo": false,
-      "last_checked_at": "2026-11-01T23:15:48Z",
+      "last_checked_at": "2026-11-02T03:41:58Z",
       "content_hash": "aef292ca9cd231b1b4b2d1f1eaa438a00bb333f0e25a2a561bed253b161e8255"
     },
     {
@@ -429,7 +429,7 @@
       "telemetry_verified": true,
       "data_origin": "Microsoft Release Health (Live Sync)",
       "is_demo": false,
-      "last_checked_at": "2026-11-01T23:15:48Z",
+      "last_checked_at": "2026-11-02T03:41:58Z",
       "content_hash": "cb3873dde031cb308ed27b02b28a12e662e5ec01a930e7d21285819591a7eb40"
     },
     {
@@ -581,7 +581,7 @@
       "telemetry_verified": true,
       "data_origin": "Microsoft Release Health (Live Sync)",
       "is_demo": false,
-      "last_checked_at": "2026-11-01T23:15:49Z",
+      "last_checked_at": "2026-11-02T03:41:59Z",
       "content_hash": "1380e0d1a80e442b09e661e11db4e23fb3264a8b710e0a21a6ad37f6f88c41cf"
     },
     {
@@ -613,7 +613,7 @@
       "telemetry_verified": true,
       "data_origin": "Microsoft Release Health (Live Sync)",
       "is_demo": false,
-      "last_checked_at": "2026-11-01T23:15:49Z",
+      "last_checked_at": "2026-11-02T03:41:59Z",
       "content_hash": "c613fa0118115015c2ecf5565c06f2d9c52a4f2df1ecfbdadd40cbd99874ca42"
     },
     {
