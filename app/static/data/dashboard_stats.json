@@ -23,11 +23,11 @@
     "sources_total": 6,
     "sources_ok": 6,
     "sources_error": 0,
-    "last_checked_at": "2026-11-02T21:12:18Z",
+    "last_checked_at": "2026-11-03T04:46:24Z",
     "demo_records_count": 8,
     "live_records_count": 15,
     "using_demo_seed": false,
-    "last_refresh_at": "2026-11-02T21:12:19Z"
+    "last_refresh_at": "2026-11-03T04:46:24Z"
   },
   "advisory_banner": {
     "level": "AFFECTED",
@@ -300,7 +300,7 @@
       "unknown_count": 0,
       "oob_count": 0,
       "kir_count": 1,
-      "latest_release_date": "2026-11-02",
+      "latest_release_date": "2026-11-03",
       "windows_version": "All Supported Desktop Releases",
       "overall_status": "AFFECTED",
       "latest_kb": "KB5129242",
@@ -453,16 +453,16 @@
   "collector": {
     "is_running": false,
     "current_source": null,
-    "started_at": "2026-11-02T21:12:17Z",
-    "finished_at": "2026-11-02T21:12:19Z",
+    "started_at": "2026-11-03T04:46:22Z",
+    "finished_at": "2026-11-03T04:46:24Z",
     "last_trigger": "scheduled_action",
     "last_status": "COMPLETED",
     "sources_total": 6,
     "sources_completed": 6,
     "sources_succeeded": 6,
     "sources_failed": 0,
-    "changes_detected": 57,
-    "last_summary": "Checked 6/6 Microsoft sources: 6 succeeded, 0 failed, 57 field-level change(s) recorded.",
+    "changes_detected": 62,
+    "last_summary": "Checked 6/6 Microsoft sources: 6 succeeded, 0 failed, 62 field-level change(s) recorded.",
     "errors": [],
     "schedule_interval_minutes": 240
   }
