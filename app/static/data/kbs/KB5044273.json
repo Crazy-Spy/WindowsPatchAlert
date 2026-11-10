@@ -31,7 +31,7 @@
   "highlights": "Addresses actively exploited MSHTML platform spoofing vulnerability and Win32k elevation of privilege.",
   "known_issues": [
     {
-      "id": 9,
+      "id": 3,
       "issue_key": "ISSUE-KB5044273-TASKBAR-KIR",
       "kb_number": "KB5044273",
       "windows_version": "Windows 10 22H2",
@@ -59,7 +59,7 @@
   ],
   "cves": [
     {
-      "id": 24,
+      "id": 6,
       "cve_id": "CVE-2024-43572",
       "kb_number": "KB5044273",
       "title": "Microsoft Management Console Remote Code Execution Vulnerability",
@@ -75,7 +75,7 @@
       "content_hash": "9e889f46fe627704fe612841f9b51b3d751e033af77e1f45360e379714e1a1c6"
     },
     {
-      "id": 22,
+      "id": 4,
       "cve_id": "CVE-2024-43573",
       "kb_number": "KB5044273",
       "title": "Windows MSHTML Platform Spoofing Vulnerability",
@@ -93,7 +93,7 @@
   ],
   "relationships": [
     {
-      "id": 26,
+      "id": 5,
       "kb_number": "KB5044273",
       "related_kb": "KB5043064",
       "relationship_type": "supersedes",
@@ -104,7 +104,7 @@
   ],
   "lifecycle": [
     {
-      "id": 41,
+      "id": 8,
       "kb_number": "KB5044273",
       "event_date": "2026-10-13",
       "event_type": "Released",
@@ -113,7 +113,7 @@
       "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-10-22h2"
     },
     {
-      "id": 42,
+      "id": 9,
       "kb_number": "KB5044273",
       "event_date": "2026-10-15",
       "event_type": "KIR Issued",
@@ -124,7 +124,7 @@
   ],
   "changes": [
     {
-      "id": 228,
+      "id": 70,
       "entity_type": "KB",
       "entity_id": "KB5044273",
       "kb_number": "KB5044273",
@@ -138,7 +138,7 @@
       "detected_at": "2026-10-16T14:30:00Z"
     },
     {
-      "id": 227,
+      "id": 69,
       "entity_type": "KB",
       "entity_id": "KB5044273",
       "kb_number": "KB5044273",
@@ -152,7 +152,7 @@
       "detected_at": "2026-10-16T14:30:00Z"
     },
     {
-      "id": 202,
+      "id": 44,
       "entity_type": "KNOWN_ISSUE",
       "entity_id": "ISSUE-KB5044273-TASKBAR-KIR",
       "kb_number": "KB5044273",
@@ -166,7 +166,7 @@
       "detected_at": "2026-10-15T09:00:00Z"
     },
     {
-      "id": 201,
+      "id": 43,
       "entity_type": "KNOWN_ISSUE",
       "entity_id": "ISSUE-KB5044273-TASKBAR-KIR",
       "kb_number": "KB5044273",
@@ -180,7 +180,7 @@
       "detected_at": "2026-10-15T09:00:00Z"
     },
     {
-      "id": 200,
+      "id": 42,
       "entity_type": "KNOWN_ISSUE",
       "entity_id": "ISSUE-KB5044273-TASKBAR-KIR",
       "kb_number": "KB5044273",
@@ -194,7 +194,7 @@
       "detected_at": "2026-10-15T09:00:00Z"
     },
     {
-      "id": 199,
+      "id": 41,
       "entity_type": "KNOWN_ISSUE",
       "entity_id": "ISSUE-KB5044273-TASKBAR-KIR",
       "kb_number": "KB5044273",
@@ -208,7 +208,7 @@
       "detected_at": "2026-10-15T09:00:00Z"
     },
     {
-      "id": 214,
+      "id": 56,
       "entity_type": "CVE",
       "entity_id": "CVE-2024-43572:KB5044273",
       "kb_number": "KB5044273",
@@ -222,7 +222,7 @@
       "detected_at": "2026-10-13T18:00:00Z"
     },
     {
-      "id": 213,
+      "id": 55,
       "entity_type": "CVE",
       "entity_id": "CVE-2024-43572:KB5044273",
       "kb_number": "KB5044273",
@@ -236,7 +236,7 @@
       "detected_at": "2026-10-13T18:00:00Z"
     },
     {
-      "id": 210,
+      "id": 52,
       "entity_type": "CVE",
       "entity_id": "CVE-2024-43573:KB5044273",
       "kb_number": "KB5044273",
@@ -250,7 +250,7 @@
       "detected_at": "2026-10-13T18:00:00Z"
     },
     {
-      "id": 209,
+      "id": 51,
       "entity_type": "CVE",
       "entity_id": "CVE-2024-43573:KB5044273",
       "kb_number": "KB5044273",
@@ -264,7 +264,7 @@
       "detected_at": "2026-10-13T18:00:00Z"
     },
     {
-      "id": 174,
+      "id": 16,
       "entity_type": "KB",
       "entity_id": "KB5044273",
       "kb_number": "KB5044273",
@@ -278,7 +278,7 @@
       "detected_at": "2026-10-13T18:00:00Z"
     },
     {
-      "id": 173,
+      "id": 15,
       "entity_type": "KB",
       "entity_id": "KB5044273",
       "kb_number": "KB5044273",
@@ -292,7 +292,7 @@
       "detected_at": "2026-10-13T18:00:00Z"
     },
     {
-      "id": 172,
+      "id": 14,
       "entity_type": "KB",
       "entity_id": "KB5044273",
       "kb_number": "KB5044273",
@@ -306,7 +306,7 @@
       "detected_at": "2026-10-13T18:00:00Z"
     },
     {
-      "id": 171,
+      "id": 13,
       "entity_type": "KB",
       "entity_id": "KB5044273",
       "kb_number": "KB5044273",

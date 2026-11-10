@@ -33,7 +33,7 @@
   "lifecycle": [],
   "changes": [
     {
-      "id": 190,
+      "id": 32,
       "entity_type": "KB",
       "entity_id": "KB5046109",
       "kb_number": "KB5046109",
@@ -47,7 +47,7 @@
       "detected_at": "2026-10-20T19:00:00Z"
     },
     {
-      "id": 189,
+      "id": 31,
       "entity_type": "KB",
       "entity_id": "KB5046109",
       "kb_number": "KB5046109",
@@ -61,7 +61,7 @@
       "detected_at": "2026-10-20T19:00:00Z"
     },
     {
-      "id": 188,
+      "id": 30,
       "entity_type": "KB",
       "entity_id": "KB5046109",
       "kb_number": "KB5046109",
@@ -75,7 +75,7 @@
       "detected_at": "2026-10-20T19:00:00Z"
     },
     {
-      "id": 187,
+      "id": 29,
       "entity_type": "KB",
       "entity_id": "KB5046109",
       "kb_number": "KB5046109",
@@ -89,7 +89,7 @@
       "detected_at": "2026-10-20T19:00:00Z"
     },
     {
-      "id": 235,
+      "id": 77,
       "entity_type": "KB",
       "entity_id": "KB5046109",
       "kb_number": "KB5046109",

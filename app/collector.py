@@ -36,6 +36,7 @@ from app.risk_engine import (
     derive_patch_tuesday_cycle,
     detect_kir_metadata,
     detect_oob_metadata,
+    is_patch_tuesday_release,
 )
 
 BUILD_REGEX = re.compile(r"\b(\d{5}\.\d{1,5})\b")
@@ -156,8 +157,12 @@ def parse_release_health_html(
     soup = BeautifulSoup(html_text, "html.parser")
     extracted_kbs: dict[str, dict[str, Any]] = {}
     extracted_issues: list[dict[str, Any]] = []
+    extracted_relationships: list[dict[str, Any]] = []
+    extracted_lifecycle: list[dict[str, Any]] = []
 
     default_build_map = {
+        "Windows 11 26H2": "26300",
+        "Windows 11 25H2": "26200",
         "Windows 11 24H2": "26100",
         "Windows 11 23H2": "22631",
         "Windows 11 22H2": "22621",
@@ -210,6 +215,13 @@ def parse_release_health_html(
         if not is_issue_table or (len(headers) == 3 and "history" in " ".join(headers)):
             continue
 
+        orig_idx = next((i for i, h in enumerate(headers) if "originating" in h), 1)
+        status_idx = next((i for i, h in enumerate(headers) if "status" in h), 2)
+        updated_idx = next(
+            (i for i, h in enumerate(headers) if "updated" in h or h == "date" or "release date" in h),
+            len(headers) - 1,
+        )
+
         tbody = table.find("tbody") or table
         for tr in tbody.find_all("tr"):
             cells = tr.find_all(["td", "th"])
@@ -234,35 +246,81 @@ def parse_release_health_html(
 
             combined_issue_text = f"{full_row_text} {detail_text}".strip()
 
-            kbs_in_row = []
-            for kb_m in KB_REGEX.findall(combined_issue_text):
-                norm_kb = kb_m.upper()
-                if norm_kb not in kbs_in_row:
-                    kbs_in_row.append(norm_kb)
+            orig_cell_text = row_texts[orig_idx] if len(row_texts) > orig_idx else full_row_text
+            status_cell_text = row_texts[status_idx] if len(row_texts) > status_idx else full_row_text
+            updated_cell_text = (
+                row_texts[updated_idx]
+                if len(row_texts) > updated_idx
+                else (row_texts[-1] if len(row_texts) >= 3 else "")
+            )
 
-            if not kbs_in_row:
-                continue
+            orig_kbs = list(dict.fromkeys(m.upper() for m in KB_REGEX.findall(orig_cell_text)))
+            status_kbs = list(dict.fromkeys(m.upper() for m in KB_REGEX.findall(status_cell_text)))
+            summary_kbs = list(dict.fromkeys(m.upper() for m in KB_REGEX.findall(row_texts[0])))
+            detail_orig_kbs = list(
+                dict.fromkeys(m.upper() for m in KB_REGEX.findall(detail_text) if m.upper() not in status_kbs)
+            )
 
-            primary_kb = kbs_in_row[0]
-            build_match = BUILD_REGEX.search(combined_issue_text)
-            os_build = build_match.group(1) if build_match else f"{base_build}.1"
+            if orig_kbs:
+                primary_kb = orig_kbs[0]
+            elif summary_kbs:
+                primary_kb = summary_kbs[0]
+            elif detail_orig_kbs:
+                primary_kb = detail_orig_kbs[0]
+            elif status_kbs:
+                primary_kb = status_kbs[0]
+            else:
+                all_row_kbs = [m.upper() for m in KB_REGEX.findall(combined_issue_text)]
+                if not all_row_kbs:
+                    continue
+                primary_kb = all_row_kbs[0]
 
-            # Determine status from row cells
+            resolving_kb = status_kbs[0] if (status_kbs and status_kbs[0] != primary_kb) else None
+
+            orig_build_m = BUILD_REGEX.search(orig_cell_text) or BUILD_REGEX.search(combined_issue_text)
+            os_build = orig_build_m.group(1) if orig_build_m else f"{base_build}.1"
+
+            # Determine status from Status cell first, then row cells
             status_val = "Confirmed"
-            for cell_txt in row_texts:
-                low_c = cell_txt.lower()
-                if low_c in ("resolved", "mitigated", "confirmed", "investigating"):
-                    status_val = cell_txt.capitalize()
-                    break
-                if "resolved" in low_c:
-                    status_val = "Resolved"
-                elif "mitigated" in low_c:
-                    status_val = "Mitigated"
-                elif "investigating" in low_c:
-                    status_val = "Investigating"
+            low_status = status_cell_text.lower()
+            if "resolved" in low_status:
+                status_val = "Resolved"
+            elif "mitigated" in low_status:
+                status_val = "Mitigated"
+            elif "investigating" in low_status:
+                status_val = "Investigating"
+            elif "confirmed" in low_status:
+                status_val = "Confirmed"
+            else:
+                for cell_txt in row_texts:
+                    low_c = cell_txt.lower()
+                    if "resolved" in low_c:
+                        status_val = "Resolved"
+                        break
+                    elif "mitigated" in low_c:
+                        status_val = "Mitigated"
+                        break
+                    elif "investigating" in low_c:
+                        status_val = "Investigating"
+                        break
 
             title = row_texts[0] if len(row_texts[0]) > 8 else (row_texts[1] if len(row_texts) > 1 else full_row_text[:120])
-            date_str = _normalize_date_string(row_texts[-1] if len(row_texts) >= 3 else "")
+
+            # Extract Originating KB release date from Originating update cell when present,
+            # or from the detail section ("After installing the Month DD, YYYY..." / "Opened: YYYY-MM-DD"),
+            # and Last Updated date from the Last updated cell.
+            last_updated_str = _normalize_date_string(updated_cell_text)
+            if DATE_ISO_REGEX.search(orig_cell_text):
+                orig_date_str = _normalize_date_string(orig_cell_text)
+            else:
+                after_inst_m = re.search(r"After installing the ([A-Z][a-z]+ \d{1,2}, 20\d{2})", detail_text)
+                opened_m = re.search(r"Opened:\s*(20\d{2}-\d{2}-\d{2})", detail_text)
+                if after_inst_m:
+                    orig_date_str = _normalize_date_string(after_inst_m.group(1))
+                elif opened_m:
+                    orig_date_str = opened_m.group(1)
+                else:
+                    orig_date_str = last_updated_str
 
             issue_source_url = (
                 f"{source_url}#{anchor_id_found}"
@@ -277,10 +335,24 @@ def parse_release_health_html(
             severity = "Critical" if is_severe else ("High" if status_val == "Confirmed" else "Moderate")
 
             oob_fix_kb = None
-            if oob_meta["is_oob"] and len(kbs_in_row) > 1:
-                oob_fix_kb = kbs_in_row[-1]
+            if oob_meta.get("oob_specific_kbs"):
+                candidate_oob = oob_meta["oob_specific_kbs"][0]
+                if resolving_kb:
+                    if candidate_oob == resolving_kb and not is_patch_tuesday_release(last_updated_str):
+                        oob_fix_kb = candidate_oob
+                else:
+                    if not re.search(
+                        rf"after installing[^.]*{re.escape(candidate_oob)}",
+                        combined_issue_text,
+                        re.IGNORECASE,
+                    ):
+                        oob_fix_kb = candidate_oob
 
-            issue_hash_seed = f"{windows_version}:{primary_kb}:{title[:80]}"
+            resolution_text = None
+            if status_val == "Resolved" and resolving_kb:
+                resolution_text = f"Resolved in {resolving_kb} ({last_updated_str})"
+
+            issue_hash_seed = f"{primary_kb}:{title[:80].lower()}"
             issue_key = f"LIVE-{calculate_content_hash(issue_hash_seed)[:12].upper()}"
 
             extracted_issues.append(
@@ -294,46 +366,138 @@ def parse_release_health_html(
                     "status": status_val,
                     "severity": severity,
                     "is_severe_failure": is_severe,
+                    "resolution": resolution_text,
                     "has_kir": kir_meta["has_kir"],
                     "kir_restart_required": kir_meta["kir_restart_required"],
                     "kir_deployment_method": kir_meta["kir_deployment_method"],
                     "kir_guidance_url": kir_meta["kir_guidance_url"],
                     "kir_gpo_name": kir_meta["kir_gpo_name"],
                     "oob_fix_kb": oob_fix_kb,
-                    "opened_date": date_str,
-                    "last_updated_date": date_str,
-                    "resolved_date": date_str if status_val == "Resolved" else None,
+                    "opened_date": orig_date_str,
+                    "last_updated_date": last_updated_str,
+                    "resolved_date": last_updated_str if status_val == "Resolved" else None,
                     "source_url": issue_source_url,
                     "is_demo": False,
                 }
             )
 
-            for kb_code in kbs_in_row:
-                is_this_oob = bool(oob_fix_kb and kb_code == oob_fix_kb)
-                if kb_code not in extracted_kbs:
-                    extracted_kbs[kb_code] = {
-                        "kb_number": kb_code,
+            # Register the Originating KB with its true originating release date
+            is_orig_oob = bool(oob_fix_kb and primary_kb == oob_fix_kb)
+            if primary_kb not in extracted_kbs:
+                extracted_kbs[primary_kb] = {
+                    "kb_number": primary_kb,
+                    "title": (
+                        f"Out-of-Band (OOB) Update {primary_kb} for {windows_version} (OS Build {os_build})"
+                        if is_orig_oob
+                        else f"Cumulative Update {primary_kb} for {windows_version} (OS Build {os_build})"
+                    ),
+                    "windows_version": windows_version,
+                    "os_build": os_build,
+                    "release_date": orig_date_str,
+                    "patch_tuesday_cycle": derive_patch_tuesday_cycle(orig_date_str),
+                    "update_type": "Out-of-Band (OOB)" if is_orig_oob else "Cumulative",
+                    "is_security_update": True,
+                    "is_oob": is_orig_oob,
+                    "has_kir": kir_meta["has_kir"],
+                    "source_url": source_url,
+                    "telemetry_verified": True,
+                    "data_origin": "Microsoft Release Health (Live Sync)",
+                    "is_demo": False,
+                }
+
+            extracted_lifecycle.append(
+                {
+                    "kb_number": primary_kb,
+                    "event_date": orig_date_str,
+                    "event_type": "RELEASED",
+                    "title": f"{primary_kb} Released ({windows_version})",
+                    "details": f"Cumulative update {primary_kb} (OS Build {os_build}) published by Microsoft.",
+                    "source_url": source_url,
+                }
+            )
+            extracted_lifecycle.append(
+                {
+                    "kb_number": primary_kb,
+                    "event_date": orig_date_str,
+                    "event_type": "KNOWN_ISSUE_OPENED",
+                    "title": f"Known Issue Logged: {title[:90]}",
+                    "details": f"Microsoft Release Health documented known issue ({status_val}) affecting {windows_version} (OS Build {os_build}).",
+                    "source_url": issue_source_url,
+                }
+            )
+
+            # Register the Resolving KB (e.g., today's Patch Tuesday cumulative update that resolved the issue)
+            if resolving_kb:
+                is_res_oob = bool(oob_fix_kb and resolving_kb == oob_fix_kb)
+                if resolving_kb not in extracted_kbs:
+                    extracted_kbs[resolving_kb] = {
+                        "kb_number": resolving_kb,
                         "title": (
-                            f"Out-of-Band (OOB) Update {kb_code} for {windows_version} (OS Build {os_build})"
-                            if is_this_oob
-                            else f"Cumulative Update {kb_code} for {windows_version} (OS Build {os_build})"
+                            f"Out-of-Band (OOB) Update {resolving_kb} for {windows_version}"
+                            if is_res_oob
+                            else f"Cumulative Security Update {resolving_kb} for {windows_version} (OS Build {base_build})"
                         ),
                         "windows_version": windows_version,
-                        "os_build": os_build,
-                        "release_date": date_str,
-                        "patch_tuesday_cycle": derive_patch_tuesday_cycle(date_str),
-                        "update_type": "Out-of-Band (OOB)" if is_this_oob else "Cumulative",
+                        "os_build": f"{base_build} (Cumulative)",
+                        "release_date": last_updated_str,
+                        "patch_tuesday_cycle": derive_patch_tuesday_cycle(last_updated_str),
+                        "update_type": "Out-of-Band (OOB)" if is_res_oob else "Cumulative",
                         "is_security_update": True,
-                        "is_oob": is_this_oob,
-                        "has_kir": kir_meta["has_kir"],
+                        "is_oob": is_res_oob,
+                        "has_kir": False,
                         "source_url": source_url,
                         "telemetry_verified": True,
                         "data_origin": "Microsoft Release Health (Live Sync)",
                         "is_demo": False,
                     }
 
-    # Also scan headings/paragraphs for KB mentions if page uses non-table blocks
-    if not extracted_kbs:
+                extracted_relationships.append(
+                    {
+                        "kb_number": primary_kb,
+                        "related_kb": resolving_kb,
+                        "relationship_type": "oob_replaced_by" if is_res_oob else "superseded_by",
+                        "issue_key": issue_key,
+                        "description": f"Resolved in {resolving_kb} ({last_updated_str}): {title[:140]}",
+                        "source_url": issue_source_url,
+                    }
+                )
+                extracted_relationships.append(
+                    {
+                        "kb_number": resolving_kb,
+                        "related_kb": primary_kb,
+                        "relationship_type": "oob_replaces" if is_res_oob else "supersedes",
+                        "issue_key": issue_key,
+                        "description": f"Resolves Known Issue from {primary_kb} ({orig_date_str}): {title[:140]}",
+                        "source_url": issue_source_url,
+                    }
+                )
+                extracted_lifecycle.append(
+                    {
+                        "kb_number": primary_kb,
+                        "event_date": last_updated_str,
+                        "event_type": "ISSUE_RESOLVED",
+                        "title": f"Resolved by {resolving_kb}",
+                        "details": f"Microsoft resolved '{title[:120]}' in update {resolving_kb} ({last_updated_str}).",
+                        "source_url": issue_source_url,
+                    }
+                )
+                extracted_lifecycle.append(
+                    {
+                        "kb_number": resolving_kb,
+                        "event_date": last_updated_str,
+                        "event_type": "RELEASED",
+                        "title": f"{resolving_kb} Released — Resolves {primary_kb} Known Issue",
+                        "details": f"Update {resolving_kb} released on {last_updated_str} for {windows_version}, resolving '{title[:120]}' from {primary_kb}.",
+                        "source_url": issue_source_url,
+                    }
+                )
+
+    # Also scan headings/paragraphs for KB mentions ONLY on version-specific pages if table extraction found none
+    if (
+        not extracted_kbs
+        and windows_version != "All Supported Desktop Releases"
+        and "windows-message-center" not in source_url.lower()
+    ):
         text_body = soup.get_text(" ", strip=True)
         found_kbs = list(dict.fromkeys(m.upper() for m in KB_REGEX.findall(text_body)))[:10]
         build_m = BUILD_REGEX.search(text_body)
@@ -361,6 +525,8 @@ def parse_release_health_html(
     return {
         "kbs": list(extracted_kbs.values()),
         "known_issues": extracted_issues,
+        "relationships": extracted_relationships,
+        "lifecycle": extracted_lifecycle,
     }
 
 
@@ -511,6 +677,28 @@ async def sync_single_source(
                     _, ich = upsert_known_issue(conn, issue_item, detected_at=now)
                     changes_count += len(ich)
                     items_collected += 1
+
+                for rel_item in parsed.get("relationships", []):
+                    add_kb_relationship(
+                        conn=conn,
+                        kb_number=rel_item["kb_number"],
+                        related_kb=rel_item["related_kb"],
+                        relationship_type=rel_item["relationship_type"],
+                        issue_key=rel_item.get("issue_key"),
+                        description=rel_item.get("description"),
+                        source_url=rel_item.get("source_url"),
+                    )
+
+                for lc_item in parsed.get("lifecycle", []):
+                    add_lifecycle_event(
+                        conn=conn,
+                        kb_number=lc_item["kb_number"],
+                        event_date=lc_item["event_date"],
+                        event_type=lc_item["event_type"],
+                        title=lc_item["title"],
+                        details=lc_item["details"],
+                        source_url=lc_item.get("source_url"),
+                    )
 
                 for kb_item in parsed["kbs"]:
                     recalculate_kb_status(conn, kb_item["kb_number"], source_failed=False, detected_at=now)

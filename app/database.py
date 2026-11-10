@@ -9,7 +9,7 @@ from pathlib import Path
 from typing import Any, Iterator, Optional, Sequence
 
 from app.audit import calculate_content_hash, record_entity_changes, utc_now_iso
-from app.config import DEFAULT_DB_PATH, DEFAULT_MICROSOFT_SOURCES
+from app.config import DEFAULT_DB_PATH, DEFAULT_MICROSOFT_SOURCES, SUPPORTED_WINDOWS_VERSIONS
 from app.models import HealthState
 from app.risk_engine import derive_patch_tuesday_cycle, evaluate_kb_health
 
@@ -388,6 +388,66 @@ def recalculate_kb_status(
     }
 
 
+def _merge_windows_versions(old_ver: Optional[str], new_ver: Optional[str]) -> str:
+    """Merge Windows version labels cleanly when a cumulative KB spans multiple branches (e.g. 26H2 / 25H2 / 24H2)."""
+    generic = "All Supported Desktop Releases"
+    parts: list[str] = []
+    for raw in (old_ver, new_ver):
+        if not raw:
+            continue
+        for token in raw.replace(",", "/").split("/"):
+            cleaned = token.strip()
+            if cleaned and cleaned != generic and cleaned not in parts:
+                parts.append(cleaned)
+
+    if not parts:
+        return (new_ver or old_ver or "Windows 11 24H2").strip()
+
+    order_map = {v: idx for idx, v in enumerate(SUPPORTED_WINDOWS_VERSIONS)}
+    parts.sort(key=lambda x: (order_map.get(x, 99), x))
+    return " / ".join(parts)
+
+
+def _merge_os_builds(old_build: Optional[str], new_build: Optional[str]) -> str:
+    """Merge OS build identifiers across shared servicing branches while preferring concrete dot-builds."""
+    tokens: list[str] = []
+    for raw in (old_build, new_build):
+        if not raw:
+            continue
+        for t in raw.split("/"):
+            c = t.strip()
+            if c and c.lower() != "unknown" and c not in tokens:
+                tokens.append(c)
+
+    if not tokens:
+        return "Unknown"
+
+    concrete = [t for t in tokens if "." in t and not t.endswith(".1")]
+    if concrete:
+        return " / ".join(concrete[:3])
+    non_placeholder = [t for t in tokens if not t.endswith(".1")]
+    if non_placeholder:
+        return " / ".join(non_placeholder[:3])
+    return tokens[0]
+
+
+def _get_canonical_versions(conn: sqlite3.Connection) -> list[str]:
+    """Return canonical Windows version names present in the database in release order."""
+    raw_rows = [
+        r["windows_version"]
+        for r in conn.execute("SELECT DISTINCT windows_version FROM kbs").fetchall()
+        if r["windows_version"]
+    ]
+    found: list[str] = []
+    for sup in SUPPORTED_WINDOWS_VERSIONS:
+        if any(sup in rv for rv in raw_rows):
+            found.append(sup)
+    for rv in raw_rows:
+        if "/" not in rv and rv != "All Supported Desktop Releases" and rv not in found:
+            found.append(rv)
+    return found or list(SUPPORTED_WINDOWS_VERSIONS)
+
+
 def upsert_kb(
     conn: sqlite3.Connection,
     kb_data: dict[str, Any],
@@ -402,11 +462,25 @@ def upsert_kb(
     cycle = kb_data.get("patch_tuesday_cycle") or derive_patch_tuesday_cycle(release_date)
     now = detected_at or kb_data.get("last_checked_at") or utc_now_iso()
 
+    merged_version = _merge_windows_versions(
+        existing.get("windows_version") if existing else None,
+        kb_data.get("windows_version"),
+    )
+    merged_build = _merge_os_builds(
+        existing.get("os_build") if existing else None,
+        kb_data.get("os_build"),
+    )
+
+    raw_title = kb_data.get("title") or (existing.get("title") if existing else f"{kb_number} Windows Update")
+    if " / " in merged_version and raw_title.startswith(("Cumulative Update ", "Cumulative Security Update ")):
+        prefix = "Cumulative Security Update" if raw_title.startswith("Cumulative Security Update") else "Cumulative Update"
+        raw_title = f"{prefix} {kb_number} for {merged_version} (OS Build {merged_build})"
+
     merged = {
         "kb_number": kb_number,
-        "title": kb_data.get("title") or (existing.get("title") if existing else f"{kb_number} Windows Update"),
-        "windows_version": kb_data.get("windows_version") or (existing.get("windows_version") if existing else "Windows 11 24H2"),
-        "os_build": kb_data.get("os_build") or (existing.get("os_build") if existing else "Unknown"),
+        "title": raw_title,
+        "windows_version": merged_version,
+        "os_build": merged_build,
         "release_date": release_date,
         "patch_tuesday_cycle": cycle,
         "update_type": kb_data.get("update_type") or (existing.get("update_type") if existing else "Cumulative"),
@@ -520,11 +594,20 @@ def upsert_known_issue(
     existing = dict(existing_row) if existing_row else None
     now = detected_at or utc_now_iso()
 
+    merged_version = _merge_windows_versions(
+        existing.get("windows_version") if existing else None,
+        issue_data.get("windows_version"),
+    )
+    merged_build = _merge_os_builds(
+        existing.get("os_build") if existing else None,
+        issue_data.get("os_build"),
+    )
+
     merged = {
         "issue_key": issue_key,
         "kb_number": kb_number,
-        "windows_version": issue_data.get("windows_version") or (existing.get("windows_version") if existing else "Windows 11 24H2"),
-        "os_build": issue_data.get("os_build") or (existing.get("os_build") if existing else None),
+        "windows_version": merged_version,
+        "os_build": merged_build if merged_build != "Unknown" else (issue_data.get("os_build") or (existing.get("os_build") if existing else None)),
         "title": issue_data["title"],
         "symptoms": issue_data.get("symptoms") or issue_data["title"],
         "status": issue_data.get("status", "Confirmed"),
@@ -955,8 +1038,8 @@ def query_kbs(
         params.extend([term] * 10)
 
     if windows_version and windows_version.lower() != "all":
-        where_clauses.append("kbs.windows_version = ?")
-        params.append(windows_version)
+        where_clauses.append("(kbs.windows_version = ? OR kbs.windows_version LIKE ?)")
+        params.extend([windows_version, f"%{windows_version}%"])
 
     if status and status.upper() != "ALL":
         where_clauses.append("kbs.health_status = ?")
@@ -997,10 +1080,7 @@ def query_kbs(
         r["patch_tuesday_cycle"]
         for r in conn.execute("SELECT DISTINCT patch_tuesday_cycle FROM kbs ORDER BY patch_tuesday_cycle DESC").fetchall()
     ]
-    versions = [
-        r["windows_version"]
-        for r in conn.execute("SELECT DISTINCT windows_version FROM kbs ORDER BY windows_version DESC").fetchall()
-    ]
+    versions = _get_canonical_versions(conn)
 
     effective_cycle = patch_tuesday_cycle
     if effective_cycle and effective_cycle.lower() == "latest":
@@ -1231,14 +1311,11 @@ def get_dashboard_stats(
     unacked_alerts_count = int(conn.execute("SELECT COUNT(*) FROM alerts WHERE acknowledged = 0").fetchone()[0])
 
     # Per-Windows-version health summary (scoped to cycle if specified, showing all supported branches)
-    all_versions = [
-        r["windows_version"]
-        for r in conn.execute("SELECT DISTINCT windows_version FROM kbs ORDER BY windows_version DESC").fetchall()
-    ]
+    all_versions = _get_canonical_versions(conn)
 
     version_health: list[dict[str, Any]] = []
     for win_ver in all_versions:
-        v_params: list[Any] = [win_ver]
+        v_params: list[Any] = [win_ver, f"%{win_ver}%"]
         v_cycle_clause = ""
         if effective_cycle and effective_cycle.lower() != "all":
             v_cycle_clause = "AND patch_tuesday_cycle = ?"
@@ -1257,7 +1334,7 @@ def get_dashboard_stats(
                 COALESCE(SUM(CASE WHEN has_kir = 1 THEN 1 ELSE 0 END), 0) AS kir_count,
                 MAX(release_date) AS latest_release_date
             FROM kbs
-            WHERE windows_version = ? {v_cycle_clause}
+            WHERE (windows_version = ? OR windows_version LIKE ?) {v_cycle_clause}
             """,
             v_params,
         ).fetchone()
@@ -1279,7 +1356,7 @@ def get_dashboard_stats(
             overall = HealthState.SAFE.value
 
         latest_kb_row = conn.execute(
-            f"SELECT kb_number, os_build, health_status FROM kbs WHERE windows_version = ? {v_cycle_clause} ORDER BY release_date DESC, kb_number DESC LIMIT 1",
+            f"SELECT kb_number, os_build, health_status FROM kbs WHERE (windows_version = ? OR windows_version LIKE ?) {v_cycle_clause} ORDER BY release_date DESC, kb_number DESC LIMIT 1",
             v_params,
         ).fetchone()
 
@@ -1289,7 +1366,7 @@ def get_dashboard_stats(
                 SELECT COUNT(*)
                 FROM known_issues ki
                 JOIN kbs k ON k.kb_number = ki.kb_number
-                WHERE k.windows_version = ? {v_cycle_clause} AND LOWER(ki.status) != 'resolved'
+                WHERE (k.windows_version = ? OR k.windows_version LIKE ?) {v_cycle_clause} AND LOWER(ki.status) != 'resolved'
                 """,
                 v_params,
             ).fetchone()[0]
@@ -1422,9 +1499,21 @@ def get_dashboard_stats(
         advisory_headline = f"TELEMETRY UNVERIFIED ({cycle_label}): Official Microsoft Release Health sources have not been verified."
         advisory_detail = "Automated GitHub Action synchronization runs every 4 hours against Microsoft Release Health and MSRC CVRF."
     else:
+        cycle_kbs_rows = conn.execute(
+            f"SELECT kb_number, release_date FROM kbs {cycle_where} ORDER BY release_date DESC, kb_number DESC LIMIT 6",
+            cycle_params,
+        ).fetchall()
+        latest_rel_date = cycle_kbs_rows[0]["release_date"] if cycle_kbs_rows else "N/A"
+        kb_list_str = ", ".join(r["kb_number"] for r in cycle_kbs_rows) if cycle_kbs_rows else "None"
         advisory_level = "SAFE"
-        advisory_headline = f"NORMAL OPERATIONS ({cycle_label}): No unmitigated critical regressions across tracked Windows branches."
-        advisory_detail = "All verified updates in this cycle are clear for standard phased ring deployment."
+        advisory_headline = (
+            f"NORMAL OPERATIONS ({cycle_label} • Released {latest_rel_date}): "
+            f"No unmitigated active regressions in latest updates ({kb_list_str})."
+        )
+        advisory_detail = (
+            "All verified updates in this Patch Tuesday cycle are clear for standard phased ring deployment. "
+            "To inspect Known Issues from previous monthly updates, select an earlier cycle or 'All Cycles' in the filter bar below."
+        )
 
     return {
         "selected_cycle": effective_cycle or "all",

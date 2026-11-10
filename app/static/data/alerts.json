@@ -1,91 +1,7 @@
 {
   "items": [
     {
-      "id": 18,
-      "kb_number": "KB5129236",
-      "windows_version": "Windows 10 22H2",
-      "severity": "CAUTION",
-      "alert_type": "STATUS_CHANGE",
-      "title": "KB5129236 Operational Health Changed: SAFE -> CAUTION",
-      "summary": "CAUTION: Requires administrator evaluation before broad deployment. KB5129236 is an Out-of-Band (OOB) update; Microsoft recommends deploying only to environments impacted by the targeted regression.",
-      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-10-22h2",
-      "acknowledged": false,
-      "acknowledged_at": null,
-      "is_demo": false,
-      "created_at": "2026-10-22T00:12:18Z"
-    },
-    {
-      "id": 17,
-      "kb_number": "KB5129242",
-      "windows_version": "Windows 11 23H2",
-      "severity": "CAUTION",
-      "alert_type": "STATUS_CHANGE",
-      "title": "KB5129242 Operational Health Changed: SAFE -> CAUTION",
-      "summary": "CAUTION: Requires administrator evaluation before broad deployment. KB5129242 is an Out-of-Band (OOB) update; Microsoft recommends deploying only to environments impacted by the targeted regression.",
-      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2",
-      "acknowledged": false,
-      "acknowledged_at": null,
-      "is_demo": false,
-      "created_at": "2026-10-22T00:12:17Z"
-    },
-    {
-      "id": 16,
-      "kb_number": "KB5129195",
-      "windows_version": "Windows 11 24H2",
-      "severity": "CAUTION",
-      "alert_type": "STATUS_CHANGE",
-      "title": "KB5129195 Operational Health Changed: SAFE -> CAUTION",
-      "summary": "CAUTION: Requires administrator evaluation before broad deployment. KB5129195 is an Out-of-Band (OOB) update; Microsoft recommends deploying only to environments impacted by the targeted regression.",
-      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2",
-      "acknowledged": false,
-      "acknowledged_at": null,
-      "is_demo": false,
-      "created_at": "2026-10-22T00:12:16Z"
-    },
-    {
-      "id": 15,
-      "kb_number": "KB5129236",
-      "windows_version": "All Supported Desktop Releases",
-      "severity": "SAFE",
-      "alert_type": "STATUS_CHANGE",
-      "title": "KB5129236 Operational Health Changed: CAUTION -> SAFE",
-      "summary": "SAFE: Official Microsoft Release Health telemetry verified for KB5129236. No active known issues, Known Issue Rollbacks (KIR), or Out-of-Band (OOB) replacements are reported by Microsoft.",
-      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/windows-message-center",
-      "acknowledged": false,
-      "acknowledged_at": null,
-      "is_demo": false,
-      "created_at": "2026-10-22T00:06:36Z"
-    },
-    {
-      "id": 14,
-      "kb_number": "KB5129242",
-      "windows_version": "All Supported Desktop Releases",
-      "severity": "SAFE",
-      "alert_type": "STATUS_CHANGE",
-      "title": "KB5129242 Operational Health Changed: CAUTION -> SAFE",
-      "summary": "SAFE: Official Microsoft Release Health telemetry verified for KB5129242. No active known issues, Known Issue Rollbacks (KIR), or Out-of-Band (OOB) replacements are reported by Microsoft.",
-      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/windows-message-center",
-      "acknowledged": false,
-      "acknowledged_at": null,
-      "is_demo": false,
-      "created_at": "2026-10-22T00:06:36Z"
-    },
-    {
-      "id": 13,
-      "kb_number": "KB5129195",
-      "windows_version": "All Supported Desktop Releases",
-      "severity": "SAFE",
-      "alert_type": "STATUS_CHANGE",
-      "title": "KB5129195 Operational Health Changed: CAUTION -> SAFE",
-      "summary": "SAFE: Official Microsoft Release Health telemetry verified for KB5129195. No active known issues, Known Issue Rollbacks (KIR), or Out-of-Band (OOB) replacements are reported by Microsoft.",
-      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/windows-message-center",
-      "acknowledged": false,
-      "acknowledged_at": null,
-      "is_demo": false,
-      "created_at": "2026-10-22T00:06:36Z"
-    },
-    {
-      "id": 10,
+      "id": 2,
       "kb_number": "KB5045934",
       "windows_version": "Windows 11 24H2",
       "severity": "AFFECTED",
@@ -99,7 +15,7 @@
       "created_at": "2026-10-16T15:00:00Z"
     },
     {
-      "id": 9,
+      "id": 1,
       "kb_number": "KB5044284",
       "windows_version": "Windows 11 24H2",
       "severity": "AFFECTED",
@@ -113,7 +29,7 @@
       "created_at": "2026-10-16T14:30:00Z"
     },
     {
-      "id": 11,
+      "id": 3,
       "kb_number": "KB5044285",
       "windows_version": "Windows 11 23H2",
       "severity": "CAUTION",
@@ -127,7 +43,7 @@
       "created_at": "2026-10-15T12:00:00Z"
     },
     {
-      "id": 12,
+      "id": 4,
       "kb_number": "KB5044273",
       "windows_version": "Windows 10 22H2",
       "severity": "MONITOR",
@@ -141,6 +57,6 @@
       "created_at": "2026-10-13T20:00:00Z"
     }
   ],
-  "total": 10,
-  "unacknowledged_count": 10
+  "total": 4,
+  "unacknowledged_count": 4
 }

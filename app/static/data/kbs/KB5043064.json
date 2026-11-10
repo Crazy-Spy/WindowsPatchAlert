@@ -32,7 +32,7 @@
   "known_issues": [],
   "cves": [
     {
-      "id": 27,
+      "id": 9,
       "cve_id": "CVE-2024-38018",
       "kb_number": "KB5043064",
       "title": "Windows TCP/IP Remote Code Execution Vulnerability",
@@ -50,7 +50,7 @@
   ],
   "relationships": [
     {
-      "id": 27,
+      "id": 6,
       "kb_number": "KB5043064",
       "related_kb": "KB5044273",
       "relationship_type": "superseded_by",
@@ -62,7 +62,7 @@
   "lifecycle": [],
   "changes": [
     {
-      "id": 234,
+      "id": 76,
       "entity_type": "KB",
       "entity_id": "KB5043064",
       "kb_number": "KB5043064",
@@ -76,7 +76,7 @@
       "detected_at": "2026-10-16T14:30:00Z"
     },
     {
-      "id": 233,
+      "id": 75,
       "entity_type": "KB",
       "entity_id": "KB5043064",
       "kb_number": "KB5043064",
@@ -90,7 +90,7 @@
       "detected_at": "2026-10-16T14:30:00Z"
     },
     {
-      "id": 220,
+      "id": 62,
       "entity_type": "CVE",
       "entity_id": "CVE-2024-38018:KB5043064",
       "kb_number": "KB5043064",
@@ -104,7 +104,7 @@
       "detected_at": "2026-10-13T18:00:00Z"
     },
     {
-      "id": 219,
+      "id": 61,
       "entity_type": "CVE",
       "entity_id": "CVE-2024-38018:KB5043064",
       "kb_number": "KB5043064",
@@ -118,7 +118,7 @@
       "detected_at": "2026-10-13T18:00:00Z"
     },
     {
-      "id": 182,
+      "id": 24,
       "entity_type": "KB",
       "entity_id": "KB5043064",
       "kb_number": "KB5043064",
@@ -132,7 +132,7 @@
       "detected_at": "2026-09-08T18:00:00Z"
     },
     {
-      "id": 181,
+      "id": 23,
       "entity_type": "KB",
       "entity_id": "KB5043064",
       "kb_number": "KB5043064",
@@ -146,7 +146,7 @@
       "detected_at": "2026-09-08T18:00:00Z"
     },
     {
-      "id": 180,
+      "id": 22,
       "entity_type": "KB",
       "entity_id": "KB5043064",
       "kb_number": "KB5043064",
@@ -160,7 +160,7 @@
       "detected_at": "2026-09-08T18:00:00Z"
     },
     {
-      "id": 179,
+      "id": 21,
       "entity_type": "KB",
       "entity_id": "KB5043064",
       "kb_number": "KB5043064",

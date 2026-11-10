@@ -1,0 +1,146 @@
+{
+  "kb_number": "KB5131087",
+  "title": "Cumulative Security Update KB5131087 for Windows 11 23H2 (OS Build 22631)",
+  "windows_version": "Windows 11 23H2",
+  "os_build": "22631 (Cumulative)",
+  "release_date": "2026-11-10",
+  "patch_tuesday_cycle": "2026-11",
+  "update_type": "Cumulative",
+  "is_security_update": true,
+  "is_oob": false,
+  "has_kir": false,
+  "health_status": "SAFE",
+  "health_rationale": "SAFE: Official Microsoft Release Health telemetry verified for KB5131087. No active known issues, Known Issue Rollbacks (KIR), or Out-of-Band (OOB) replacements are reported by Microsoft.",
+  "known_issues_count": 0,
+  "active_issues_count": 0,
+  "cve_count": 0,
+  "exploited_cve_count": 0,
+  "supersedes_kbs": [
+    "KB5122880"
+  ],
+  "superseded_by_kbs": [],
+  "oob_replaces_kbs": [],
+  "oob_replaced_by_kbs": [],
+  "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2",
+  "telemetry_verified": true,
+  "data_origin": "Microsoft Release Health (Live Sync)",
+  "is_demo": false,
+  "last_checked_at": "2026-11-10T20:52:28Z",
+  "content_hash": "e1ec97c00cc4433fae142d0eb538a400367d2409dcf210486eda0afe257d3a0a",
+  "summary": null,
+  "highlights": null,
+  "known_issues": [],
+  "cves": [],
+  "relationships": [
+    {
+      "id": 37,
+      "kb_number": "KB5131087",
+      "related_kb": "KB5122880",
+      "relationship_type": "supersedes",
+      "issue_key": "LIVE-3DDEA85BB636",
+      "description": "Resolves Known Issue from KB5122880 (2026-09-08): USB audio devices might fail to start or produce no sound Some USB Audio Class 1.0 devices display Code 10 or fail in multichannel audio mod",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2#4984msgdesc"
+    }
+  ],
+  "lifecycle": [
+    {
+      "id": 73,
+      "kb_number": "KB5131087",
+      "event_date": "2026-11-10",
+      "event_type": "RELEASED",
+      "title": "KB5131087 Released — Resolves KB5122880 Known Issue",
+      "details": "Update KB5131087 released on 2026-11-10 for Windows 11 23H2, resolving 'USB audio devices might fail to start or produce no sound Some USB Audio Class 1.0 devices display Code 10 or fail in mu' from KB5122880.",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2#4984msgdesc"
+    }
+  ],
+  "changes": [
+    {
+      "id": 209,
+      "entity_type": "KB",
+      "entity_id": "KB5131087",
+      "kb_number": "KB5131087",
+      "field_name": "health_rationale",
+      "old_value": "",
+      "new_value": "SAFE: Official Microsoft Release Health telemetry verified for KB5131087. No active known issues, Known Issue Rollbacks (KIR), or Out-of-Band (OOB) replacements are reported by Microsoft.",
+      "change_type": "UPDATED",
+      "content_hash": "e1ec97c00cc4433fae142d0eb538a400367d2409dcf210486eda0afe257d3a0a",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2",
+      "is_demo": false,
+      "detected_at": "2026-11-10T20:52:28Z"
+    },
+    {
+      "id": 208,
+      "entity_type": "KB",
+      "entity_id": "KB5131087",
+      "kb_number": "KB5131087",
+      "field_name": "health_status",
+      "old_value": "UNKNOWN",
+      "new_value": "SAFE",
+      "change_type": "STATUS_CHANGED",
+      "content_hash": "e1ec97c00cc4433fae142d0eb538a400367d2409dcf210486eda0afe257d3a0a",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2",
+      "is_demo": false,
+      "detected_at": "2026-11-10T20:52:28Z"
+    },
+    {
+      "id": 201,
+      "entity_type": "KB",
+      "entity_id": "KB5131087",
+      "kb_number": "KB5131087",
+      "field_name": "health_status",
+      "old_value": "",
+      "new_value": "UNKNOWN",
+      "change_type": "CREATED",
+      "content_hash": "160f0d6042e062b35b1fc6f391da850ddcc9db26ec727819cda3bdda99444307",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2",
+      "is_demo": false,
+      "detected_at": "2026-11-10T20:52:28Z"
+    },
+    {
+      "id": 200,
+      "entity_type": "KB",
+      "entity_id": "KB5131087",
+      "kb_number": "KB5131087",
+      "field_name": "has_kir",
+      "old_value": "",
+      "new_value": "0",
+      "change_type": "CREATED",
+      "content_hash": "160f0d6042e062b35b1fc6f391da850ddcc9db26ec727819cda3bdda99444307",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2",
+      "is_demo": false,
+      "detected_at": "2026-11-10T20:52:28Z"
+    },
+    {
+      "id": 199,
+      "entity_type": "KB",
+      "entity_id": "KB5131087",
+      "kb_number": "KB5131087",
+      "field_name": "is_oob",
+      "old_value": "",
+      "new_value": "0",
+      "change_type": "CREATED",
+      "content_hash": "160f0d6042e062b35b1fc6f391da850ddcc9db26ec727819cda3bdda99444307",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2",
+      "is_demo": false,
+      "detected_at": "2026-11-10T20:52:28Z"
+    },
+    {
+      "id": 198,
+      "entity_type": "KB",
+      "entity_id": "KB5131087",
+      "kb_number": "KB5131087",
+      "field_name": "title",
+      "old_value": "",
+      "new_value": "Cumulative Security Update KB5131087 for Windows 11 23H2 (OS Build 22631)",
+      "change_type": "CREATED",
+      "content_hash": "160f0d6042e062b35b1fc6f391da850ddcc9db26ec727819cda3bdda99444307",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2",
+      "is_demo": false,
+      "detected_at": "2026-11-10T20:52:28Z"
+    }
+  ],
+  "risk_factors": [
+    "Official Microsoft Release Health telemetry verified.",
+    "Zero active, mitigated, or investigating known issues reported by Microsoft."
+  ]
+}

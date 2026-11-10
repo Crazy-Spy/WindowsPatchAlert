@@ -170,15 +170,27 @@ def detect_oob_metadata(title: str, description: str = "", kb_number: str = "") 
     lower = combined.lower()
     is_oob = "out-of-band" in lower or "out of band" in lower or bool(re.search(r"\boob\b", lower))
 
-    all_kbs = []
+    all_kbs: list[str] = []
     for match in KB_REGEX.findall(combined):
         norm = match.upper()
         if norm != (kb_number or "").upper() and norm not in all_kbs:
             all_kbs.append(norm)
 
+    # Identify KBs explicitly mentioned in the same sentence/clause as "out-of-band" or "OOB"
+    oob_specific_kbs: list[str] = []
+    if is_oob:
+        for clause in re.split(r"[.!?\n]+", combined):
+            c_low = clause.lower()
+            if "out-of-band" in c_low or "out of band" in c_low or re.search(r"\boob\b", c_low):
+                for m in KB_REGEX.findall(clause):
+                    norm_m = m.upper()
+                    if norm_m != (kb_number or "").upper() and norm_m not in oob_specific_kbs:
+                        oob_specific_kbs.append(norm_m)
+
     return {
         "is_oob": is_oob,
         "referenced_kbs": all_kbs,
+        "oob_specific_kbs": oob_specific_kbs,
     }
 
 

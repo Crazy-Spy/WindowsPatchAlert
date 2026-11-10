@@ -34,7 +34,7 @@
   "known_issues": [],
   "cves": [
     {
-      "id": 20,
+      "id": 2,
       "cve_id": "CVE-2024-43573",
       "kb_number": "KB5045934",
       "title": "Windows MSHTML Platform Spoofing Vulnerability",
@@ -52,7 +52,7 @@
   ],
   "relationships": [
     {
-      "id": 23,
+      "id": 2,
       "kb_number": "KB5045934",
       "related_kb": "KB5044284",
       "relationship_type": "oob_replaces",
@@ -63,7 +63,7 @@
   ],
   "lifecycle": [
     {
-      "id": 38,
+      "id": 5,
       "kb_number": "KB5045934",
       "event_date": "2026-10-16",
       "event_type": "Released",
@@ -74,7 +74,7 @@
   ],
   "changes": [
     {
-      "id": 224,
+      "id": 66,
       "entity_type": "KB",
       "entity_id": "KB5045934",
       "kb_number": "KB5045934",
@@ -88,7 +88,7 @@
       "detected_at": "2026-10-16T14:30:00Z"
     },
     {
-      "id": 223,
+      "id": 65,
       "entity_type": "KB",
       "entity_id": "KB5045934",
       "kb_number": "KB5045934",
@@ -102,7 +102,7 @@
       "detected_at": "2026-10-16T14:30:00Z"
     },
     {
-      "id": 166,
+      "id": 8,
       "entity_type": "KB",
       "entity_id": "KB5045934",
       "kb_number": "KB5045934",
@@ -116,7 +116,7 @@
       "detected_at": "2026-10-16T14:30:00Z"
     },
     {
-      "id": 165,
+      "id": 7,
       "entity_type": "KB",
       "entity_id": "KB5045934",
       "kb_number": "KB5045934",
@@ -130,7 +130,7 @@
       "detected_at": "2026-10-16T14:30:00Z"
     },
     {
-      "id": 164,
+      "id": 6,
       "entity_type": "KB",
       "entity_id": "KB5045934",
       "kb_number": "KB5045934",
@@ -144,7 +144,7 @@
       "detected_at": "2026-10-16T14:30:00Z"
     },
     {
-      "id": 163,
+      "id": 5,
       "entity_type": "KB",
       "entity_id": "KB5045934",
       "kb_number": "KB5045934",
@@ -158,7 +158,7 @@
       "detected_at": "2026-10-16T14:30:00Z"
     },
     {
-      "id": 206,
+      "id": 48,
       "entity_type": "CVE",
       "entity_id": "CVE-2024-43573:KB5045934",
       "kb_number": "KB5045934",
@@ -172,7 +172,7 @@
       "detected_at": "2026-10-13T18:00:00Z"
     },
     {
-      "id": 205,
+      "id": 47,
       "entity_type": "CVE",
       "entity_id": "CVE-2024-43573:KB5045934",
       "kb_number": "KB5045934",

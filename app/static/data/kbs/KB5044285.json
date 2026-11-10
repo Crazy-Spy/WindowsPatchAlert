@@ -31,7 +31,7 @@
   "highlights": "Includes servicing stack improvements and security fixes for Windows Management Instrumentation and USB print drivers.",
   "known_issues": [
     {
-      "id": 8,
+      "id": 2,
       "issue_key": "ISSUE-KB5044285-USB-PRINT-KIR",
       "kb_number": "KB5044285",
       "windows_version": "Windows 11 23H2",
@@ -59,7 +59,7 @@
   ],
   "cves": [
     {
-      "id": 21,
+      "id": 3,
       "cve_id": "CVE-2024-43573",
       "kb_number": "KB5044285",
       "title": "Windows MSHTML Platform Spoofing Vulnerability",
@@ -75,7 +75,7 @@
       "content_hash": "e00bedd671c972d0b25552981d7938392b91cdce26b2de299e4c5fd328f3cf46"
     },
     {
-      "id": 25,
+      "id": 7,
       "cve_id": "CVE-2024-43582",
       "kb_number": "KB5044285",
       "title": "Remote Desktop Protocol Server Remote Code Execution Vulnerability",
@@ -93,7 +93,7 @@
   ],
   "relationships": [
     {
-      "id": 24,
+      "id": 3,
       "kb_number": "KB5044285",
       "related_kb": "KB5043076",
       "relationship_type": "supersedes",
@@ -104,7 +104,7 @@
   ],
   "lifecycle": [
     {
-      "id": 39,
+      "id": 6,
       "kb_number": "KB5044285",
       "event_date": "2026-10-13",
       "event_type": "Released",
@@ -113,7 +113,7 @@
       "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2"
     },
     {
-      "id": 40,
+      "id": 7,
       "kb_number": "KB5044285",
       "event_date": "2026-10-14",
       "event_type": "KIR Issued",
@@ -124,7 +124,7 @@
   ],
   "changes": [
     {
-      "id": 226,
+      "id": 68,
       "entity_type": "KB",
       "entity_id": "KB5044285",
       "kb_number": "KB5044285",
@@ -138,7 +138,7 @@
       "detected_at": "2026-10-16T14:30:00Z"
     },
     {
-      "id": 225,
+      "id": 67,
       "entity_type": "KB",
       "entity_id": "KB5044285",
       "kb_number": "KB5044285",
@@ -152,7 +152,7 @@
       "detected_at": "2026-10-16T14:30:00Z"
     },
     {
-      "id": 198,
+      "id": 40,
       "entity_type": "KNOWN_ISSUE",
       "entity_id": "ISSUE-KB5044285-USB-PRINT-KIR",
       "kb_number": "KB5044285",
@@ -166,7 +166,7 @@
       "detected_at": "2026-10-15T11:20:00Z"
     },
     {
-      "id": 197,
+      "id": 39,
       "entity_type": "KNOWN_ISSUE",
       "entity_id": "ISSUE-KB5044285-USB-PRINT-KIR",
       "kb_number": "KB5044285",
@@ -180,7 +180,7 @@
       "detected_at": "2026-10-15T11:20:00Z"
     },
     {
-      "id": 196,
+      "id": 38,
       "entity_type": "KNOWN_ISSUE",
       "entity_id": "ISSUE-KB5044285-USB-PRINT-KIR",
       "kb_number": "KB5044285",
@@ -194,7 +194,7 @@
       "detected_at": "2026-10-15T11:20:00Z"
     },
     {
-      "id": 195,
+      "id": 37,
       "entity_type": "KNOWN_ISSUE",
       "entity_id": "ISSUE-KB5044285-USB-PRINT-KIR",
       "kb_number": "KB5044285",
@@ -208,7 +208,7 @@
       "detected_at": "2026-10-15T11:20:00Z"
     },
     {
-      "id": 216,
+      "id": 58,
       "entity_type": "CVE",
       "entity_id": "CVE-2024-43582:KB5044285",
       "kb_number": "KB5044285",
@@ -222,7 +222,7 @@
       "detected_at": "2026-10-13T18:00:00Z"
     },
     {
-      "id": 215,
+      "id": 57,
       "entity_type": "CVE",
       "entity_id": "CVE-2024-43582:KB5044285",
       "kb_number": "KB5044285",
@@ -236,7 +236,7 @@
       "detected_at": "2026-10-13T18:00:00Z"
     },
     {
-      "id": 208,
+      "id": 50,
       "entity_type": "CVE",
       "entity_id": "CVE-2024-43573:KB5044285",
       "kb_number": "KB5044285",
@@ -250,7 +250,7 @@
       "detected_at": "2026-10-13T18:00:00Z"
     },
     {
-      "id": 207,
+      "id": 49,
       "entity_type": "CVE",
       "entity_id": "CVE-2024-43573:KB5044285",
       "kb_number": "KB5044285",
@@ -264,7 +264,7 @@
       "detected_at": "2026-10-13T18:00:00Z"
     },
     {
-      "id": 170,
+      "id": 12,
       "entity_type": "KB",
       "entity_id": "KB5044285",
       "kb_number": "KB5044285",
@@ -278,7 +278,7 @@
       "detected_at": "2026-10-13T18:00:00Z"
     },
     {
-      "id": 169,
+      "id": 11,
       "entity_type": "KB",
       "entity_id": "KB5044285",
       "kb_number": "KB5044285",
@@ -292,7 +292,7 @@
       "detected_at": "2026-10-13T18:00:00Z"
     },
     {
-      "id": 168,
+      "id": 10,
       "entity_type": "KB",
       "entity_id": "KB5044285",
       "kb_number": "KB5044285",
@@ -306,7 +306,7 @@
       "detected_at": "2026-10-13T18:00:00Z"
     },
     {
-      "id": 167,
+      "id": 9,
       "entity_type": "KB",
       "entity_id": "KB5044285",
       "kb_number": "KB5044285",

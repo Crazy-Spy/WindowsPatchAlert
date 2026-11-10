@@ -371,7 +371,10 @@ def test_api_alerts_acknowledge_changes_and_sources(client: TestClient):
     sources_resp = client.get("/api/sources")
     assert sources_resp.status_code == 200
     sources = sources_resp.json()["items"]
-    assert len(sources) == 6
+    assert len(sources) == 8
+    source_keys = {s["source_key"] for s in sources}
+    assert "win11_26h2_release_health" in source_keys
+    assert "win11_25h2_release_health" in source_keys
     src_id = sources[0]["id"]
 
     patch_resp = client.patch(

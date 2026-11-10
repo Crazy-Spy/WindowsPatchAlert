@@ -50,6 +50,8 @@ def export_static_snapshot(base_url: str = "./") -> dict[str, Any]:
         _write_json(DATA_DIR / "kbs.json", kbs_data)
 
         # 3. Full Dossier per KB + combined dossiers map
+        for old_kb_file in (DATA_DIR / "kbs").glob("*.json"):
+            old_kb_file.unlink(missing_ok=True)
         dossiers_map: dict[str, Any] = {}
         for kb_summary in kbs_data.get("items", []):
             kb_num = kb_summary["kb_number"]

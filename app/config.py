@@ -21,8 +21,36 @@ USER_AGENT = (
     "(+https://learn.microsoft.com/en-us/windows/release-health/; Windows Desktop Update Intelligence)"
 )
 
+# Canonical order of supported Windows Desktop releases
+SUPPORTED_WINDOWS_VERSIONS: list[str] = [
+    "Windows 11 26H2",
+    "Windows 11 25H2",
+    "Windows 11 24H2",
+    "Windows 11 23H2",
+    "Windows 11 22H2",
+    "Windows 10 22H2",
+]
+
 # Default configurable Official Microsoft Sources
 DEFAULT_MICROSOFT_SOURCES: list[dict[str, Any]] = [
+    {
+        "source_key": "win11_26h2_release_health",
+        "name": "Windows 11, version 26H2 Release Health",
+        "source_type": "release_health",
+        "windows_version": "Windows 11 26H2",
+        "url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-26h2",
+        "enabled": True,
+        "check_interval_minutes": 240,
+    },
+    {
+        "source_key": "win11_25h2_release_health",
+        "name": "Windows 11, version 25H2 Release Health",
+        "source_type": "release_health",
+        "windows_version": "Windows 11 25H2",
+        "url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-25h2",
+        "enabled": True,
+        "check_interval_minutes": 240,
+    },
     {
         "source_key": "win11_24h2_release_health",
         "name": "Windows 11, version 24H2 Release Health",

@@ -1,0 +1,146 @@
+{
+  "kb_number": "KB5131096",
+  "title": "Cumulative Security Update KB5131096 for Windows 10 22H2 (OS Build 19045)",
+  "windows_version": "Windows 10 22H2",
+  "os_build": "19045 (Cumulative)",
+  "release_date": "2026-11-10",
+  "patch_tuesday_cycle": "2026-11",
+  "update_type": "Cumulative",
+  "is_security_update": true,
+  "is_oob": false,
+  "has_kir": false,
+  "health_status": "SAFE",
+  "health_rationale": "SAFE: Official Microsoft Release Health telemetry verified for KB5131096. No active known issues, Known Issue Rollbacks (KIR), or Out-of-Band (OOB) replacements are reported by Microsoft.",
+  "known_issues_count": 0,
+  "active_issues_count": 0,
+  "cve_count": 0,
+  "exploited_cve_count": 0,
+  "supersedes_kbs": [
+    "KB5122878"
+  ],
+  "superseded_by_kbs": [],
+  "oob_replaces_kbs": [],
+  "oob_replaced_by_kbs": [],
+  "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-10-22h2",
+  "telemetry_verified": true,
+  "data_origin": "Microsoft Release Health (Live Sync)",
+  "is_demo": false,
+  "last_checked_at": "2026-11-10T20:52:29Z",
+  "content_hash": "9f6f224e0c25128fc108b18d6239e27b5a57cdf4d598d975fc73b0516b0dfc97",
+  "summary": null,
+  "highlights": null,
+  "known_issues": [],
+  "cves": [],
+  "relationships": [
+    {
+      "id": 39,
+      "kb_number": "KB5131096",
+      "related_kb": "KB5122878",
+      "relationship_type": "supersedes",
+      "issue_key": "LIVE-19FB4C43BD93",
+      "description": "Resolves Known Issue from KB5122878 (2026-09-08): USB audio devices might fail to start or produce no sound Some USB Audio Class 1.0 devices display Code 10 or fail in multichannel audio mod",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-10-22h2#4984msgdesc"
+    }
+  ],
+  "lifecycle": [
+    {
+      "id": 77,
+      "kb_number": "KB5131096",
+      "event_date": "2026-11-10",
+      "event_type": "RELEASED",
+      "title": "KB5131096 Released — Resolves KB5122878 Known Issue",
+      "details": "Update KB5131096 released on 2026-11-10 for Windows 10 22H2, resolving 'USB audio devices might fail to start or produce no sound Some USB Audio Class 1.0 devices display Code 10 or fail in mu' from KB5122878.",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-10-22h2#4984msgdesc"
+    }
+  ],
+  "changes": [
+    {
+      "id": 225,
+      "entity_type": "KB",
+      "entity_id": "KB5131096",
+      "kb_number": "KB5131096",
+      "field_name": "health_rationale",
+      "old_value": "",
+      "new_value": "SAFE: Official Microsoft Release Health telemetry verified for KB5131096. No active known issues, Known Issue Rollbacks (KIR), or Out-of-Band (OOB) replacements are reported by Microsoft.",
+      "change_type": "UPDATED",
+      "content_hash": "9f6f224e0c25128fc108b18d6239e27b5a57cdf4d598d975fc73b0516b0dfc97",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-10-22h2",
+      "is_demo": false,
+      "detected_at": "2026-11-10T20:52:29Z"
+    },
+    {
+      "id": 224,
+      "entity_type": "KB",
+      "entity_id": "KB5131096",
+      "kb_number": "KB5131096",
+      "field_name": "health_status",
+      "old_value": "UNKNOWN",
+      "new_value": "SAFE",
+      "change_type": "STATUS_CHANGED",
+      "content_hash": "9f6f224e0c25128fc108b18d6239e27b5a57cdf4d598d975fc73b0516b0dfc97",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-10-22h2",
+      "is_demo": false,
+      "detected_at": "2026-11-10T20:52:29Z"
+    },
+    {
+      "id": 217,
+      "entity_type": "KB",
+      "entity_id": "KB5131096",
+      "kb_number": "KB5131096",
+      "field_name": "health_status",
+      "old_value": "",
+      "new_value": "UNKNOWN",
+      "change_type": "CREATED",
+      "content_hash": "1b11a8571819a68d45b4f2b1ac41c904a45813720a64c288d924bc2fb1c9f7a4",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-10-22h2",
+      "is_demo": false,
+      "detected_at": "2026-11-10T20:52:29Z"
+    },
+    {
+      "id": 216,
+      "entity_type": "KB",
+      "entity_id": "KB5131096",
+      "kb_number": "KB5131096",
+      "field_name": "has_kir",
+      "old_value": "",
+      "new_value": "0",
+      "change_type": "CREATED",
+      "content_hash": "1b11a8571819a68d45b4f2b1ac41c904a45813720a64c288d924bc2fb1c9f7a4",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-10-22h2",
+      "is_demo": false,
+      "detected_at": "2026-11-10T20:52:29Z"
+    },
+    {
+      "id": 215,
+      "entity_type": "KB",
+      "entity_id": "KB5131096",
+      "kb_number": "KB5131096",
+      "field_name": "is_oob",
+      "old_value": "",
+      "new_value": "0",
+      "change_type": "CREATED",
+      "content_hash": "1b11a8571819a68d45b4f2b1ac41c904a45813720a64c288d924bc2fb1c9f7a4",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-10-22h2",
+      "is_demo": false,
+      "detected_at": "2026-11-10T20:52:29Z"
+    },
+    {
+      "id": 214,
+      "entity_type": "KB",
+      "entity_id": "KB5131096",
+      "kb_number": "KB5131096",
+      "field_name": "title",
+      "old_value": "",
+      "new_value": "Cumulative Security Update KB5131096 for Windows 10 22H2 (OS Build 19045)",
+      "change_type": "CREATED",
+      "content_hash": "1b11a8571819a68d45b4f2b1ac41c904a45813720a64c288d924bc2fb1c9f7a4",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-10-22h2",
+      "is_demo": false,
+      "detected_at": "2026-11-10T20:52:29Z"
+    }
+  ],
+  "risk_factors": [
+    "Official Microsoft Release Health telemetry verified.",
+    "Zero active, mitigated, or investigating known issues reported by Microsoft."
+  ]
+}

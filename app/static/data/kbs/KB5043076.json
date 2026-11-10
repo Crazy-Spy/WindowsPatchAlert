@@ -32,7 +32,7 @@
   "known_issues": [],
   "cves": [
     {
-      "id": 26,
+      "id": 8,
       "cve_id": "CVE-2024-38217",
       "kb_number": "KB5043076",
       "title": "Windows Mark of the Web (MotW) Security Feature Bypass Vulnerability",
@@ -50,7 +50,7 @@
   ],
   "relationships": [
     {
-      "id": 25,
+      "id": 4,
       "kb_number": "KB5043076",
       "related_kb": "KB5044285",
       "relationship_type": "superseded_by",
@@ -61,7 +61,7 @@
   ],
   "lifecycle": [
     {
-      "id": 43,
+      "id": 10,
       "kb_number": "KB5043076",
       "event_date": "2026-09-08",
       "event_type": "Released",
@@ -70,7 +70,7 @@
       "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2"
     },
     {
-      "id": 44,
+      "id": 11,
       "kb_number": "KB5043076",
       "event_date": "2026-10-13",
       "event_type": "Superseded",
@@ -81,7 +81,7 @@
   ],
   "changes": [
     {
-      "id": 232,
+      "id": 74,
       "entity_type": "KB",
       "entity_id": "KB5043076",
       "kb_number": "KB5043076",
@@ -95,7 +95,7 @@
       "detected_at": "2026-10-16T14:30:00Z"
     },
     {
-      "id": 231,
+      "id": 73,
       "entity_type": "KB",
       "entity_id": "KB5043076",
       "kb_number": "KB5043076",
@@ -109,7 +109,7 @@
       "detected_at": "2026-10-16T14:30:00Z"
     },
     {
-      "id": 218,
+      "id": 60,
       "entity_type": "CVE",
       "entity_id": "CVE-2024-38217:KB5043076",
       "kb_number": "KB5043076",
@@ -123,7 +123,7 @@
       "detected_at": "2026-10-13T18:00:00Z"
     },
     {
-      "id": 217,
+      "id": 59,
       "entity_type": "CVE",
       "entity_id": "CVE-2024-38217:KB5043076",
       "kb_number": "KB5043076",
@@ -137,7 +137,7 @@
       "detected_at": "2026-10-13T18:00:00Z"
     },
     {
-      "id": 178,
+      "id": 20,
       "entity_type": "KB",
       "entity_id": "KB5043076",
       "kb_number": "KB5043076",
@@ -151,7 +151,7 @@
       "detected_at": "2026-09-08T18:00:00Z"
     },
     {
-      "id": 177,
+      "id": 19,
       "entity_type": "KB",
       "entity_id": "KB5043076",
       "kb_number": "KB5043076",
@@ -165,7 +165,7 @@
       "detected_at": "2026-09-08T18:00:00Z"
     },
     {
-      "id": 176,
+      "id": 18,
       "entity_type": "KB",
       "entity_id": "KB5043076",
       "kb_number": "KB5043076",
@@ -179,7 +179,7 @@
       "detected_at": "2026-09-08T18:00:00Z"
     },
     {
-      "id": 175,
+      "id": 17,
       "entity_type": "KB",
       "entity_id": "KB5043076",
       "kb_number": "KB5043076",

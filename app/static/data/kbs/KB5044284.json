@@ -33,7 +33,7 @@
   "highlights": "Addresses security vulnerabilities in Windows Kernel, Kerberos, OpenSSH, and Remote Desktop.",
   "known_issues": [
     {
-      "id": 7,
+      "id": 1,
       "issue_key": "ISSUE-KB5044284-SSH-KERBEROS",
       "kb_number": "KB5044284",
       "windows_version": "Windows 11 24H2",
@@ -61,7 +61,7 @@
   ],
   "cves": [
     {
-      "id": 23,
+      "id": 5,
       "cve_id": "CVE-2024-43572",
       "kb_number": "KB5044284",
       "title": "Microsoft Management Console Remote Code Execution Vulnerability",
@@ -77,7 +77,7 @@
       "content_hash": "9e889f46fe627704fe612841f9b51b3d751e033af77e1f45360e379714e1a1c6"
     },
     {
-      "id": 19,
+      "id": 1,
       "cve_id": "CVE-2024-43573",
       "kb_number": "KB5044284",
       "title": "Windows MSHTML Platform Spoofing Vulnerability",
@@ -95,7 +95,7 @@
   ],
   "relationships": [
     {
-      "id": 22,
+      "id": 1,
       "kb_number": "KB5044284",
       "related_kb": "KB5045934",
       "relationship_type": "oob_replaced_by",
@@ -106,7 +106,7 @@
   ],
   "lifecycle": [
     {
-      "id": 34,
+      "id": 1,
       "kb_number": "KB5044284",
       "event_date": "2026-10-13",
       "event_type": "Released",
@@ -115,7 +115,7 @@
       "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2"
     },
     {
-      "id": 35,
+      "id": 2,
       "kb_number": "KB5044284",
       "event_date": "2026-10-14",
       "event_type": "Known Issue Reported",
@@ -124,7 +124,7 @@
       "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2"
     },
     {
-      "id": 36,
+      "id": 3,
       "kb_number": "KB5044284",
       "event_date": "2026-10-15",
       "event_type": "KIR Issued",
@@ -133,7 +133,7 @@
       "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2"
     },
     {
-      "id": 37,
+      "id": 4,
       "kb_number": "KB5044284",
       "event_date": "2026-10-16",
       "event_type": "OOB Issued",
@@ -144,7 +144,7 @@
   ],
   "changes": [
     {
-      "id": 222,
+      "id": 64,
       "entity_type": "KB",
       "entity_id": "KB5044284",
       "kb_number": "KB5044284",
@@ -158,7 +158,7 @@
       "detected_at": "2026-10-16T14:30:00Z"
     },
     {
-      "id": 221,
+      "id": 63,
       "entity_type": "KB",
       "entity_id": "KB5044284",
       "kb_number": "KB5044284",
@@ -172,7 +172,7 @@
       "detected_at": "2026-10-16T14:30:00Z"
     },
     {
-      "id": 194,
+      "id": 36,
       "entity_type": "KNOWN_ISSUE",
       "entity_id": "ISSUE-KB5044284-SSH-KERBEROS",
       "kb_number": "KB5044284",
@@ -186,7 +186,7 @@
       "detected_at": "2026-10-16T14:30:00Z"
     },
     {
-      "id": 193,
+      "id": 35,
       "entity_type": "KNOWN_ISSUE",
       "entity_id": "ISSUE-KB5044284-SSH-KERBEROS",
       "kb_number": "KB5044284",
@@ -200,7 +200,7 @@
       "detected_at": "2026-10-16T14:30:00Z"
     },
     {
-      "id": 192,
+      "id": 34,
       "entity_type": "KNOWN_ISSUE",
       "entity_id": "ISSUE-KB5044284-SSH-KERBEROS",
       "kb_number": "KB5044284",
@@ -214,7 +214,7 @@
       "detected_at": "2026-10-16T14:30:00Z"
     },
     {
-      "id": 191,
+      "id": 33,
       "entity_type": "KNOWN_ISSUE",
       "entity_id": "ISSUE-KB5044284-SSH-KERBEROS",
       "kb_number": "KB5044284",
@@ -228,7 +228,7 @@
       "detected_at": "2026-10-16T14:30:00Z"
     },
     {
-      "id": 212,
+      "id": 54,
       "entity_type": "CVE",
       "entity_id": "CVE-2024-43572:KB5044284",
       "kb_number": "KB5044284",
@@ -242,7 +242,7 @@
       "detected_at": "2026-10-13T18:00:00Z"
     },
     {
-      "id": 211,
+      "id": 53,
       "entity_type": "CVE",
       "entity_id": "CVE-2024-43572:KB5044284",
       "kb_number": "KB5044284",
@@ -256,7 +256,7 @@
       "detected_at": "2026-10-13T18:00:00Z"
     },
     {
-      "id": 204,
+      "id": 46,
       "entity_type": "CVE",
       "entity_id": "CVE-2024-43573:KB5044284",
       "kb_number": "KB5044284",
@@ -270,7 +270,7 @@
       "detected_at": "2026-10-13T18:00:00Z"
     },
     {
-      "id": 203,
+      "id": 45,
       "entity_type": "CVE",
       "entity_id": "CVE-2024-43573:KB5044284",
       "kb_number": "KB5044284",
@@ -284,7 +284,7 @@
       "detected_at": "2026-10-13T18:00:00Z"
     },
     {
-      "id": 162,
+      "id": 4,
       "entity_type": "KB",
       "entity_id": "KB5044284",
       "kb_number": "KB5044284",
@@ -298,7 +298,7 @@
       "detected_at": "2026-10-13T18:00:00Z"
     },
     {
-      "id": 161,
+      "id": 3,
       "entity_type": "KB",
       "entity_id": "KB5044284",
       "kb_number": "KB5044284",
@@ -312,7 +312,7 @@
       "detected_at": "2026-10-13T18:00:00Z"
     },
     {
-      "id": 160,
+      "id": 2,
       "entity_type": "KB",
       "entity_id": "KB5044284",
       "kb_number": "KB5044284",
@@ -326,7 +326,7 @@
       "detected_at": "2026-10-13T18:00:00Z"
     },
     {
-      "id": 159,
+      "id": 1,
       "entity_type": "KB",
       "entity_id": "KB5044284",
       "kb_number": "KB5044284",

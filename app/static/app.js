@@ -250,7 +250,9 @@
       const allVersions = staticCache.kbs.available_versions || [];
       const versionHealth = [];
       allVersions.forEach((ver) => {
-        const vKbs = cycleKbs.filter((k) => k.windows_version === ver);
+        const vKbs = cycleKbs.filter(
+          (k) => k.windows_version === ver || (k.windows_version && k.windows_version.includes(ver))
+        );
         if (!vKbs.length) return;
         const safeCount = vKbs.filter((k) => k.health_status === "SAFE").length;
         const monitorCount = vKbs.filter((k) => k.health_status === "MONITOR").length;
@@ -318,9 +320,13 @@
       });
 
       const cycleLabel = reqCycle && reqCycle.toLowerCase() !== "all" ? reqCycle : "All Cycles";
+      const sortedCycleKbs = cycleKbs.slice().sort((a, b) => (a.release_date < b.release_date ? 1 : -1));
+      const latestRelDate = sortedCycleKbs.length ? sortedCycleKbs[0].release_date : "N/A";
+      const kbListStr = sortedCycleKbs.slice(0, 6).map((k) => k.kb_number).join(", ") || "None";
       let advLevel = "SAFE";
-      let advHeadline = `NORMAL OPERATIONS (${cycleLabel}): No unmitigated critical regressions across tracked Windows branches.`;
-      let advDetail = "All verified updates in this cycle are clear for standard phased ring deployment.";
+      let advHeadline = `NORMAL OPERATIONS (${cycleLabel} • Released ${latestRelDate}): No unmitigated active regressions in latest updates (${kbListStr}).`;
+      let advDetail =
+        "All verified updates in this Patch Tuesday cycle are clear for standard phased ring deployment. To inspect Known Issues from previous monthly updates, select an earlier cycle or 'All Cycles' in the filter bar below.";
 
       if (counts.AFFECTED > 0) {
         const affList = advisoryItems.filter((i) => i.health_status === "AFFECTED").map((i) => i.kb_number);
@@ -389,7 +395,14 @@
       const secOnly = params.get("security_only");
 
       const filtered = allItems.filter((kb) => {
-        if (winVer && winVer.toLowerCase() !== "all" && kb.windows_version !== winVer) return false;
+        if (
+          winVer &&
+          winVer.toLowerCase() !== "all" &&
+          kb.windows_version !== winVer &&
+          !(kb.windows_version && kb.windows_version.includes(winVer))
+        ) {
+          return false;
+        }
         if (status && status.toUpperCase() !== "ALL" && kb.health_status !== status.toUpperCase()) return false;
         if (updateType && updateType.toLowerCase() !== "all" && kb.update_type.toLowerCase() !== updateType.toLowerCase()) return false;
         if (cycle && cycle.toLowerCase() !== "all" && kb.patch_tuesday_cycle !== cycle) return false;
