@@ -25,7 +25,7 @@
   "telemetry_verified": true,
   "data_origin": "Microsoft Release Health (Live Sync)",
   "is_demo": false,
-  "last_checked_at": "2026-11-11T11:40:24Z",
+  "last_checked_at": "2026-11-11T19:04:10Z",
   "content_hash": "edf03361af6dd95a23ffd9a6b7a6173e3cafcd722556ba76c7d5d577136bd8f8",
   "summary": null,
   "highlights": null,
@@ -108,6 +108,34 @@
     }
   ],
   "changes": [
+    {
+      "id": 348,
+      "entity_type": "KNOWN_ISSUE",
+      "entity_id": "LIVE-89F6887B1E6A",
+      "kb_number": "KB5120998",
+      "field_name": "symptoms",
+      "old_value": "Devices might experience a black screen or desktop loading issues after sign-in Microsoft has received reports of this issue occurring in some virtual desktop environments. | OS Build 26200.9278 KB5120998 2026-08-27 | Resolved KB5127648 | 2026-10-13 10:13 PT Devices might experience a black screen or desktop loading issues after sign-in Status Originating update History Resolved KB5127648 OS Build 26200.9278 KB5120998 2026-08-27 Resolved: 2026-10-13, 10:00 PT Opened: 2026-10-13, 09:49 PT After installing the August 2026 Windows non-security preview update ( KB5120998 ) and subsequent updates, some devices might experience desktop loading issues. This issue has been primarily observed on Azure Virtual Desktop (AVD) hosts, using FSLogix . This issue appears to occur more frequently with some existing user profiles. Symptoms might include: ​A black screen appears after sign-in and the desktop session does not load automatically. ​Users might be unable to access their desktop until the desktop session is started manually. ​Application event logs might show Windows Explorer crashes. Resolution: This issue was resolved by Windows updates released October 13, 2026 ( KB5127648 ), and updat",
+      "new_value": "Devices might experience a black screen or desktop loading issues after sign-in Microsoft has received reports of this issue occurring in some virtual desktop environments. | OS Build 26100.9278 KB5120998 2026-08-27 | Resolved KB5127648 | 2026-10-13 10:13 PT Devices might experience a black screen or desktop loading issues after sign-in Status Originating update History Resolved KB5127648 OS Build 26100.9278 KB5120998 2026-08-27 Resolved: 2026-10-13, 10:00 PT Opened: 2026-10-13, 09:49 PT After installing the August 2026 Windows non-security preview update ( KB5120998 ) and subsequent updates, some devices might experience desktop loading issues. This issue has been primarily observed on Azure Virtual Desktop (AVD) hosts, using FSLogix . This issue appears to occur more frequently with some existing user profiles. Symptoms might include: ​A black screen appears after sign-in and the desktop session does not load automatically. ​Users might be unable to access their desktop until the desktop session is started manually. ​Application event logs might show Windows Explorer crashes. Resolution: This issue was resolved by Windows updates released October 13, 2026 ( KB5127648 ), and updat",
+      "change_type": "UPDATED",
+      "content_hash": "66535bb9bcabcc954d6f67019688fb0f70a38984b195eb5378d91e81b78bc186",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2#5006msgdesc",
+      "is_demo": false,
+      "detected_at": "2026-11-11T19:04:10Z"
+    },
+    {
+      "id": 340,
+      "entity_type": "KNOWN_ISSUE",
+      "entity_id": "LIVE-89F6887B1E6A",
+      "kb_number": "KB5120998",
+      "field_name": "symptoms",
+      "old_value": "Devices might experience a black screen or desktop loading issues after sign-in Microsoft has received reports of this issue occurring in some virtual desktop environments. | OS Build 26100.9278 KB5120998 2026-08-27 | Resolved KB5127648 | 2026-10-13 10:13 PT Devices might experience a black screen or desktop loading issues after sign-in Status Originating update History Resolved KB5127648 OS Build 26100.9278 KB5120998 2026-08-27 Resolved: 2026-10-13, 10:00 PT Opened: 2026-10-13, 09:49 PT After installing the August 2026 Windows non-security preview update ( KB5120998 ) and subsequent updates, some devices might experience desktop loading issues. This issue has been primarily observed on Azure Virtual Desktop (AVD) hosts, using FSLogix . This issue appears to occur more frequently with some existing user profiles. Symptoms might include: ​A black screen appears after sign-in and the desktop session does not load automatically. ​Users might be unable to access their desktop until the desktop session is started manually. ​Application event logs might show Windows Explorer crashes. Resolution: This issue was resolved by Windows updates released October 13, 2026 ( KB5127648 ), and updat",
+      "new_value": "Devices might experience a black screen or desktop loading issues after sign-in Microsoft has received reports of this issue occurring in some virtual desktop environments. | OS Build 26200.9278 KB5120998 2026-08-27 | Resolved KB5127648 | 2026-10-13 10:13 PT Devices might experience a black screen or desktop loading issues after sign-in Status Originating update History Resolved KB5127648 OS Build 26200.9278 KB5120998 2026-08-27 Resolved: 2026-10-13, 10:00 PT Opened: 2026-10-13, 09:49 PT After installing the August 2026 Windows non-security preview update ( KB5120998 ) and subsequent updates, some devices might experience desktop loading issues. This issue has been primarily observed on Azure Virtual Desktop (AVD) hosts, using FSLogix . This issue appears to occur more frequently with some existing user profiles. Symptoms might include: ​A black screen appears after sign-in and the desktop session does not load automatically. ​Users might be unable to access their desktop until the desktop session is started manually. ​Application event logs might show Windows Explorer crashes. Resolution: This issue was resolved by Windows updates released October 13, 2026 ( KB5127648 ), and updat",
+      "change_type": "UPDATED",
+      "content_hash": "c6361577ad16d56d148b976843b44a04249b6c0566e15d1cdca53e680139f8cb",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-25h2#5006msgdesc",
+      "is_demo": false,
+      "detected_at": "2026-11-11T19:04:10Z"
+    },
     {
       "id": 322,
       "entity_type": "KNOWN_ISSUE",

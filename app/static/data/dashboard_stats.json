@@ -24,11 +24,11 @@
     "sources_total": 8,
     "sources_ok": 8,
     "sources_error": 0,
-    "last_checked_at": "2026-11-11T11:40:25Z",
+    "last_checked_at": "2026-11-11T19:04:11Z",
     "demo_records_count": 8,
     "live_records_count": 11,
     "using_demo_seed": false,
-    "last_refresh_at": "2026-11-11T11:40:25Z"
+    "last_refresh_at": "2026-11-11T19:04:11Z"
   },
   "advisory_banner": {
     "level": "AFFECTED",
@@ -271,16 +271,16 @@
   "collector": {
     "is_running": false,
     "current_source": null,
-    "started_at": "2026-11-11T11:40:24Z",
-    "finished_at": "2026-11-11T11:40:25Z",
+    "started_at": "2026-11-11T19:04:10Z",
+    "finished_at": "2026-11-11T19:04:11Z",
     "last_trigger": "scheduled_action",
     "last_status": "COMPLETED",
     "sources_total": 8,
     "sources_completed": 8,
     "sources_succeeded": 8,
     "sources_failed": 0,
-    "changes_detected": 23,
-    "last_summary": "Checked 8/8 Microsoft sources: 8 succeeded, 0 failed, 23 field-level change(s) recorded.",
+    "changes_detected": 26,
+    "last_summary": "Checked 8/8 Microsoft sources: 8 succeeded, 0 failed, 26 field-level change(s) recorded.",
     "errors": [],
     "schedule_interval_minutes": 240
   }

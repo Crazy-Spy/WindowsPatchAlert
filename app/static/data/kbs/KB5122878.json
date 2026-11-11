@@ -25,7 +25,7 @@
   "telemetry_verified": true,
   "data_origin": "Microsoft Release Health (Live Sync)",
   "is_demo": false,
-  "last_checked_at": "2026-11-11T11:40:25Z",
+  "last_checked_at": "2026-11-11T19:04:10Z",
   "content_hash": "fa165a536a3b6614fdeda54ca0c379cd480f9fefa4661bb02871cf5ef4310ccb",
   "summary": null,
   "highlights": null,
@@ -37,7 +37,7 @@
       "windows_version": "Windows 10 22H2",
       "os_build": "19045.7725",
       "title": "USB audio devices might fail to start or produce no sound Some USB Audio Class 1.0 devices display Code 10 or fail in multichannel audio modes after installing the Sept. 8 update",
-      "symptoms": "USB audio devices might fail to start or produce no sound Some USB Audio Class 1.0 devices display Code 10 or fail in multichannel audio modes after installing the Sept. 8 update | OS Build 19045.7725 KB5122878 2026-09-08 | Resolved KB5131096 | 2026-11-10 09:32 PT USB audio devices might fail to start or produce no sound Status Originating update History Resolved KB5131096 OS Build 19045.7725 KB5122878 2026-09-08 Resolved: 2026-11-10, 10:00 PT Opened: 2026-11-09, 16:04 PT After installing the September 8, 2026, Windows security update ( KB5122878 ), some USB Audio Class 1.0 devices might fail to start or produce audio. Affected devices might experience one or more of the following symptoms: ​The device displays an error in Device Manager: \"This device cannot start (Code 10).” ​No audio output. ​Volume controls are unresponsive or remain at zero. ​Sound settings are unresponsive or unavailable. ​Some devices might function in standard stereo configurations but fail when using multichannel audio features, including 8-channel or 3D audio modes. Some customers have reported that they're able to restore audio in these cases by switching to 2-channel mode. (*Note: This behavior is resolv",
+      "symptoms": "USB audio devices might fail to start or produce no sound Some USB Audio Class 1.0 devices display Code 10 or fail in multichannel audio modes after installing the Sept. 8 update | OS Build 19045.7725 KB5122878 2026-09-08 | Resolved KB5131096 | 2026-11-10 10:27 PT USB audio devices might fail to start or produce no sound Status Originating update History Resolved KB5131096 OS Build 19045.7725 KB5122878 2026-09-08 Resolved: 2026-11-10, 10:00 PT Opened: 2026-11-09, 16:04 PT After installing the September 8, 2026, Windows security update ( KB5122878 ), some USB Audio Class 1.0 devices might fail to start or produce audio. Affected devices might experience one or more of the following symptoms: ​The device displays an error in Device Manager: \"This device cannot start (Code 10).” ​No audio output. ​Volume controls are unresponsive or remain at zero. ​Sound settings are unresponsive or unavailable. ​Some devices might function in standard stereo configurations but fail when using multichannel audio features, including 8-channel or 3D audio modes. Some customers have reported that they're able to restore audio in these cases by switching to 2-channel mode. (*Note: This behavior is resolv",
       "status": "Resolved",
       "severity": "Critical",
       "is_severe_failure": true,
@@ -54,7 +54,7 @@
       "resolved_date": "2026-11-10",
       "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-10-22h2#4984msgdesc",
       "is_demo": 0,
-      "content_hash": "0e8ef259a322ecf34ee7f689127d1cb4408079cea6c898523eae95a72c02cd30"
+      "content_hash": "420c9ee26ad1c673e634d09e8f839abe522156a0f9b61558ba33fd766bcf4788"
     }
   ],
   "cves": [],
@@ -99,6 +99,20 @@
     }
   ],
   "changes": [
+    {
+      "id": 353,
+      "entity_type": "KNOWN_ISSUE",
+      "entity_id": "LIVE-19FB4C43BD93",
+      "kb_number": "KB5122878",
+      "field_name": "symptoms",
+      "old_value": "USB audio devices might fail to start or produce no sound Some USB Audio Class 1.0 devices display Code 10 or fail in multichannel audio modes after installing the Sept. 8 update | OS Build 19045.7725 KB5122878 2026-09-08 | Resolved KB5131096 | 2026-11-10 09:32 PT USB audio devices might fail to start or produce no sound Status Originating update History Resolved KB5131096 OS Build 19045.7725 KB5122878 2026-09-08 Resolved: 2026-11-10, 10:00 PT Opened: 2026-11-09, 16:04 PT After installing the September 8, 2026, Windows security update ( KB5122878 ), some USB Audio Class 1.0 devices might fail to start or produce audio. Affected devices might experience one or more of the following symptoms: ​The device displays an error in Device Manager: \"This device cannot start (Code 10).” ​No audio output. ​Volume controls are unresponsive or remain at zero. ​Sound settings are unresponsive or unavailable. ​Some devices might function in standard stereo configurations but fail when using multichannel audio features, including 8-channel or 3D audio modes. Some customers have reported that they're able to restore audio in these cases by switching to 2-channel mode. (*Note: This behavior is resolv",
+      "new_value": "USB audio devices might fail to start or produce no sound Some USB Audio Class 1.0 devices display Code 10 or fail in multichannel audio modes after installing the Sept. 8 update | OS Build 19045.7725 KB5122878 2026-09-08 | Resolved KB5131096 | 2026-11-10 10:27 PT USB audio devices might fail to start or produce no sound Status Originating update History Resolved KB5131096 OS Build 19045.7725 KB5122878 2026-09-08 Resolved: 2026-11-10, 10:00 PT Opened: 2026-11-09, 16:04 PT After installing the September 8, 2026, Windows security update ( KB5122878 ), some USB Audio Class 1.0 devices might fail to start or produce audio. Affected devices might experience one or more of the following symptoms: ​The device displays an error in Device Manager: \"This device cannot start (Code 10).” ​No audio output. ​Volume controls are unresponsive or remain at zero. ​Sound settings are unresponsive or unavailable. ​Some devices might function in standard stereo configurations but fail when using multichannel audio features, including 8-channel or 3D audio modes. Some customers have reported that they're able to restore audio in these cases by switching to 2-channel mode. (*Note: This behavior is resolv",
+      "change_type": "UPDATED",
+      "content_hash": "420c9ee26ad1c673e634d09e8f839abe522156a0f9b61558ba33fd766bcf4788",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-10-22h2#4984msgdesc",
+      "is_demo": false,
+      "detected_at": "2026-11-11T19:04:10Z"
+    },
     {
       "id": 223,
       "entity_type": "KB",
