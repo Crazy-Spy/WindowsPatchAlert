@@ -7,28 +7,28 @@
     "2026-08"
   ],
   "status_counts": {
-    "SAFE": 7,
+    "SAFE": 6,
     "MONITOR": 8,
-    "CAUTION": 2,
+    "CAUTION": 4,
     "AFFECTED": 1,
     "UNKNOWN": 1
   },
   "metrics": {
-    "total_kbs": 19,
+    "total_kbs": 20,
     "oob_updates_count": 1,
     "active_kir_count": 3,
-    "active_known_issues_count": 3,
+    "active_known_issues_count": 5,
     "total_cves_count": 5,
     "exploited_cves_count": 2,
-    "unacknowledged_alerts_count": 4,
+    "unacknowledged_alerts_count": 5,
     "sources_total": 8,
     "sources_ok": 8,
     "sources_error": 0,
-    "last_checked_at": "2026-11-11T19:04:11Z",
+    "last_checked_at": "2026-11-12T01:45:11Z",
     "demo_records_count": 8,
-    "live_records_count": 11,
+    "live_records_count": 12,
     "using_demo_seed": false,
-    "last_refresh_at": "2026-11-11T19:04:11Z"
+    "last_refresh_at": "2026-11-12T01:45:11Z"
   },
   "advisory_banner": {
     "level": "AFFECTED",
@@ -109,47 +109,89 @@
             "source_url": "https://support.microsoft.com/help/5044285#known-issues-in-this-update"
           }
         ]
+      },
+      {
+        "kb_number": "KB5127648",
+        "windows_version": "Windows 11 26H2 / Windows 11 25H2 / Windows 11 24H2",
+        "os_build": "26200.9711 / 26100.9711",
+        "health_status": "CAUTION",
+        "rationale": "CAUTION: Requires administrator evaluation before broad deployment. Microsoft confirmed active known issue: \"SQL Server linked server connections might remain open Connections to external databases such as Oracle and PostgreSQL can accumulate over time\".",
+        "is_oob": false,
+        "oob_replaced_by_kbs": [],
+        "oob_replaces_kbs": [],
+        "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2",
+        "kirs": [],
+        "issues": [
+          {
+            "title": "SQL Server linked server connections might remain open Connections to external databases such as Oracle and PostgreSQL can accumulate over time",
+            "status": "Confirmed",
+            "severity": "High",
+            "oob_fix_kb": null,
+            "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2#3721msgdesc"
+          }
+        ]
+      },
+      {
+        "kb_number": "KB5126653",
+        "windows_version": "Windows 11 23H2",
+        "os_build": "22631.7652",
+        "health_status": "CAUTION",
+        "rationale": "CAUTION: Requires administrator evaluation before broad deployment. Microsoft confirmed active known issue: \"SQL Server linked server connections might remain open Connections to external databases such as Oracle and PostgreSQL can accumulate over time\".",
+        "is_oob": false,
+        "oob_replaced_by_kbs": [],
+        "oob_replaces_kbs": [],
+        "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2",
+        "kirs": [],
+        "issues": [
+          {
+            "title": "SQL Server linked server connections might remain open Connections to external databases such as Oracle and PostgreSQL can accumulate over time",
+            "status": "Confirmed",
+            "severity": "High",
+            "oob_fix_kb": null,
+            "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2#3721msgdesc"
+          }
+        ]
       }
     ]
   },
   "version_health": [
     {
       "total_kbs": 6,
-      "safe_count": 2,
+      "safe_count": 1,
       "monitor_count": 4,
-      "caution_count": 0,
+      "caution_count": 1,
       "affected_count": 0,
       "unknown_count": 0,
       "oob_count": 0,
       "kir_count": 3,
       "latest_release_date": "2026-11-10",
       "windows_version": "Windows 11 26H2",
-      "overall_status": "MONITOR",
+      "overall_status": "CAUTION",
       "latest_kb": "KB5132061",
       "latest_build": "26200 (Cumulative) / 26100 (Cumulative)",
-      "active_issues": 0
+      "active_issues": 1
     },
     {
       "total_kbs": 6,
-      "safe_count": 2,
+      "safe_count": 1,
       "monitor_count": 4,
-      "caution_count": 0,
+      "caution_count": 1,
       "affected_count": 0,
       "unknown_count": 0,
       "oob_count": 0,
       "kir_count": 3,
       "latest_release_date": "2026-11-10",
       "windows_version": "Windows 11 25H2",
-      "overall_status": "MONITOR",
+      "overall_status": "CAUTION",
       "latest_kb": "KB5132061",
       "latest_build": "26200 (Cumulative) / 26100 (Cumulative)",
-      "active_issues": 0
+      "active_issues": 1
     },
     {
       "total_kbs": 7,
-      "safe_count": 1,
+      "safe_count": 0,
       "monitor_count": 4,
-      "caution_count": 1,
+      "caution_count": 2,
       "affected_count": 1,
       "unknown_count": 0,
       "oob_count": 1,
@@ -159,13 +201,13 @@
       "overall_status": "AFFECTED",
       "latest_kb": "KB5132061",
       "latest_build": "26200 (Cumulative) / 26100 (Cumulative)",
-      "active_issues": 1
+      "active_issues": 2
     },
     {
-      "total_kbs": 4,
+      "total_kbs": 5,
       "safe_count": 2,
       "monitor_count": 1,
-      "caution_count": 1,
+      "caution_count": 2,
       "affected_count": 0,
       "unknown_count": 0,
       "oob_count": 0,
@@ -175,7 +217,7 @@
       "overall_status": "CAUTION",
       "latest_kb": "KB5131087",
       "latest_build": "22631 (Cumulative)",
-      "active_issues": 1
+      "active_issues": 2
     },
     {
       "total_kbs": 2,
@@ -211,6 +253,20 @@
     }
   ],
   "latest_alerts": [
+    {
+      "id": 5,
+      "kb_number": "KB5127648",
+      "windows_version": "Windows 11 26H2 / Windows 11 25H2 / Windows 11 24H2",
+      "severity": "CAUTION",
+      "alert_type": "STATUS_CHANGE",
+      "title": "KB5127648 Operational Health Changed: SAFE -> CAUTION",
+      "summary": "CAUTION: Requires administrator evaluation before broad deployment. Microsoft confirmed active known issue: \"SQL Server linked server connections might remain open Connections to external databases such as Oracle and PostgreSQL can accumulate over time\".",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-25h2",
+      "acknowledged": false,
+      "acknowledged_at": null,
+      "is_demo": false,
+      "created_at": "2026-11-12T01:45:10Z"
+    },
     {
       "id": 2,
       "kb_number": "KB5045934",
@@ -271,16 +327,16 @@
   "collector": {
     "is_running": false,
     "current_source": null,
-    "started_at": "2026-11-11T19:04:10Z",
-    "finished_at": "2026-11-11T19:04:11Z",
+    "started_at": "2026-11-12T01:45:10Z",
+    "finished_at": "2026-11-12T01:45:11Z",
     "last_trigger": "scheduled_action",
     "last_status": "COMPLETED",
     "sources_total": 8,
     "sources_completed": 8,
     "sources_succeeded": 8,
     "sources_failed": 0,
-    "changes_detected": 26,
-    "last_summary": "Checked 8/8 Microsoft sources: 8 succeeded, 0 failed, 26 field-level change(s) recorded.",
+    "changes_detected": 40,
+    "last_summary": "Checked 8/8 Microsoft sources: 8 succeeded, 0 failed, 40 field-level change(s) recorded.",
     "errors": [],
     "schedule_interval_minutes": 240
   }

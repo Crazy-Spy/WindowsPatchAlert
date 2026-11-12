@@ -28,7 +28,7 @@
       "telemetry_verified": true,
       "data_origin": "Microsoft Release Health (Live Sync)",
       "is_demo": false,
-      "last_checked_at": "2026-11-11T19:04:10Z",
+      "last_checked_at": "2026-11-12T01:45:10Z",
       "content_hash": "b6675ac869a81922a15a7de89d9f400210130023766326d11b5649eb85aa135f"
     },
     {
@@ -58,7 +58,7 @@
       "telemetry_verified": true,
       "data_origin": "Microsoft Release Health (Live Sync)",
       "is_demo": false,
-      "last_checked_at": "2026-11-11T19:04:10Z",
+      "last_checked_at": "2026-11-12T01:45:10Z",
       "content_hash": "9f6f224e0c25128fc108b18d6239e27b5a57cdf4d598d975fc73b0516b0dfc97"
     },
     {
@@ -88,7 +88,7 @@
       "telemetry_verified": true,
       "data_origin": "Microsoft Release Health (Live Sync)",
       "is_demo": false,
-      "last_checked_at": "2026-11-11T19:04:10Z",
+      "last_checked_at": "2026-11-12T01:45:10Z",
       "content_hash": "e1ec97c00cc4433fae142d0eb538a400367d2409dcf210486eda0afe257d3a0a"
     },
     {
@@ -118,7 +118,7 @@
       "telemetry_verified": true,
       "data_origin": "Microsoft Release Health (Live Sync)",
       "is_demo": false,
-      "last_checked_at": "2026-11-11T19:04:10Z",
+      "last_checked_at": "2026-11-12T01:45:10Z",
       "content_hash": "4eaef656d8c35c0b2c1b4817f75784910e88c04aa26fbc47a7753fe8fb3a7f08"
     },
     {
@@ -183,19 +183,19 @@
     },
     {
       "kb_number": "KB5127648",
-      "title": "Cumulative Security Update KB5127648 for Windows 11 26H2 / Windows 11 25H2 / Windows 11 24H2 (OS Build 26300 (Cumulative) / 26200 (Cumulative) / 26100 (Cumulative))",
+      "title": "Cumulative Update KB5127648 for Windows 11 26H2 / Windows 11 25H2 / Windows 11 24H2 (OS Build 26200.9711 / 26100.9711)",
       "windows_version": "Windows 11 26H2 / Windows 11 25H2 / Windows 11 24H2",
-      "os_build": "26300 (Cumulative) / 26200 (Cumulative) / 26100 (Cumulative)",
+      "os_build": "26200.9711 / 26100.9711",
       "release_date": "2026-10-13",
       "patch_tuesday_cycle": "2026-10",
       "update_type": "Cumulative",
       "is_security_update": true,
       "is_oob": false,
       "has_kir": false,
-      "health_status": "SAFE",
-      "health_rationale": "SAFE: Official Microsoft Release Health telemetry verified for KB5127648. No active known issues, Known Issue Rollbacks (KIR), or Out-of-Band (OOB) replacements are reported by Microsoft.",
-      "known_issues_count": 0,
-      "active_issues_count": 0,
+      "health_status": "CAUTION",
+      "health_rationale": "CAUTION: Requires administrator evaluation before broad deployment. Microsoft confirmed active known issue: \"SQL Server linked server connections might remain open Connections to external databases such as Oracle and PostgreSQL can accumulate over time\".",
+      "known_issues_count": 1,
+      "active_issues_count": 1,
       "cve_count": 0,
       "exploited_cve_count": 0,
       "supersedes_kbs": [
@@ -210,8 +210,36 @@
       "telemetry_verified": true,
       "data_origin": "Microsoft Release Health (Live Sync)",
       "is_demo": false,
-      "last_checked_at": "2026-11-11T19:04:10Z",
-      "content_hash": "7ba293b12f8519c8ce5d3fe9eaabf9e532823be32ac07128535e16736eb360c1"
+      "last_checked_at": "2026-11-12T01:45:10Z",
+      "content_hash": "5d14a1a6794e60d860c6bae1380dc297e35d9d007401646c45bb3c432642fa28"
+    },
+    {
+      "kb_number": "KB5126653",
+      "title": "Cumulative Update KB5126653 for Windows 11 23H2 (OS Build 22631.7652)",
+      "windows_version": "Windows 11 23H2",
+      "os_build": "22631.7652",
+      "release_date": "2026-10-13",
+      "patch_tuesday_cycle": "2026-10",
+      "update_type": "Cumulative",
+      "is_security_update": true,
+      "is_oob": false,
+      "has_kir": false,
+      "health_status": "CAUTION",
+      "health_rationale": "CAUTION: Requires administrator evaluation before broad deployment. Microsoft confirmed active known issue: \"SQL Server linked server connections might remain open Connections to external databases such as Oracle and PostgreSQL can accumulate over time\".",
+      "known_issues_count": 1,
+      "active_issues_count": 1,
+      "cve_count": 0,
+      "exploited_cve_count": 0,
+      "supersedes_kbs": [],
+      "superseded_by_kbs": [],
+      "oob_replaces_kbs": [],
+      "oob_replaced_by_kbs": [],
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2",
+      "telemetry_verified": true,
+      "data_origin": "Microsoft Release Health (Live Sync)",
+      "is_demo": false,
+      "last_checked_at": "2026-11-12T01:45:10Z",
+      "content_hash": "e07024c1e8f607b357f3c3ad0dbe4e30b19a44b026d32ed09cc3cf308c448383"
     },
     {
       "kb_number": "KB5124006",
@@ -240,7 +268,7 @@
       "telemetry_verified": true,
       "data_origin": "Microsoft Release Health (Live Sync)",
       "is_demo": false,
-      "last_checked_at": "2026-11-11T19:04:10Z",
+      "last_checked_at": "2026-11-12T01:45:10Z",
       "content_hash": "664751fb8c2632ba0ad145e3c9dc465b032138049ae77259f4176f267f143ecd"
     },
     {
@@ -394,7 +422,7 @@
       "telemetry_verified": true,
       "data_origin": "Microsoft Release Health (Live Sync)",
       "is_demo": false,
-      "last_checked_at": "2026-11-11T19:04:10Z",
+      "last_checked_at": "2026-11-12T01:45:10Z",
       "content_hash": "06dc630153026cc9e183ae6a97304ec20dc135b5a193a1004727dcfdfa65598a"
     },
     {
@@ -425,7 +453,7 @@
       "telemetry_verified": true,
       "data_origin": "Microsoft Release Health (Live Sync)",
       "is_demo": false,
-      "last_checked_at": "2026-11-11T19:04:10Z",
+      "last_checked_at": "2026-11-12T01:45:10Z",
       "content_hash": "e93df655b205a00dbb590c978718bfa7dd60ae56fc20ad8e2ccf85dc624882ee"
     },
     {
@@ -455,7 +483,7 @@
       "telemetry_verified": true,
       "data_origin": "Microsoft Release Health (Live Sync)",
       "is_demo": false,
-      "last_checked_at": "2026-11-11T19:04:10Z",
+      "last_checked_at": "2026-11-12T01:45:10Z",
       "content_hash": "e0628da88ab8ebaf5b8215995cab59bff3cb1ecbfec34763fbc500ee969d7f2d"
     },
     {
@@ -485,7 +513,7 @@
       "telemetry_verified": true,
       "data_origin": "Microsoft Release Health (Live Sync)",
       "is_demo": false,
-      "last_checked_at": "2026-11-11T19:04:10Z",
+      "last_checked_at": "2026-11-12T01:45:10Z",
       "content_hash": "fa165a536a3b6614fdeda54ca0c379cd480f9fefa4661bb02871cf5ef4310ccb"
     },
     {
@@ -575,11 +603,11 @@
       "telemetry_verified": true,
       "data_origin": "Microsoft Release Health (Live Sync)",
       "is_demo": false,
-      "last_checked_at": "2026-11-11T19:04:10Z",
+      "last_checked_at": "2026-11-12T01:45:10Z",
       "content_hash": "edf03361af6dd95a23ffd9a6b7a6173e3cafcd722556ba76c7d5d577136bd8f8"
     }
   ],
-  "total": 19,
+  "total": 20,
   "page": 1,
   "page_size": 200,
   "total_pages": 1,

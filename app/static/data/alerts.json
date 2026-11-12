@@ -1,6 +1,20 @@
 {
   "items": [
     {
+      "id": 5,
+      "kb_number": "KB5127648",
+      "windows_version": "Windows 11 26H2 / Windows 11 25H2 / Windows 11 24H2",
+      "severity": "CAUTION",
+      "alert_type": "STATUS_CHANGE",
+      "title": "KB5127648 Operational Health Changed: SAFE -> CAUTION",
+      "summary": "CAUTION: Requires administrator evaluation before broad deployment. Microsoft confirmed active known issue: \"SQL Server linked server connections might remain open Connections to external databases such as Oracle and PostgreSQL can accumulate over time\".",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-25h2",
+      "acknowledged": false,
+      "acknowledged_at": null,
+      "is_demo": false,
+      "created_at": "2026-11-12T01:45:10Z"
+    },
+    {
       "id": 2,
       "kb_number": "KB5045934",
       "windows_version": "Windows 11 24H2",
@@ -57,6 +71,6 @@
       "created_at": "2026-10-13T20:00:00Z"
     }
   ],
-  "total": 4,
-  "unacknowledged_count": 4
+  "total": 5,
+  "unacknowledged_count": 5
 }
