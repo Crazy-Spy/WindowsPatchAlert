@@ -24,11 +24,11 @@
     "sources_total": 8,
     "sources_ok": 8,
     "sources_error": 0,
-    "last_checked_at": "2026-11-12T12:00:23Z",
+    "last_checked_at": "2026-11-12T21:59:01Z",
     "demo_records_count": 8,
     "live_records_count": 12,
     "using_demo_seed": false,
-    "last_refresh_at": "2026-11-12T12:00:24Z"
+    "last_refresh_at": "2026-11-12T21:59:01Z"
   },
   "advisory_banner": {
     "level": "AFFECTED",
@@ -113,7 +113,7 @@
       {
         "kb_number": "KB5127648",
         "windows_version": "Windows 11 26H2 / Windows 11 25H2 / Windows 11 24H2",
-        "os_build": "26200.9711 / 26100.9711",
+        "os_build": "26200.9711 / 26100.9711 / 26300.9711",
         "health_status": "CAUTION",
         "rationale": "CAUTION: Requires administrator evaluation before broad deployment. Microsoft confirmed active known issue: \"SQL Server linked server connections might remain open Connections to external databases such as Oracle and PostgreSQL can accumulate over time\".",
         "is_oob": false,
@@ -327,16 +327,16 @@
   "collector": {
     "is_running": false,
     "current_source": null,
-    "started_at": "2026-11-12T12:00:22Z",
-    "finished_at": "2026-11-12T12:00:24Z",
+    "started_at": "2026-11-12T21:59:00Z",
+    "finished_at": "2026-11-12T21:59:01Z",
     "last_trigger": "scheduled_action",
     "last_status": "COMPLETED",
     "sources_total": 8,
     "sources_completed": 8,
     "sources_succeeded": 8,
     "sources_failed": 0,
-    "changes_detected": 27,
-    "last_summary": "Checked 8/8 Microsoft sources: 8 succeeded, 0 failed, 27 field-level change(s) recorded.",
+    "changes_detected": 19,
+    "last_summary": "Checked 8/8 Microsoft sources: 8 succeeded, 0 failed, 19 field-level change(s) recorded.",
     "errors": [],
     "schedule_interval_minutes": 240
   }

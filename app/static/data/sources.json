@@ -9,13 +9,13 @@
       "url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-26h2",
       "enabled": true,
       "check_interval_minutes": 240,
-      "last_checked_at": "2026-11-12T12:00:22Z",
-      "last_success_at": "2026-11-12T12:00:22Z",
+      "last_checked_at": "2026-11-12T21:59:00Z",
+      "last_success_at": "2026-11-12T21:59:00Z",
       "last_status": "OK",
       "last_http_code": 200,
       "last_error": null,
-      "content_hash": "30cf713140d419f3101ade2f772e62b05a33c323720c2e380f21ee2c8a193f77",
-      "items_collected": 11
+      "content_hash": "796725d298e8aa903e781aa16dbefa31e3d9387d9003e5d835f70049b54862ec",
+      "items_collected": 7
     },
     {
       "id": 2,
@@ -26,13 +26,13 @@
       "url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-25h2",
       "enabled": true,
       "check_interval_minutes": 240,
-      "last_checked_at": "2026-11-12T12:00:23Z",
-      "last_success_at": "2026-11-12T12:00:23Z",
+      "last_checked_at": "2026-11-12T21:59:00Z",
+      "last_success_at": "2026-11-12T21:59:00Z",
       "last_status": "OK",
       "last_http_code": 200,
       "last_error": null,
-      "content_hash": "21c2847e8686873046d551b34676ecdc3f8a770b8bdaf0e4d514760a8c3e4ebb",
-      "items_collected": 12
+      "content_hash": "6ffbd9fd988bca0b79119db40f1b1d9920b81c251f7818db26e70394fd184680",
+      "items_collected": 8
     },
     {
       "id": 3,
@@ -43,13 +43,13 @@
       "url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-24h2",
       "enabled": true,
       "check_interval_minutes": 240,
-      "last_checked_at": "2026-11-12T12:00:23Z",
-      "last_success_at": "2026-11-12T12:00:23Z",
+      "last_checked_at": "2026-11-12T21:59:00Z",
+      "last_success_at": "2026-11-12T21:59:00Z",
       "last_status": "OK",
       "last_http_code": 200,
       "last_error": null,
-      "content_hash": "c28de1b1ca3ded840f618a283d15db4c15c152aa40b4d25ee61c80e105fa4931",
-      "items_collected": 11
+      "content_hash": "4e72218440b2322c8321ed3505fb3e1a617a6acc3e3add49eb081cdf18d2a56f",
+      "items_collected": 7
     },
     {
       "id": 4,
@@ -60,12 +60,12 @@
       "url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2",
       "enabled": true,
       "check_interval_minutes": 240,
-      "last_checked_at": "2026-11-12T12:00:23Z",
-      "last_success_at": "2026-11-12T12:00:23Z",
+      "last_checked_at": "2026-11-12T21:59:00Z",
+      "last_success_at": "2026-11-12T21:59:00Z",
       "last_status": "OK",
       "last_http_code": 200,
       "last_error": null,
-      "content_hash": "0f859cf9c45177deb277717884685028a66865c991440d14c949e80b134611b9",
+      "content_hash": "46ce74fef61f960e5668fc608f34f2fe0d97ecdcf9514515ae989998a72daf5e",
       "items_collected": 5
     },
     {
@@ -77,12 +77,12 @@
       "url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-22h2",
       "enabled": true,
       "check_interval_minutes": 240,
-      "last_checked_at": "2026-11-12T12:00:23Z",
-      "last_success_at": "2026-11-12T12:00:23Z",
+      "last_checked_at": "2026-11-12T21:59:01Z",
+      "last_success_at": "2026-11-12T21:59:01Z",
       "last_status": "OK",
       "last_http_code": 200,
       "last_error": null,
-      "content_hash": "e5f75b94d4b25376950673a2207561efc71c1674a7b8b3f103040befd20e3ca3",
+      "content_hash": "fa20bdc2ebb2e38f5ef539da3a17dbb4112e6f2b0a0804843dc60df582324932",
       "items_collected": 0
     },
     {
@@ -94,12 +94,12 @@
       "url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-10-22h2",
       "enabled": true,
       "check_interval_minutes": 240,
-      "last_checked_at": "2026-11-12T12:00:23Z",
-      "last_success_at": "2026-11-12T12:00:23Z",
+      "last_checked_at": "2026-11-12T21:59:01Z",
+      "last_success_at": "2026-11-12T21:59:01Z",
       "last_status": "OK",
       "last_http_code": 200,
       "last_error": null,
-      "content_hash": "5fbca797b3ab85637d9d5db0fdc1b214ddc0377d5d9048c0b75a5626f008c094",
+      "content_hash": "3fc4368c0bf9e999fa853416a8b9deff8519e2d5db182bf3dad5f512ee7cff12",
       "items_collected": 3
     },
     {
@@ -111,12 +111,12 @@
       "url": "https://learn.microsoft.com/en-us/windows/release-health/windows-message-center",
       "enabled": true,
       "check_interval_minutes": 240,
-      "last_checked_at": "2026-11-12T12:00:23Z",
-      "last_success_at": "2026-11-12T12:00:23Z",
+      "last_checked_at": "2026-11-12T21:59:01Z",
+      "last_success_at": "2026-11-12T21:59:01Z",
       "last_status": "OK",
       "last_http_code": 200,
       "last_error": null,
-      "content_hash": "1ef4f8cc97f8da14336fae673a8a2ba74b6a2a164c2f3505ee171f5a1d0fe662",
+      "content_hash": "92b74d0e2851c33444d17ff9c841d06f189dcd4a344a40251e7b4aa0c31f38f6",
       "items_collected": 0
     },
     {
@@ -128,12 +128,12 @@
       "url": "https://api.msrc.microsoft.com/cvrf/v3.0/updates",
       "enabled": true,
       "check_interval_minutes": 240,
-      "last_checked_at": "2026-11-12T12:00:23Z",
-      "last_success_at": "2026-11-12T12:00:23Z",
+      "last_checked_at": "2026-11-12T21:59:01Z",
+      "last_success_at": "2026-11-12T21:59:01Z",
       "last_status": "OK",
       "last_http_code": 200,
       "last_error": null,
-      "content_hash": "4fab36a622c98cab502e8b62700803d594cdd8e2fb916f4026c8d7c5f1b626dc",
+      "content_hash": "1d93d5391431ab09327b5101494554aee42f37f861a4b5d4cf9ae81227818f03",
       "items_collected": 12
     }
   ],
