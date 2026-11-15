@@ -24,11 +24,11 @@
     "sources_total": 8,
     "sources_ok": 8,
     "sources_error": 0,
-    "last_checked_at": "2026-11-15T04:02:30Z",
+    "last_checked_at": "2026-11-15T15:09:25Z",
     "demo_records_count": 8,
     "live_records_count": 12,
     "using_demo_seed": false,
-    "last_refresh_at": "2026-11-15T04:02:30Z"
+    "last_refresh_at": "2026-11-15T15:09:26Z"
   },
   "advisory_banner": {
     "level": "AFFECTED",
@@ -327,8 +327,8 @@
   "collector": {
     "is_running": false,
     "current_source": null,
-    "started_at": "2026-11-15T04:02:27Z",
-    "finished_at": "2026-11-15T04:02:30Z",
+    "started_at": "2026-11-15T15:09:24Z",
+    "finished_at": "2026-11-15T15:09:26Z",
     "last_trigger": "scheduled_action",
     "last_status": "COMPLETED",
     "sources_total": 8,
