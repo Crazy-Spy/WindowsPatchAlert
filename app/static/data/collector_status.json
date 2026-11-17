@@ -1,8 +1,8 @@
 {
   "is_running": false,
   "current_source": null,
-  "started_at": "2026-11-17T02:42:45Z",
-  "finished_at": "2026-11-17T02:42:47Z",
+  "started_at": "2026-11-17T12:39:50Z",
+  "finished_at": "2026-11-17T12:39:54Z",
   "last_trigger": "scheduled_action",
   "last_status": "COMPLETED",
   "sources_total": 8,
@@ -14,6 +14,18 @@
   "errors": [],
   "schedule_interval_minutes": 240,
   "recent_runs": [
+    {
+      "id": 22,
+      "started_at": "2026-11-17T12:39:50Z",
+      "finished_at": "2026-11-17T12:39:54Z",
+      "trigger_type": "scheduled_action",
+      "status": "COMPLETED",
+      "sources_checked": 8,
+      "sources_succeeded": 8,
+      "sources_failed": 0,
+      "changes_detected": 16,
+      "summary": "Checked 8/8 Microsoft sources: 8 succeeded, 0 failed, 16 field-level change(s) recorded."
+    },
     {
       "id": 21,
       "started_at": "2026-11-17T02:42:45Z",
@@ -114,18 +126,6 @@
       "id": 13,
       "started_at": "2026-11-14T04:18:31Z",
       "finished_at": "2026-11-14T04:18:36Z",
-      "trigger_type": "scheduled_action",
-      "status": "COMPLETED",
-      "sources_checked": 8,
-      "sources_succeeded": 8,
-      "sources_failed": 0,
-      "changes_detected": 16,
-      "summary": "Checked 8/8 Microsoft sources: 8 succeeded, 0 failed, 16 field-level change(s) recorded."
-    },
-    {
-      "id": 12,
-      "started_at": "2026-11-13T21:45:19Z",
-      "finished_at": "2026-11-13T21:45:21Z",
       "trigger_type": "scheduled_action",
       "status": "COMPLETED",
       "sources_checked": 8,
