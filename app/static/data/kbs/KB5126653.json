@@ -23,7 +23,7 @@
   "telemetry_verified": true,
   "data_origin": "Microsoft Release Health (Live Sync)",
   "is_demo": false,
-  "last_checked_at": "2026-11-24T19:14:43Z",
+  "last_checked_at": "2026-11-25T03:16:09Z",
   "content_hash": "e07024c1e8f607b357f3c3ad0dbe4e30b19a44b026d32ed09cc3cf308c448383",
   "summary": null,
   "highlights": null,
@@ -35,7 +35,7 @@
       "windows_version": "Windows 11 23H2",
       "os_build": "22631.7652",
       "title": "SQL Server linked server connections might remain open Connections to external databases such as Oracle and PostgreSQL can accumulate over time",
-      "symptoms": "SQL Server linked server connections might remain open Connections to external databases such as Oracle and PostgreSQL can accumulate over time | OS Build 22631.7652 KB5126653 2026-10-13 | Confirmed | 2026-11-23 18:11 PT SQL Server linked server connections might remain open Status Originating update History Confirmed OS Build 22631.7652 KB5126653 2026-10-13 Last updated: 2026-11-23, 18:11 PT Opened: 2026-11-11, 15:11 PT After Windows updates released October 13, 2026 ( KB5126653 ), and later are installed on server devices, connections created by SQL Server linked server queries might remain open after the queries complete. As additional queries are performed, connections to external databases can accumulate instead of closing as expected. This can slow or degrade server performance after prolonged run time. This issue affects SQL Server linked server queries that use OLE DB providers to connect to external databases. Oracle and PostgreSQL connections are among those known to be affected. In affected environments, administrators might observe an increasing number of open connections to external databases, even when the associated SQL Server linked server queries are no longer runn",
+      "symptoms": "SQL Server linked server connections might remain open Connections to external databases such as Oracle and PostgreSQL can accumulate over time | OS Build 22631.7652 KB5126653 2026-10-13 | Confirmed | 2026-11-23 18:35 PT SQL Server linked server connections might remain open Status Originating update History Confirmed OS Build 22631.7652 KB5126653 2026-10-13 Last updated: 2026-11-23, 18:35 PT Opened: 2026-11-11, 15:11 PT After Windows updates released October 13, 2026 ( KB5126653 ), and later are installed on server devices, connections created by SQL Server linked server queries might remain open after the queries complete. As additional queries are performed, connections to external databases can accumulate instead of closing as expected. This can slow or degrade server performance after prolonged run time. This issue affects SQL Server linked server queries that use OLE DB providers to connect to external databases. Oracle and PostgreSQL connections are among those known to be affected. In affected environments, administrators might observe an increasing number of open connections to external databases, even when the associated SQL Server linked server queries are no longer runn",
       "status": "Confirmed",
       "severity": "High",
       "is_severe_failure": false,
@@ -52,7 +52,7 @@
       "resolved_date": null,
       "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2#3721msgdesc",
       "is_demo": 0,
-      "content_hash": "5401ec12a5a4c600323b726938977582c2a758401125f5564f0d0ff64af4925f"
+      "content_hash": "5c59c97b0d801e07bd69dcc63a09850bbef8940d764cc28bef12190302b073c1"
     }
   ],
   "cves": [],
@@ -78,6 +78,20 @@
     }
   ],
   "changes": [
+    {
+      "id": 1045,
+      "entity_type": "KNOWN_ISSUE",
+      "entity_id": "LIVE-5CF4B989E13B",
+      "kb_number": "KB5126653",
+      "field_name": "symptoms",
+      "old_value": "SQL Server linked server connections might remain open Connections to external databases such as Oracle and PostgreSQL can accumulate over time | OS Build 22631.7652 KB5126653 2026-10-13 | Confirmed | 2026-11-23 18:11 PT SQL Server linked server connections might remain open Status Originating update History Confirmed OS Build 22631.7652 KB5126653 2026-10-13 Last updated: 2026-11-23, 18:11 PT Opened: 2026-11-11, 15:11 PT After Windows updates released October 13, 2026 ( KB5126653 ), and later are installed on server devices, connections created by SQL Server linked server queries might remain open after the queries complete. As additional queries are performed, connections to external databases can accumulate instead of closing as expected. This can slow or degrade server performance after prolonged run time. This issue affects SQL Server linked server queries that use OLE DB providers to connect to external databases. Oracle and PostgreSQL connections are among those known to be affected. In affected environments, administrators might observe an increasing number of open connections to external databases, even when the associated SQL Server linked server queries are no longer runn",
+      "new_value": "SQL Server linked server connections might remain open Connections to external databases such as Oracle and PostgreSQL can accumulate over time | OS Build 22631.7652 KB5126653 2026-10-13 | Confirmed | 2026-11-23 18:35 PT SQL Server linked server connections might remain open Status Originating update History Confirmed OS Build 22631.7652 KB5126653 2026-10-13 Last updated: 2026-11-23, 18:35 PT Opened: 2026-11-11, 15:11 PT After Windows updates released October 13, 2026 ( KB5126653 ), and later are installed on server devices, connections created by SQL Server linked server queries might remain open after the queries complete. As additional queries are performed, connections to external databases can accumulate instead of closing as expected. This can slow or degrade server performance after prolonged run time. This issue affects SQL Server linked server queries that use OLE DB providers to connect to external databases. Oracle and PostgreSQL connections are among those known to be affected. In affected environments, administrators might observe an increasing number of open connections to external databases, even when the associated SQL Server linked server queries are no longer runn",
+      "change_type": "UPDATED",
+      "content_hash": "5c59c97b0d801e07bd69dcc63a09850bbef8940d764cc28bef12190302b073c1",
+      "source_url": "https://learn.microsoft.com/en-us/windows/release-health/status-windows-11-23h2#3721msgdesc",
+      "is_demo": false,
+      "detected_at": "2026-11-25T03:16:09Z"
+    },
     {
       "id": 1008,
       "entity_type": "KNOWN_ISSUE",
